@@ -1,0 +1,23 @@
+<html>
+	<script src="jquery.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+	$("#btn").click(function(){
+	console.log("hello jquery");
+	});
+	$("#fullname").focus(function(){
+	$(this).css("background","red");
+	});
+	$("#fullname").blur(function(){
+	$(this).css("background","");
+	});
+
+
+	});
+	</script>
+	<head><title>Event01</title></head>
+	<body>
+	<input type="text" id="fullname" name="fullname">
+	<input type="button" id="btn" name="btn" value="Click">
+	</body>
+</html>

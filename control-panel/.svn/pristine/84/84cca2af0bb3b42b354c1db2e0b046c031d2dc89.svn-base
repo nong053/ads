@@ -1,0 +1,64 @@
+<html>
+	<head>
+		<title>Test menu</title>
+		<style>
+		ul#menu{
+		position:relative;
+		z-index:10;
+		}
+		li{
+		float:left;
+		width:100px;
+		display:block;
+		background:#cccccc;
+		
+		}
+		p{
+		display:block;
+		width:1000px;
+		height:100px;
+		background:red;
+		}
+		</style>
+		<script src="http://code.jquery.com/jquery-latest.js"></script>
+		<script type="text/javascript">
+		$(document).ready(function(){
+		$("ul#menu li ul").hide();
+		$("ul#menu li").has("ul").hover(function(){
+		$(this).children("ul").show("slow").fadIn();
+		},function(){
+		$(this).children("ul").slideUp();
+		});
+
+		});
+		</script>
+	</head>
+	
+	<body>
+	<ul id="menu">
+		<li>
+			menu1
+				<ul>
+					<li>
+					sub menu1
+					</li>
+					<li>
+					sub menu2
+					</li>
+					<li>
+					sub menu3
+					</li>
+				</ul>
+		</li>
+		<li>
+			menu2
+		</li>
+		<li>
+			menu3
+		</li>
+	</ul>
+	
+	<br>
+<p></p>
+	</body>
+</html>

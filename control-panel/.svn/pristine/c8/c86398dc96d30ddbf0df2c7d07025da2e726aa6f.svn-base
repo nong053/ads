@@ -1,0 +1,66 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Prototype jQuery</title>
+<style type="text/css">
+	#content{
+	font-size:14px;
+	color:#FFFFFF;
+	background-color:#000000;
+	width:240px;
+	height:80px;
+	padding:10px;
+	
+	}
+	#tipmsg{
+	background-color:#00FF00;
+	width:120px;
+	height:32px;
+	padding:2px;
+	text-align:center;
+	padding-top:5px;
+	border:solid 2px #FF0000;
+	
+	border-radius:10px;
+	position:absolute;/* position at reality*/
+	z-index:2;
+	display:none;
+	}
+</style>
+<script src="jquery.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+console.log("jquery");
+var title;
+	$("a").hover(function(){
+	title = $(this).attr("title")
+	$(this).attr("title","");
+	$("#tipmsg").html(title);
+	$("#tipmsg").slideDown(1000);
+	
+	},function(){
+	$(this).attr("title",title);
+	$("#tipmsg").slideUp(1000);
+	});
+	//e variable is get event
+	$(document).mouseover(function(e){
+		//console.log(e.pageX);
+		var x,y;
+		x = e.pageX+2; y = e.pageY+2;
+		$("#tipmsg").css("left",x+"px").css("top",y+"px");
+	});
+});
+</script>
+</head>
+
+<body>
+<div id="content">
+xxxxxxxxxxxxx <a href="#" title="Go to Web">xxxxxxxxx</a>
+xxxxxxxxxxxx xxxxxxxxxx
+xxxxxxxxxxxx xxxxxxxxxxx
+xxxxxxxxxxxx <a href="#" title="Program">xxxxxxxxxxx</a>
+</div>
+<div id="tipmsg">Massage</div>
+</body>
+</html>

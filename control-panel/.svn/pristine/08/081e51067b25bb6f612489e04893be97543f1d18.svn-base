@@ -1,0 +1,46 @@
+<html>
+	<head>
+	<link href="css/ui-darkness/jquery-ui-1.8.23.custom.css" rel="stylesheet" type="text/css">
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="js/jquery-ui-1.8.23.custom.min.js"></script>
+	<script>
+	$(document).ready(function(){
+	$("#tabs").tabs();
+	$("a[href=#tab1]").click(function(){
+		$.ajax({
+			url:'content1.php',
+			//type:'get',
+			dataType:'html',
+			cache:true,
+			//data:
+			success:function(data){
+			$("#tab1").html(data);
+			}
+			
+		});
+	});
+$("a[href=#tab1]").trigger("click");
+
+	$("a[href=#tab2]").click(function(){
+		alert("hellol2");
+	});
+	$("a[href=#tab3]").click(function(){
+		alert("hellol3");
+	});
+	});
+	</script>
+	<title>jquery ui tabs</title></head>
+	
+	<body>
+	<div id="tabs">
+		<ul>
+			<li><a href="#tab1">title1</a></li>
+			<li><a href="#tab2">title2</a></li>
+			<li><a href="#tab3">title3</a></li>
+		</ul>
+		<div id="tab1"></div>
+		<div id="tab2"></div>
+		<div id="tab3"></div>
+	</div>
+	<body>
+</html>

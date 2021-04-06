@@ -1,0 +1,33 @@
+<html>
+	<head>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script>
+	$(document).ready(function(){
+		$("#btn1").click(function(){
+			$.ajax({
+					url:'file.xml',
+					type:'get',
+					dataType:'xml',
+					success:function(data){
+					//alert(data);
+						$(data).find("register").each(function(){
+						
+							console.log($(this).find("fullName").text());
+							console.log($(this).find("email").text());
+							console.log($(this).find("tel").text());
+							console.log($(this).find("address").text());
+
+							console.log("--------------------------------");
+						});
+					}
+			});
+		});
+	});
+	</script>
+	<title>jquery ui tabs</title></head>
+	
+	<body>
+	<div id="content"></div>
+	<button id="btn1">Click</button>
+	<body>
+</html>

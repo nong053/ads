@@ -1,0 +1,65 @@
+<html>
+<style>
+body{
+background:#cccccc;
+padding:0px;
+margin:0px;
+}
+#body{
+width:1000px;
+height:auto;
+margin:auto;
+
+
+
+}
+#body #header{
+height:100px;
+background:yellow;
+}
+#body #menu{
+height:50px;
+background:white;
+border:black;
+}
+#body #maincontent{
+height:800px;
+background:green;
+}
+#body #maincontent #menu_right{
+	border:red 1px solid;
+	width:300px;
+	height:300px;
+	float:right;
+	background:red;
+}
+#body #maincontent #content{
+width:700px;
+height:700px;
+background:blue;
+}
+#body #footer{
+height:80px;
+background:blue;
+}
+</style>
+	<head><title>Design template</title></head>
+	<body>
+		<div id="body">
+			<div id="header">
+			</div>
+			<div id="menu">
+			</div>
+			<div id="maincontent">
+				<div id="menu_right">
+				menu_right
+				</div>
+				<div id="content">
+				</div>
+			</div>
+			<div id="footer">
+			</div>
+		</div>
+	</body>
+<html>
+

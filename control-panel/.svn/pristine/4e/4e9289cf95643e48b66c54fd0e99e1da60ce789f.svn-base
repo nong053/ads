@@ -1,0 +1,19 @@
+<html>
+<head>
+<title>jQuery Tutorials</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$("#btn1").click(function(){
+		$("#div1").toggle();
+	});
+
+});
+</script>
+</head>
+<body>
+<div id="div1">Test Effect Toggle</div>
+<input type="button" id="btn1" value="Click">
+</body>
+</html>

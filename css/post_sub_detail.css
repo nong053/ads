@@ -1,0 +1,8 @@
+@CHARSET "UTF-8";
+ul.list_realty_detail{
+	
+}
+ul.list_realty_detail > li{
+	float:left;
+	width:200px;
+}

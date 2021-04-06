@@ -1,0 +1,32 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Use jQuery UI Tab</title>
+<script src="jquery.js"></script>
+<script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.20.custom.min.js"></script>
+<link href="jquery-ui/css/south-street/jquery-ui-1.8.20.custom.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+$(document).ready(function(){
+$("#allNews").tabs();	
+});
+</script>
+</head>
+
+<body>
+<div id="allNews">
+	<ul>
+    	<li> <a href="#news1">News1</a></li>
+        <li><a href="#news2">News2</a></li>
+        <li><a href="#news3">News3</a></li>
+    </ul>
+    <div id="news1">News1 News1 News1 News1 News1 News1 News1</div>
+	<div id="news2">News2News2News2News2News2News2News2News2News2News2</div>
+	<div id="news3">News3News3News3News3News3News3News3News3News3News3</div>
+</div>
+
+
+
+
+</body>
+</html>

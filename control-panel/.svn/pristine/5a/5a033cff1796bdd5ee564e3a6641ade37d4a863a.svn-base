@@ -1,0 +1,10 @@
+#tooltip{
+	width:100px;
+	height:100px;
+	background:red;
+	color:white;
+	position:absolute;
+	z-index:5;
+	border-radius:5px;
+	display:none;
+	}

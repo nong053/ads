@@ -1,0 +1,10 @@
+#box{
+		background:red;
+		width:250px;
+		height:250px;
+	}
+.box{
+		background:green;
+		width:250px;
+		height:100px;
+	}

@@ -1,0 +1,26 @@
+<!-- css internal-->
+<html>
+	<head><title>CSS INTERNAL</title>
+	<style type="text/css">
+	#box{
+		background:red;
+		width:250px;
+		height:250px;
+	}
+	.box{
+		background:green;
+		width:250px;
+		height:250px;
+	}
+</style>
+	</head>
+	<body>
+		<div id="box">
+		ID
+		</div>
+		<div class="box">
+		CLASS
+		</div>
+	</body>
+	
+</html>

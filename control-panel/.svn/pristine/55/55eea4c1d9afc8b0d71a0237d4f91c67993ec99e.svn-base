@@ -1,0 +1,34 @@
+<html>
+	<head>
+	<style>
+	.focus_bg{
+	background:blue;
+	color:white;
+	}
+	</style>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script>
+	$(document).ready(function(){
+		$("input").focus(function(){
+		$(this).addClass("focus_bg");
+		{
+		}
+		});
+		$("input").blur(function(){
+		$(this).removeClass("focus_bg");
+		});
+
+		
+		
+	});
+	</script>
+	</head>
+	<body>
+	
+		<form>
+			<input type="name" id="name">
+			<input type="email" id="email">
+			
+		</form>
+	</body>
+</html>

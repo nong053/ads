@@ -1,0 +1,39 @@
+<html>
+	<head><title>ajax get</title>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		//alert("hello world");
+			$("form#form1").submit(function(){
+				//alert("submit now");
+				$.ajax({
+				url:"serverGet.php",
+				cache:false,
+				type:"get",
+				dataType:"html",
+				data:{"txt1":$("#txt1").val(),"txt2":$("#txt2").val()},
+				success:function(data){
+				alert(data);
+				$("#content").html(data);
+				$("#txt1").val("");
+				$("#txt2").val("");
+				}
+
+				});
+				return false;
+			});
+			
+		});
+	</script>
+	</head>
+	<body>
+	<div id="content">
+	</div>
+	<form id="form1">
+		<input type="text" id="txt1" name="txt1">
+		<input type="text" id="txt2" name="txt2">
+		<input type="submit" id="btn1" name="btn1">
+	</form>
+	</body>
+
+</html>

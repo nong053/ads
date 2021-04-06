@@ -1,0 +1,48 @@
+<html>
+	<head>
+	<style type="text/css">
+	#box{
+	background:red;
+	width:500px;
+	height:500px;
+	display:show;
+	}
+	</style>
+	<title>Workphp Tutorial javascript</title>
+	<script type="text/javascript">
+
+	function manageObject(button){
+	var objectBox = document.getElementById('box');
+		if(button.name=="hide_bt"){
+		objectBox.style.display="none";
+		}else if(button.name=="show_bt")
+		{
+		objectBox.style.display=""
+		}
+	}
+
+	function funcShowHide(value){
+	var objectBox = document.getElementById('box');
+	if(value.checked){
+		objectBox.style.display="none";
+		}
+		else
+		{
+		objectBox.style.display="";
+		}
+	}
+
+	</script>
+	</head>
+	<body>
+	<div id="box">
+		Content
+	</div>
+	<br>javascript<br>
+	<input type="checkbox" onclick="funcShowHide(this)">
+	<input type="button" name="show_bt" value="Show(javascript)" onclick="manageObject(this)">
+	<input type="button" name="hide_bt" value="Hide(javascript)" onclick="manageObject(this)">
+	
+	</body>
+</html>
+		

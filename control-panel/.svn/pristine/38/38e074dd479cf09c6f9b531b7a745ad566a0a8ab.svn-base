@@ -1,0 +1,52 @@
+<html>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<head><title>Workphp Tutorial</title>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript">
+	// Manage by javascript
+		function funcShowHideTable(value){
+			var idTb = document.getElementById('tbMain');
+			if(value.checked){
+				idTb.style.display="none";
+			}
+			else
+			{
+				idTb.style.display="";
+			}
+		}
+	//Manage by jQuery
+		$(document).ready(function(){
+			//console.log("Hello jQuery");
+			$(':checkbox#showHide').click(function(){
+				$('#tbMain').toggle();
+			});
+		});
+	</script>
+	</head>
+	<body>
+	<h1>Workphp Tutorial<h1>
+	<input type="checkbox" id="showHide">Show Hide Table Element By jQuery
+	<br>
+	<input type="checkbox" onclick="funcShowHideTable(this)">Show Hide Table Element By javascript
+	<br>
+	<br>
+	<table border="1" id="tbMain">
+		<tr>
+			<td>column 1</td>
+			<td>column 2</td>
+		</tr>
+		<tr>
+			<td>column 1</td>
+			<td>column 2</td>
+		</tr>
+		<tr>
+			<td>column 1</td>
+			<td>column 2</td>
+		</tr>
+		<tr>
+			<td>column 1</td>
+			<td>column 2</td>
+		</tr>
+	</table>
+	</body>
+</html>

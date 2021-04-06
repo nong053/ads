@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>jQuery UI</title>
+
+<style type="text/css">
+#content{
+width:250px; height:150px; background-color:#ff6600; padding:4px;
+}
+</style>
+
+<script src="jquery.js"></script>
+<script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.20.custom.min.js"></script>
+<link href="jquery-ui/css/south-street/jquery-ui-1.8.20.custom.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript">
+$(document).ready(function(){
+console.log("jquery");
+	$("#btn").click(function(){
+	$("#content").hide("Drop");
+	});
+	
+	$("#calendar").datepicker();
+	$("#birthday").datepicker({dateFormat:'dd/mm/yy',showAnim:'clip'});
+	$("#dialog").click(function(){
+	$("#d1").dialog();
+	});
+	
+});
+</script>
+
+</head>
+
+<body>
+<div id="d1" title="Information">
+Dialog by jQuery UI
+</div>
+<!--<div id="calendar"></div>-->
+<input type="button" id="dialog" name="dialog"  value="dialog" /><br>
+<input type="text" id="birthday" name="birthday" readonly />
+
+<div id="content">
+Customize your jQuery UI download by selecting the version and specific modules you need in the form below or select a quick download package. A range of current and historical jQuery UI releases are also hosted on
+</div>
+<input type="button" name="btn" id="btn" value="Click Animation" />
+</body>
+</html>

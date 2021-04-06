@@ -1,0 +1,22 @@
+<html>
+<link href="css.css" rel="stylesheet" type="text/css">
+<style>
+	#box{
+	background:green;
+	width:100px;
+	/*height:100px;*/
+	
+	}
+	[name!="name"]{
+	font-size:24px;
+	}
+
+</style>
+
+	<head><title>test css</title></head>
+	<body>
+	<div id="box" style="border:1px"></div>
+	<input type="text" name="name" id="name">
+	<input type="text" name="age" id="age">
+	</body>
+</html>

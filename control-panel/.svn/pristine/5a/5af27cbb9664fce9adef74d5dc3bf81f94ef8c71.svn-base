@@ -1,0 +1,25 @@
+<html>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+	$("#btn1").click(function(){
+		$.ajax({
+				url:'server-side.php',
+				type:'GET',
+				dataType:'html',
+				success:function(data){
+				//alert(data);
+				$("#content").append(data);
+				}
+				});
+			});
+	});
+	</script>
+
+	<head><title>Using Ajax  by jQuery</title></head>
+	<body>
+	<div id="content"></div>
+	<input type="button" id="btn1" name="btn1" value="Request">
+	</body>
+</html>

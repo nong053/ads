@@ -1,0 +1,36 @@
+<html>
+<style>
+#box1{
+width:500px;
+height:500px;
+background:red;
+}
+</style>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<script src="jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#btn1").click(function(){
+			//$("#box1").slideToggle();
+			//$("#box1").css({"background":"blue","font-size":"28px"}).slideToggle();
+		var setTime=function(){
+			$("#box1").fadeToggle();
+		}
+				setTimeout(function(){
+						setTime();
+					},5000);
+					setTime();
+				});
+			});
+
+			
+	</script>
+
+	<head><title></title></head>
+	<body>
+	<input type="button" id="btn1" name="btn1" value="click">
+	<div id="box1">
+	test font
+	</div>
+	</body>
+</html>

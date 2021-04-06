@@ -1,0 +1,187 @@
+<html>
+	<head>
+	<style>
+	#load{
+	display:none;
+	width:100px;
+	height:50px;
+	position:absolute;
+	z-index:5;
+	background:red;
+	border-radius:5;
+	}
+	</style>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>Register Form</title>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		//ajax loading
+		$("#load").ajaxStart(function(){
+			$(this).show("slow");
+		});
+		$("#load").ajaxStop(function(){
+			$(this).hide("slow");
+		});
+		//ajax loading
+		var requestData = function(){
+			$.ajax({
+				url:'server.php',
+				type:'post',
+				dataType:'html',
+				data:{"action":"select"},
+				success:function(data){
+					///$("table#showData tbody").empty();
+					$("table#showData tbody").html(data).slideDown();
+					$("table#showData tbody tr:odd").css("background","#e0e0e0");
+					$("table#showData thead").css({"background":"#cccccc","color":"white"});
+					$(".edit").css({"cursor":"pointer"})
+					$(".del").css({"cursor":"pointer"})
+				}
+			});
+		}
+
+
+			$("form#form1").submit(function(){
+
+			//alert("hello");
+				$.ajax({
+					url:'server.php',
+					type:'POST',
+					dataType:'html',
+					//data:{"fullName":$("#fullName").val(),"email":$("#email").val()},
+					data:$(this).serialize(),
+					success:function(data){
+						//alert(data);
+						$("#fullName").val("");
+						$("#email").val("");
+						$("#tel").val("");
+						$("#address").html("");
+						requestData();
+					}
+
+				});
+				return false;
+			});
+		
+		requestData();
+
+			$(".del").live("click",function(event){
+			//alert(event.target.id);
+					$.ajax({
+							url:'server.php',
+							type:'get',
+							dataType:'html',
+							data:{"id":event.target.id,"action":"del"},
+							success:function(data){
+							
+							requestData();
+								
+							}
+					});
+			});
+
+			//edit
+			$(".edit").live("click",function(event){
+			//alert(event.target.id);
+					$.ajax({
+							url:'server.php',
+							type:'get',
+							dataType:'json',
+							data:{"id":event.target.id,"action":"edit"},
+							success:function(data){
+							//alert(data['fullName']);
+							$("#fullName").val(data['fullName']);
+							$("#email").val(data['email']);
+							$("#tel").val(data['tel']);
+							$("#address").text(data['address']);
+							$("#save").val("Edit");
+							$("#action").val("editMange");
+							$("input#id").remove();
+							$("#action").after("<input type='hidden' id='id' name='id' value='"+data['id']+"'>");
+							
+								
+							}
+					});
+			});
+			//edit
+
+			//reset to add
+			$("#clear").live("click",function(){
+				$("#action").val("add");
+				$("#save").val("Save");
+				
+			});
+			//reset to add
+		});
+	</script>
+	</head>
+	<body>
+	<div id="load">Loading.....</div>
+	<table id="showData">
+	<thead>
+
+		<tr>
+			<th>
+			
+			</th>
+			<th>
+			Full Name
+			</th>
+			<th>
+			E-mail
+			</th>
+			<th>
+			Tel
+			</th>
+			<th>
+			Address
+			</th>
+			<th>
+			Management
+			</th>
+		</tr>
+	</thead>
+	<tbody>
+		
+	</tbody>
+	</table>
+	<br>
+	<form id="form1">
+	<table>
+		<tr>
+			<td>Full Name</td>
+			<td>
+			<input type="text" name="fullName" id="fullName">
+			</td>
+		</tr>
+		<tr>
+			<td>E-mail</td>
+			<td>
+			<input type="text" name="email" id="email" >
+			</td>
+		</tr>
+		<tr>
+			<td>Tel.</td>
+			<td>
+			<input type="text" name="tel" id="tel">
+			</td>
+		</tr>
+		<tr>
+			<td>Address</td>
+			<td>
+			<textarea name="address" id="address"></textarea>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="2">
+			<input type="submit" id="save" name="save" value="Save">
+			<input type="hidden" name="action" id="action" value="add">
+			<input type="reset" id="clear" name="clear" value="clear">
+			</td>
+			
+		</tr>
+	</table>
+	</form>
+	</body>
+</html>

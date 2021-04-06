@@ -1,0 +1,17 @@
+.margin-bottom5{
+	margin-bottom:5px;
+}
+#realtyForArea .optonArea{
+	width:100px;
+	float:left;
+	
+}
+#map-canvas {
+	width:100%;
+	height:500px;
+
+	}
+	
+.classHidden{
+	display:hidden;
+}

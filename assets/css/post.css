@@ -1,0 +1,15 @@
+@CHARSET "UTF-8";
+.disPlaInline{
+	display:inline;
+}
+.fileUploadArea{
+	width:150px;
+	float:left;
+}
+.btnUploadArea{
+	width:100px;
+	float:left;
+}
+.control-label-l{
+	padding-top: 7px;
+}

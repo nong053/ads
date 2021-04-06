@@ -1,0 +1,40 @@
+<html>
+	<head>
+	<title>XML Training jQuery Library JavaScript</title>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$("#btn1").click(function(){
+			//alert("ok");
+			$.ajax({
+			url:"serverXml.php",
+			type:"get",
+			dataType:"xml",
+			cache:true,
+			success:function(data){
+			//alert("hello");	
+				$(data).find("student").each(function(){
+					var $entry =$(this);
+					console.log($entry.attr("name"));
+					console.log($entry.find("age").text());
+					console.log($entry.find("address").text());
+					var $programming = $entry.find("programming");
+					if($programming.length){
+						$programming.find("line").each(function(){
+						console.log($(this).text());
+						});
+
+						
+					}
+				});						
+			}
+			});
+		});
+	});
+	</script>
+	</head>
+	<body>
+	<div id="content"></div>
+	<input type="button" id="btn1" name="btn1" value="Press Here">
+	</body>
+</html>

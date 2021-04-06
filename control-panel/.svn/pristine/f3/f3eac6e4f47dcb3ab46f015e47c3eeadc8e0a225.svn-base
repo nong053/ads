@@ -1,0 +1,53 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<?
+include("../config.inc.php");
+$member_user=$_POST['member_user'];
+$member_password=$_POST['member_password'];
+$member_fullname=$_POST['member_fullname'];
+$member_idcard=$_POST['member_idcard'];
+$member_brithday=$_POST['member_brithday'];
+
+$member_address=$_POST['member_address'];
+$member_district=$_POST['member_district'];
+$member_prefecture=$_POST['member_prefecture'];
+$member_province=$_POST['member_province'];
+$member_country=$_POST['member_country'];
+$member_post=$_POST['member_post'];
+$member_tel=$_POST['member_tel'];
+$member_email=$_POST['member_email'];
+$member_id_upline=$_POST['member_id_upline'];
+$member_name_upline=$_POST['member_name_upline'];
+$member_bank=$_POST['member_bank'];
+$member_branch_bank=$_POST['member_branch_bank'];
+$member_account_number=$_POST['member_account_number'];
+$member_beneficiaries=$_POST['member_beneficiaries'];
+$member_id=$_POST['member_id'];
+/*echo"member_id$member_id<br>";
+echo"1$member_user<br>";
+echo"2$member_password<br>";
+echo"3$member_fullname<br>";
+echo"4$member_idcard<br>";
+echo"5:$member_brithday<br>";
+echo"6$member_address<br>";
+echo"7$member_district<br>";
+echo"8$member_prefecture<br>";
+echo"9$member_province<br>";
+echo"10$member_country<br>";
+echo"11$member_post<br>";
+echo"12$member_tel<br>";
+echo"13$member_email<br>";
+echo"14$member_id_upline<br>";
+echo"15$member_name_upline<br>";
+echo"16$member_bank<br>";
+echo"17$member_branch_bank<br>";
+echo"18$member_account_number<br>";
+echo"19$member_beneficiaries<br>";
+*/
+$strSQL="update member set member_password='$member_password',member_fullname='$member_fullname',member_idcard='$member_idcard',member_brithday='$member_brithday',member_address='$member_address',member_district='$member_district',member_prefecture='$member_prefecture',member_province='$member_province',member_country='$member_country',member_post='$member_post',member_tel='$member_tel',member_email='$member_email',member_id_upline='$member_id_upline',member_name_upline='$member_name_upline',member_bank='$member_bank',member_branch_bank='$member_branch_bank',member_account_number='$member_account_number',member_account_number='$member_account_number',member_beneficiaries='$member_beneficiaries' where member_id=$member_id";
+$result=mysql_query($strSQL);
+if(!$result){
+echo"error".mysql_error();
+}else{
+	echo"<script>window.location=\"index.php?page=mlm_system&select_mlm=mlm_detail&member_id=$member_id\"</script>";
+	}
+?>

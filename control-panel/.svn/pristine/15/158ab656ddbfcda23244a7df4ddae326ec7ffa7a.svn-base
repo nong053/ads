@@ -1,0 +1,81 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Prototype jQuery</title>
+
+<style type="text/css">
+.error{
+color:#FF0000;
+}
+</style>
+
+<script src="jquery.js"></script>
+<script type="text/javascript" src="jquery-validation/jquery.validate.min.js"></script>
+<script type="text/javascript" src="jquery-validation/localization/messages_th.js"></script>
+
+<script type="text/javascript">
+$(document).ready(function(){
+console.log("jquery");
+	$("#form1").validate({
+		submitHandler:function(){
+		alert("ok submit");
+		var  allValue;
+		//allValue = $(this).serialize();
+		allValue=$("#form1 input").serialize();
+		alert(allValue);
+
+		
+		}
+
+	});
+});
+
+</script>
+</head>
+
+<body>
+<form id="form1" name="form1" method="post">
+	<fieldset >
+    <legend>Form Validate Plugin</legend>
+    <table>
+    	<tr>
+        	<td>
+            Name
+            </td>
+            <td>
+            
+            <input type="text" name="name" id="name"  class="required" title="กรุณากรอกชื่อด้วย"/>
+            </td>
+        </tr>
+        <tr>
+        	<td>
+            E-mail
+            </td>
+            <td>
+            
+            <input type="text" name="email" id="email"  class="required email" />
+            </td>
+        </tr>
+        <tr>
+        	<td>
+            Age
+            </td>
+            <td>
+            
+            <input type="text" name="age" id="age"   class="required digits" max="60" min="20"/>
+            </td>
+        </tr>
+        <tr>
+        	<td>
+            <input type="submit" name="btnSubmit"  id="btnSubmit" value="Submit" />
+            </td>
+            <td>
+           
+            </td>
+        </tr>
+    </table>
+    </fieldset>
+</form>
+</body>
+</html>

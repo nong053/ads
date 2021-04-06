@@ -1,0 +1,35 @@
+<html>
+	<head><title>test float</title></head>
+	<style>
+		#content{
+		width:250px;
+		}
+		#content #box1{
+		width:100px;
+		height:120px;
+		background:red;
+		float:left;
+		margin:5px;
+		}
+		#content #box2{
+		width:100px;
+		height:100px;
+		background:yellow;
+		float:left;
+		margin:5px;
+		}
+		#content #box3{
+		width:100px;
+		height:100px;
+		background:green;
+		clear:both;
+		}
+	</style>
+	<body>
+	<div id="content">
+		<div id="box1"></div>
+		<div id="box2"></div>
+		<div id="box3"></div>
+	</div>
+	</body>
+</html>

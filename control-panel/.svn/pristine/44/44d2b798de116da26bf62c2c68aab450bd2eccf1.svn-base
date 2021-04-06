@@ -1,0 +1,29 @@
+<html>
+<style>
+#box1{
+width:500px;
+height:500px;
+background:red;
+position:relative;
+}
+</style>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<script src="jquery.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$("#btn1").click(function(){
+				$("#box1").animate({"left":"400"});
+			});
+		});
+
+			
+	</script>
+
+	<head><title></title></head>
+	<body>
+	<input type="button" id="btn1" name="btn1" value="click">
+	<div id="box1">
+	test font
+	</div>
+	</body>
+</html>

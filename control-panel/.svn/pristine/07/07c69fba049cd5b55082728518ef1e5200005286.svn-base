@@ -1,0 +1,23 @@
+<html>
+<head>
+<title>ajax method jQuery Tutorials</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+	$("#btn1").click(function(){
+
+		$.ajax({ url: "server_side.php" })
+		.success(function(data) { $("#div1").html(data); })
+		.error(function() { $("#div1").html("error"); })
+		.complete(function() { $("#div1").after("Ajax load finished"); });
+
+		});
+	});
+</script>
+</head>
+<body>
+<div id="div1"></div>
+<input type="button" id="btn1" value="Load">
+</body>
+</html>

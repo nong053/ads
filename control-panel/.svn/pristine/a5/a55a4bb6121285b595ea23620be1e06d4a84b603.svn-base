@@ -1,0 +1,44 @@
+<html>
+	<head><title>ajax setTimeout</title>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		//alert("hello world");
+			$("form#form1").submit(function(){
+				//alert("submit now");
+				$.ajax({
+				url:"serverGet.php",
+				cache:false,
+				type:"get",
+				dataType:"html",
+				success:function(data){
+				$("#content").html(data);
+				}
+
+				});
+				return false;
+			});
+			function realtime(){
+				$.ajax({
+				url:"serverGet.php",
+				cache:true,
+				type:"get",
+				dataType:"html",
+				success:function(data){
+				$("#content").html(data);
+				}
+			});
+			setTimeout(realtime,1000);
+			}
+
+			realtime();
+		});
+	</script>
+	</head>
+	<body>
+	<div id="content">
+	</div>
+	
+	</body>
+
+</html>

@@ -1,0 +1,20 @@
+<html>
+	<head>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<!--<script src="jQuery.hello.js"></script>-->
+	<script src="jQuery.hello_option.js"></script>
+	<script type="text/javascript"> 
+		$(document).ready(function(){
+		//alert("hello jquery")
+		$("#btn1").click(function(){
+		//$("body").hello();
+		$("body").hello_option({txt:"test set option"});
+		});
+		
+		});
+	</script>
+	<title>create plugin</title></head>
+	<body>
+	<input type="button" id="btn1" name="btn1" value="Click">
+	</body>
+</html>

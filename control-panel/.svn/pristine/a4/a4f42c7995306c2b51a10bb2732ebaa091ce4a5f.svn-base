@@ -1,0 +1,45 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Dom jQuery</title>
+<style type="text/css">
+ .font100{
+ font-size:100px;
+ }
+</style>
+<script src="jquery.js"></script>
+<script type="text/javascript">
+
+$(document).ready(function(){
+//alert("jquery");
+	$("#btn1").click(function(){
+		 var str = $("#content").html();
+		 alert(str);
+	});
+	$("#btn2").click(function(){
+		var str2 ="<h2>HONDA</h2>";
+		$("#content").html(str2);
+		 //alert(str);
+	});
+	$("#btn3").click(function(){
+		//add css by inline
+		$("#content").css({"color":"red","border":"2px solid #000000","font-size":"30px"});
+		//add css by class
+		$("#content").addClass("font100");
+		 //alert(str);
+	});
+});
+</script>
+
+</head>
+
+<body>
+<div id="content">
+	<h2>TOYOTA</h2>
+</div>
+<input type="button" id="btn1"  name="btn1"value="Read" />
+<input type="button" id="btn2" name="btn2" value="Write" />
+<input type="button" id="btn3" name="btn3" value="CSS" />
+</body>
+</html>

@@ -1,0 +1,31 @@
+<html>
+	<head><title>Test javascript</title>
+	<style type="text/css">
+	#box{
+	width:100px;
+	height:100px;
+	background:green;
+	}
+	</style>
+	<script type="text/javascript">
+		function manageObject(button){
+		
+		var $objectBox = document.getElementById('box');
+		if(button.name=="showObject"){
+		//alert(button.name);
+			$objectBox.style.display="";
+		}else{
+		//alert(button.name);
+			$objectBox.style.display="none";
+		}
+		}
+	</script>
+	</head>
+	<body>
+		<div id="box">
+		</div>
+
+		<input type="button" name="showObject" value="show" onclick="manageObject(this)">
+		<input type="button" name="hideObject" value="hide" onclick="manageObject(this)">
+	</body>
+</html>

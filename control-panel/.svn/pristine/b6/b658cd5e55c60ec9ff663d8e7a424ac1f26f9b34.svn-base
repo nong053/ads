@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Test jQuery01</title>
+<script src="jquery.js"></script>
+<script type="text/javascript" type="text/javascript">
+$(document).ready(function(){
+//console.log("hello jquery");
+$(".myButton").click(function(){
+alert("Event class");
+});
+$("#btn2").click(function(){
+alert("Event id");
+});
+
+$("[name=btn3]").click(function(){
+alert("Event Attribute");
+});
+
+$("input:first").click(function(){
+alert("Event first");
+});
+
+$("input[name !=btn3]").click(function(){
+alert("Event no btn3");
+});
+
+$("input[name ^=x]").click(function(){
+alert("Event start first character x");
+});
+
+$("input[class =a2]").click(function(){
+alert("class  ");
+});
+
+
+});
+</script>
+</head>
+
+<body>
+<input type="button" id="btn" value="Click first" />
+<input type="button" class="myButton" id="btn" value="Click" />
+<input type="button" id="btn2" value="Click" />
+<input type="button" id="btn3" value="Click" name="btn3"/>
+<input type="button" id="btn3" value="Click" name="xbtn3"/>
+<input type="button" id="btn3" value="Click" name="bnt4" class="f1 a2"/>
+
+
+</body>
+</html>

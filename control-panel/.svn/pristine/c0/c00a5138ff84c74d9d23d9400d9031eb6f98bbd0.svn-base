@@ -1,0 +1,15 @@
+<!-- css external-->
+<html>
+	<head><title>CSS EXTERNAL</title>
+	<link href="file_css.css" rel="stylesheet" type="text/css">
+	</head>
+	<body>
+		<div id="box">
+		ID
+		</div>
+		<div class="box">
+		CLASS
+		</div>
+	</body>
+	
+</html>

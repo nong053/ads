@@ -1,0 +1,17 @@
+<!-- css intranal-->
+<style type="text/css">
+#box{
+	background:red;
+	width:250px;
+	height:250px;
+}
+</style>
+<html>
+	<head><title>CSS INTRANAL</title>
+	</head>
+	<body>
+		<div id="box">
+		</div>
+	</body>
+	
+</html>

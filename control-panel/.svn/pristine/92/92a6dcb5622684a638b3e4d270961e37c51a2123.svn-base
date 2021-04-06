@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>jQuery Tutorials</title>
+<script type="text/javascript" src="http://code.jquery.com/jquery-latest.js"></script>
+<script type="text/javascript">
+$(document).ready(function(){
+
+$("#btn1").click(function(){
+	var $value = parseFloat($("#txt1").val())+parseFloat($("#txt2").val());
+	$("#txt3").val($value).show();
+});
+$("#btn2").click(function(){
+	$("#txt1").val("");
+	$("#txt2").val("");
+	$("#txt3").val("").hide();
+
+});
+
+});
+</script>
+<input type="text" id="txt1" />+<input type="text" id="txt2" />=<input type="text" id="txt3" />
+<input type="button" id="btn1" value="Submit"/>
+<input type="button" id="btn2"  value="Clear"/>
+
+</body>
+</html>

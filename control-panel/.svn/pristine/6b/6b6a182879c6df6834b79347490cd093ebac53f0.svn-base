@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Table jQuery</title>
+<script src="jquery.js"></script>
+<script type="text/javascript">
+jQuery(document).ready(function(){
+//alert("jquery");
+	$("tr").mouseover(function(){
+	//alert("Tr");
+	$(this).css("background-color","#FF00FF");
+	});
+	$("tr").mouseout(function(){
+	//alert("Tr");
+	$(this).css("background-color","#FFFFFF");
+	$("tr:odd").css("background-color","#CCCCCC");
+	});
+	$("tr:odd").css("background-color","#CCCCCC");
+	
+	
+});
+</script>
+</head>
+
+<body>
+<table width="500" height="248" border="1" id="myTB">
+	<tr>
+    	<td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+    	<td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+    	<td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+    	<td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+    	<td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+    	<td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+    	<td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+    	<td></td><td></td><td></td><td></td>
+    </tr>
+    <tr>
+    	<td></td><td></td><td></td><td></td>
+    </tr>
+    
+    <tr>
+    	<td></td><td></td><td></td><td></td>
+    </tr>
+</table>
+</body>
+</html>

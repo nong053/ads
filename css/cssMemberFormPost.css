@@ -1,0 +1,9 @@
+@CHARSET "UTF-8";
+.formHidden{
+	display:none;
+}
+.control-label-l {
+    margin-bottom: 0;
+    padding-top: 7px;
+    text-align: left;
+}

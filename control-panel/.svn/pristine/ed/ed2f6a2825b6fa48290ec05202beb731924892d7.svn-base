@@ -1,0 +1,22 @@
+<html>
+	<head>
+	<link href="tooltip.css" rel="stylesheet" type="text/css">
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script src="jQuery.tooltip.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+		//alert($("#tooltip").html());
+			$('a[href]').tooltip({
+										txt:"texxxx"
+										});
+		});
+	</script>
+	<title>plugin tooltip</title>
+	
+	</head>
+	<body>
+	<div id="tooltip">aa</div>
+	<a href="#">Link1</a>
+	<a href="index2.pdf">Link2</a>
+	</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>BOX Model</title>
+<style type="text/css">
+	#box1{
+	width:200px; height:120px;
+	background:#FFFF99;
+	border:solid 10px #FF0000;
+	margin:50px; 
+	padding:20px;
+	}
+	h1{display:inline;}
+	a{width:200px; display:block; background:#FF0000;}
+</style>
+</head>
+
+<body>
+	<div id="box1">
+  	xxxxx xxxxx xxxxx xxxxx xxxxx
+    cxxxxx xxxxx xxxxx xxxxx xxxxx
+    xxxxx xxxxx xxxxx xxxxx xxxxx
+    xxxxx xxxxx xxxxx xxxxx xxxxx
+    </div>
+    <h1>Bock Element display:inline</h1>
+    <a href="">Link</a>display:inline
+</body>
+</html>

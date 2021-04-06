@@ -1,0 +1,22 @@
+<script src="http://code.jquery.com/jquery-latest.js"></script>
+
+<body>
+<script>
+$(document).ready(function(){
+$.ajax({
+   type: "GET",
+   url: "keepalive.php",
+   success: function(msg){
+     alert("Connection active!")
+   }
+   error: function(XMLHttpRequest, textStatus, errorThrown) {
+       if(textStatus == 'timeout') {
+           alert('Connection seems dead!');
+       }
+   }
+ });
+
+});
+
+</script>
+<body>

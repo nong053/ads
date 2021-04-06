@@ -1,0 +1,31 @@
+<html>
+
+<style>
+	.bg_red{
+	background:red;
+	}
+</style>
+	<script src="jquery.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+	$("#btn").click(function(){
+	console.log("hello jquery");
+	});
+	$("#fullname").focus(function(){
+	$(this).addClass("bg_red");
+	});
+	$("#fullname").blur(function(){
+	$(this).removeClass("bg_red");
+	});
+
+
+	});
+	</script>
+	<head>
+	<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<title>Event addClass</title></head>
+	<body>
+	<input type="text" id="fullname" name="fullname">
+	<input type="button" id="btn" name="btn" value="Click">
+	</body>
+</html>

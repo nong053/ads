@@ -1,0 +1,29 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Untitled Document</title>
+<link href="/jQuery1/mycss.css" rel="stylesheet" type="text/css" />
+</head>
+
+<body>
+
+<h1>HEADER 1</h1>
+<h1>HEADER 1-2</h1>
+<h2 class="titleH2">HEADER 2 </h2>
+
+<div id="box1">Content for  id "box1" Goes Here
+	
+    <span>Span Div</span>
+
+</div>
+<p>
+	<a>
+	<span class="font12">Span p</span>
+    </a>
+</p>
+
+
+</body>
+
+</html>

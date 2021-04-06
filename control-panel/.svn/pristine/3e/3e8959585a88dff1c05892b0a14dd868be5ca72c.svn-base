@@ -1,0 +1,38 @@
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>เปรียบเทียบการใช้งาน onload กับ การใช้ $(document).ready()</title>
+     <style type="text/css">
+
+		.highlight{
+		background-color:#999;
+		}
+
+  </style>
+   <script src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
+ 
+   <script type="text/javascript">
+        function runhighlight(){
+            $("#content").addClass("highlight");
+            }
+		$(document).ready(runhighlight);
+  </script>
+</head>
+ 
+     <body>
+ 
+          <h1>Header</h1>
+ 
+          <p>Paragraph1 </p>
+ 
+		  <p>Paragraph2</p>
+ 
+          <p>Paragraph3</p>
+ 
+         <div id="content">
+             highlight here content content content
+         </div>
+ 
+     </body>
+ 
+</html>

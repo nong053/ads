@@ -1,0 +1,38 @@
+<html>
+<style>
+body{
+background:black;
+}
+strong>p{
+color:white;
+}
+#box p{
+color:red;
+font-size:24px;
+}
+
+#box>span{
+color:yellow;
+font-size:24px;
+}
+</style>
+	<head><title>test css</title></head>
+	<body>
+	
+		<strong>
+			<p>
+			test dom
+			</p>
+		</strong>
+
+		<div id="box">
+			<p>test dom2 </p>
+			<p> 
+				<span>
+				<b>text dom3</b>
+				</span>
+			</p>
+		</div>
+	
+	</body>
+</html>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<registers>
+	<register>
+		<fullName>Kosit Aromsava1</fullName>
+		<email>nn.it@hotmail.com1</email>
+		<tel>010535461</tel>
+		<address>Kalasin1</address>
+	</register>
+	<register>
+		<fullName>Kosit Aromsava2</fullName>
+		<email>nn.it@hotmail.com2</email>
+		<tel>010535462</tel>
+		<address>Kalasin2</address>
+	</register>
+	<register>
+		<fullName>Kosit Aromsava3</fullName>
+		<email>nn.it@hotmail.com3</email>
+		<tel>010535463</tel>
+		<address>Kalasin3</address>
+	</register>
+</registers>

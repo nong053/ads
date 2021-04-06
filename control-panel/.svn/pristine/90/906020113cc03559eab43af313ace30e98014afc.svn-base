@@ -1,0 +1,35 @@
+<html>
+	<head>
+	<style>
+	#tooltip{
+	width:100px;
+	height:100px;
+	background:red;
+	color:white;
+	position:absolute;
+	z-index:5;
+	border-radius:5px;
+	display:none;
+	}
+	</style>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+			$('a[href]').hover(function(e){
+				var $left=e.pageX+10;
+				var $top=e.pageY+10;
+				$("#tooltip").css({"left":$left,"top":$top}).show("slow");
+			},function(){
+				$("#tooltip").slideUp("slow");
+			});
+		});
+	</script>
+	<title>plugin tooltip</title>
+	
+	</head>
+	<body>
+	<div id="tooltip">aaaaaaaasdfasdfasdfasdsdsadfasdff</div>
+	<a href="#">Link1</a>
+	<a href="index2.pdf">Link2</a>
+	</body>
+</html>

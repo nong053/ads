@@ -1,0 +1,18 @@
+@charset "utf-8";
+h1 {
+	color: #FF0000;
+	font-size:50px;
+	font:Arial, Helvetica, sans-serif;
+}
+
+.titleH2 {
+	color: #0000FF;
+}
+
+#box1 {
+	color: #00FF00;
+}
+p .font12{
+color:#FFFF00;
+font-size:12px;
+}

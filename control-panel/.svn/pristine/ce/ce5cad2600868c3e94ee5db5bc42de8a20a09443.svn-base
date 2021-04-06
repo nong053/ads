@@ -1,0 +1,13 @@
+<html>
+	<head>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript"> 
+		$(document).ready(function(){
+		//alert("hello jquery")
+		});
+	</script>
+	<title>create plugin</title></head>
+	<body>
+	<input type="button" id="btn1" name="btn1" value="Click">
+	</body>
+</html>

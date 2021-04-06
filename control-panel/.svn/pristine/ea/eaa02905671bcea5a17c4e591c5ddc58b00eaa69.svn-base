@@ -1,0 +1,62 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<?php
+
+include("../config.inc.php");
+$action=$_GET['action'];
+
+if($action="delete"){
+$picture_id=$_GET['picture_id'];
+$picturecat_id=$_GET['picturecat_id'];
+
+$path_thumbnail="../picture/".$picturecat_id."/".$picture_id."/thumbnail/";
+$path_big_picture="../picture/".$picturecat_id."/".$picture_id."/";
+
+			if($handle=@opendir($path_thumbnail)){
+				$imagesFile=array();
+				while(false!==($file=readdir($handle))){
+					if($file !="." && $file !=".."){
+					$thumbnailsFile=$path_thumbnail."/".$file;
+					$big_picture_File=$path_big_picture."/".$file;
+					unlink("$thumbnailsFile");
+					unlink("$big_picture_File");
+				}
+
+			}
+			closedir($handle);//ต้องปิดทุกครั้งไม่งั้นลบfolderไม่ได้
+		}
+
+
+
+
+	if(is_dir($path_thumbnail)){
+	rmdir("$path_thumbnail");
+	} 
+	if(is_dir($path_big_picture)){
+	rmdir("$path_big_picture");
+	}
+
+
+$strSQL="delete from picture where picture_id=$picture_id";
+mysql_query($strSQL);
+//header("Location:index.php?page=picture&prdductcat_id=$picturecat_id");
+echo"<script> window.location=\"index.php?page=picture&picturecat_id=$picturecat_id\"</script>";
+
+}//action==delete
+?>
+<?php if($action=="edit")
+$picture_id=$_POST['picture_id'];
+$picturecat_id=$_POST['picturecat_id'];
+$picture_name=$_POST['picture_name'];
+$picture_detail=$_POST['picture_detail'];
+$picture_price=$_POST['picture_price'];
+$picture_promotion=$_POST['picture_promotion'];
+$picture_amount=$_POST['picture_amount'];
+$picture_date=date("D-M-y:H:i:s");
+
+
+      $strSQL="update picture set picture_name='$picture_name',picture_detail='$picture_detail',picture_price='$picture_price',picture_promotion='$picture_promotion',picture_amount='$picture_amount',picture_date='$picture_date' where picture_id=$picture_id";
+	  $result=mysql_query($strSQL);
+	  if(!$result){
+	  echo "error".mysql_error();
+	  }
+?>

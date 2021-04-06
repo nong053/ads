@@ -1,0 +1,32 @@
+<html>
+	<head>
+	<style>
+		#box1{
+		width:500px;
+		height:500px;
+		background:blue;
+		}
+	</style>
+	<script src="jquery.js"></script>
+
+	<script type="text/javascript">
+	$(document).ready(function(){
+	//alert("hello");
+	$("#btnShow").click(function(){
+		$("#box1").show("slow");
+	});
+
+	$("#btnHide").click(function(){
+		$("#box1").hide(1000);
+	});
+	});
+	</script>
+	<title>Hide Show Object</title></head>
+	
+	<body>
+	<div id="box1">
+	</div>
+	<input type="button" id="btnShow" name="btnShow" value="Show">
+	<input type="button" id="btnHide" name="btnHide" value="Hide">
+	</body>
+</html>

@@ -1,0 +1,223 @@
+<html>
+	<head><title>Gallery</title>
+	<style>
+		#featured-books{
+			position: relative;
+			background:#ddd;
+			width:440px;
+			height:186px;
+			overflow:scroll;
+			margin: 1em auto;
+			padding:0;
+			text-align:center;
+			z-index:2;
+		}
+		#featured-books .covers{
+			position:relative;
+			width:840px;
+			z-index:1;
+		}
+		#featured-books a{
+			float:left;
+			margin:10px;
+			height:146px;
+		}
+		#featured-books .price{
+			display:none;
+		}
+		#featured-books .control{
+			top:0px;
+			left:0px;
+			z-index:3;
+			position:absolute;
+		}
+		 img.enlarged{
+			z-index:5;
+			cursor:pointer;
+			position:absolute;
+		}
+		 img.enlarged-control{
+			z-index:6;
+			cursor:pointer;
+			position:absolute;
+		}
+		.enlarged-price{
+			background:#373c40;
+			color:fff;
+			width:80px;
+			padding:5px;
+			font-weight:bold;
+			font-size:18px;
+			text-align:right;
+			position:absolute;
+			z-index:6;
+		}
+	</style>
+	
+
+	<!--<script src="http://code.jquery.com/jquery-latest.js"></script>-->
+	<script src="jquery.js"></script>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	</head>
+	<body>
+	
+	<script>
+		$(document).ready(function(){
+		// console.log("Hello jquery");
+		var spacing = 140;
+			$('#featured-books').css({
+				'width':spacing *3,
+				'height':'166px',
+				'overflow':'hidden'
+			}).find('.covers a').css({
+				'float':'none',
+				'position':'absolute',
+				'left':1000
+			});
+			/*var $covers = $('#featured-books .covers a');
+			$covers.eq(0).css('left',0);
+			$covers.eq(1).css('left',spacing);
+			$covers.eq(2).css('left',spacing * 2);*/
+			var setUpCovers = function(){
+			var $covers = $('#featured-books .covers a');
+			$covers.unbind('click mouseenter mouseleave');
+			$covers.eq(0).css('left',0)
+				.click(function(event){
+				$covers.eq(0).animate({'left':spacing},'fast');
+				$covers.eq(1).animate({'left':spacing * 2},'fast');
+				$covers.eq(2).animate({'left':spacing * 3},'fast');
+				$covers.eq($covers.length-1).css('left',-spacing)
+					.animate({'left':0},'fast',function(){
+						$(this).prependTo('#featured-books .covers');
+						setUpCovers();
+					});
+					event.preventDefault();
+				//close tage click
+				}).hover(function(){
+				 $leftRollover.appendTo($(this)).show();
+				}, function(){
+				 $leftRollover.hide();
+				});
+			$covers.eq(2).css('left',spacing * 2)
+				.click(function(event){
+					$covers.eq(0).animate({'left':-spacing},'fast',function(){
+						$(this).appendTo('#featured-books .covers');
+						setUpCovers();
+					});
+					$covers.eq(1).animate({'left':0},'fast');
+					$covers.eq(2).animate({'left':spacing},'fast');
+					$covers.eq(3).css('left',spacing*3)
+						.animate({'left':spacing*2},'fast');
+					event.preventDefault();
+				//close tage click
+				}).hover(function(){
+					$rightRollover.appendTo(this).show();
+				},function(){
+					$rightRollover.hide();
+				});
+
+
+				$covers.eq(1)
+				.css('left',spacing)
+				.click(function(event){
+					$enlargedCover.attr('src',$(this).attr('href'))
+								  .css({'left':($('body').width()-360) / 2,
+								  'top':100,
+								  'width':360,
+								  'height':444
+								  }).show()
+									.one('click',function(){
+									$closeButton.unbind('click').hide();
+									$enlargedCover.fadeOut();
+									});
+
+
+					$closeButton
+						.css({
+							'left':($('body').width() - 360) /2 ,
+							'top' :100
+						}).show()
+						.click(function(){
+							$enlargedCover.click();
+						});
+					
+					var price = $(this).find('.price').text();
+					$priceBadge.css({
+					'right':($('body').width()-360) / 2,
+					'top':100,
+					}).text(price).show().click(function(){
+						$enlargedCover.click();
+					});
+									
+					event.preventDefault();
+				}).hover(function(){
+					$enlargeRollover.appendTo(this).show();
+				},function(){
+					$enlargeRollover.hide();
+				});
+			};//setUpCovers
+		setUpCovers();
+		//create fuhction for create button ,$leftRollover,$rightRollover,$enlargeRollover
+		var createControl = function(src){
+			return $('<img>')
+					.attr('src',src)
+					.addClass('control')
+					.css('opacity',0.6)
+					.css('display','none');
+		}
+		var $leftRollover = createControl("images/left.gif");
+		var $rightRollover= createControl("images/right.gif");
+		var $enlargeRollover = createControl("images/enlarge.gif");
+		var $closeButton = createControl("images/close.gif")
+			.addClass('enlarged-control')
+			.appendTo('body');
+			
+		//create picture enlarged
+		var $enlargedCover = $('<img/>')
+		.addClass('enlarged')
+		.hide()
+		.appendTo('body');
+		//create price enlarged
+		var $priceBadge = $('<div/>')
+			.addClass('enlarged-price')
+			.css('opacity',0.6)
+			.css('display','none')
+			.appendTo('body');
+		
+	
+		//console.log($leftRollover);
+		});
+	</script>
+
+	<div id="featured-books">
+		<div class="covers">
+			<a href="images/covers/large/190481106X.jpg" title="Community Server Quickly1">
+				<img src="images/covers/medium/190481106X.jpg" width="120" height="148" alt="Community Server Quickly1">
+				<span class="price">35.99</span>
+			</a>
+			<a href="images/covers/large/1847190871.jpg" title="Community Server Quickly2">
+				<img src="images/covers/medium/1847190871.jpg" width="120" height="148" alt="Community Server Quickly2">
+				<span class="price">36.99</span>
+			</a>
+			<a href="images/covers/large/1847190901.jpg" title="Community Server Quickly3">
+				<img src="images/covers/medium/1847190901.jpg" width="120" height="148" alt="Community Server Quickly3">
+				<span class="price">37.99</span>
+			</a>
+			<a href="images/covers/large/1847190979.jpg" title="Community Server Quickly4">
+				<img src="images/covers/medium/1847190979.jpg" width="120" height="148" alt="Community Server Quickly2">
+				<span class="price">38.99</span>
+			</a>
+			<a href="images/covers/large/1847190987.jpg" title="Community Server Quickly5">
+				<img src="images/covers/medium/1847190987.jpg" width="120" height="148" alt="Community Server Quickly5">
+				<span class="price">39.99</span>
+			</a>
+			<a href="images/covers/large/1847191002.jpg" title="Community Server Quickly6">
+				<img src="images/covers/medium/1847191002.jpg" width="120" height="148" alt="Community Server Quickly6">
+				<span class="price">40.99</span>
+			</a>
+		</div>
+	</div>
+
+
+	</body>
+</html>

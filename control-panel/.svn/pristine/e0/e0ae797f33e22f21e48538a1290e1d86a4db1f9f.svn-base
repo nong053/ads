@@ -1,0 +1,18 @@
+<html>
+<meta http-equiv="Content-type" content="text/html; charset=utf-8">
+	<script src="jquery.js"></script>
+	<script type="text/javascript">
+	$(document).ready(function(){
+		$("#btn").click(function(){
+			//$("#content").text($("#txt1").val());
+			$("#content").html($("#txt1").val());
+		});
+	});
+	</script>
+	<head><title>dom01</title></head>
+	<body>
+	<div id="content"></div>
+	<input type="txt1" name="txt1" id="txt1" >
+	<input type="button" id="btn" value="Click"> 
+	</body>
+</html>

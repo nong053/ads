@@ -1,0 +1,24 @@
+<html>
+		<style>
+		#box1{
+		width:100px;
+		height:100px;
+		background:blue;
+		position:relative;
+		}
+		#box2{
+		top:100px;
+		width:100px;
+		height:100px;
+		background:red;
+		position:relative;
+		}
+		</style>
+	<head><title>Position</title></head>
+	<body>
+		<div id="box1">
+		</div>
+		<div id="box2">
+		</div>
+	</body>
+</html>

@@ -1,0 +1,51 @@
+#featured-books{
+			position: relative;
+			background:#ddd;
+			width:440px;
+			height:186px;
+			overflow:scroll;
+			margin: 1em auto;
+			padding:0;
+			text-align:center;
+			z-index:2;
+		}
+		#featured-books .covers{
+			position:relative;
+			width:840px;
+			z-index:1;
+		}
+		#featured-books a{
+			float:left;
+			margin:10px;
+			height:146px;
+		}
+		#featured-books .price{
+			display:none;
+		}
+		#featured-books .control{
+			top:0px;
+			left:0px;
+			z-index:3;
+			position:absolute;
+		}
+		 img.enlarged{
+			z-index:5;
+			cursor:pointer;
+			position:absolute;
+		}
+		 img.enlarged-control{
+			z-index:6;
+			cursor:pointer;
+			position:absolute;
+		}
+		.enlarged-price{
+			background:#373c40;
+			color:fff;
+			width:80px;
+			padding:5px;
+			font-weight:bold;
+			font-size:18px;
+			text-align:right;
+			position:absolute;
+			z-index:6;
+		}

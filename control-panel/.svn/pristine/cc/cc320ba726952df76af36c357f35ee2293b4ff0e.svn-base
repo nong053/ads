@@ -1,0 +1,45 @@
+<html>
+	<head>
+	<title>Json Training jQuery Library JavaScript</title>
+	<script src="http://code.jquery.com/jquery-latest.js"></script>
+	<script type="text/javascript">
+		$(document).ready(function(){
+				$("#btn1").click(function(){
+				//alert("hello world");
+					$.ajax({
+					url:"serverJson.php",
+					type:"get",
+					dataType:"json",
+					success:function(data){
+					/*
+					entryIndex = index ในการวนลูปแต่ละรอบ
+					entry = ค่าข้อมูลประจำ index ข้อมูลปจุบันของแต่ละรอบ
+					*/
+					//$data1 = data[0];
+					var $ul = $("<table border=\"1\"></table>");
+						$.each(data,function(entryIndex,entry){
+							console.log("entry"+entry+"\n"+"entryIndex"+entryIndex);
+							
+							var $tr = $("<tr></tr>").append("<td>"+entry["Fristname"]+"</td><td>"+entry["Lastname"]+"</td><td>"+entry["Address"]+"</td>");
+
+							$.each(entry["Programming"],function(lineIndex,line){
+							var $td=$("<td><h1></h1></td>").append(line);
+							$($tr).append($td);
+							});
+
+							$($ul).append($tr);
+						});
+
+						$("#content").append($ul);
+					}
+					});
+				});
+		});
+	</script>
+	</head>
+	<body>
+		<div id="content">
+		</div>
+		<button id="btn1">Submit</button>
+	</body>
+</html>
