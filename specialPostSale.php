@@ -123,12 +123,12 @@ while($rsSCCate=mysqli_fetch_array($resultSCCate)){
 														
 														<div class="row">
 															<div class="col-xs-10 ">
-															<h4>(#<?=$rsPsale['rdg_id']?>)
+															<b>(#<?=$rsPsale['rdg_id']?>)
 															<?php 
 															if($rsPsale['rdg_title']){
 
-															 if(strlen($rsPsale['rdg_title'])>40){
-																$text=mb_substr($rsPsale['rdg_title'],0,40,"UTF-8")."...";
+															 if(strlen($rsPsale['rdg_title'])>50){
+																$text=mb_substr($rsPsale['rdg_title'],0,50,"UTF-8")."...";
 																echo"$text"."";
 																}else{
 																
@@ -156,8 +156,9 @@ while($rsSCCate=mysqli_fetch_array($resultSCCate)){
 															echo "<font color='red'>(เช่าแล้ว)</font>";	
 															}
 															?>
-															</h4>
+															</b>
 															</div>
+															
 															<div class="col-xs-2 ">
 															<a target="_blank" href="index.php?page=post_sub_detail&rdg_id=<?=$rsPsale['rdg_id']?>">		
 																<button  class="box-margin-top5 btn-u btn-u-red btn-left-right" type="button"><i class="fa  fa-eye "></i> คลิ๊กรายละเอียด</button>
@@ -268,7 +269,7 @@ while($rsSCCate=mysqli_fetch_array($resultSCCate)){
 															<?php
 															
 															if($rsPsale['rdg_title']){
-																echo "<p>";
+																echo "<div>";
 															 	if(strlen($rsPsale['rdg_title'])>100){
 																$text=mb_substr($rsPsale['rdg_title'],0,100,"UTF-8")."...";
 																echo"$text"."";
@@ -276,33 +277,49 @@ while($rsSCCate=mysqli_fetch_array($resultSCCate)){
 																
 																echo $rsPsale['rdg_title'];
 																}
-																echo"</p>";
+																echo"</div>";
 															}
+
+															
+															?>
+															<div>
+															<b>ที่อยู่ </b>  
+															<?php if($rsPsale['PROVINCE_NAME'])echo"จังหวัด" .$rsPsale['PROVINCE_NAME'];?>
+															<?php if($rsPsale['AMPHUR_NAME'])echo"อำเภอ/เขต:" .$rsPsale['AMPHUR_NAME']; ?>
+															<?php if($rsPsale['DISTRICT_NAME'])echo"ตำบล/แขวง:" .$rsPsale['DISTRICT_NAME'];?>
+															<?php if($rsPsale['rdg_address_no'])echo"เลขที่: ". $rsPsale['rdg_address_no'];?>
+															<?php if($rsPsale['rdg_post_code'])echo"รหัสไปษณีย์:". $rsPsale['rdg_post_code'];?>
+															
+															</div>
+
+															<?php
 															if($rsPsale['rf_id']=="1"){//เพื่อขาย
-																echo"<p><b>ราคาขาย</b>";
+																echo"<div><b>ราคาขาย</b>";
 																if($rsPsale['rdg_price']){
 																 echo " <span style='color:red;font-weight:bold;'>".number_format($rsPsale['rdg_price'])."</span> บาท";
 																 
 																}else{
 																?>
-																	<button data-target="#contactFormModal" data-toggle="modal" class="btn-u btn-u-xs btn-u-green contactFormModal" type="button" id="<?=$rsPsale['cus_id']?>"><i class="fa fa-child "></i> ติดต่อผู้ลงประกาศ</button>
+																--
+																	<!-- <button data-target="#contactFormModal" data-toggle="modal" class="btn-u btn-u-xs btn-u-green contactFormModal" type="button" id="<?=$rsPsale['cus_id']?>"><i class="fa fa-child "></i> ติดต่อผู้ลงประกาศ</button> -->
 																<?php
 																}
-																echo"</p>";
+																echo"</div>";
 																
 															}else if($rsPsale['rf_id']=="2"){//เพื่อเช่า
-																echo"<p><b>ราคาเช่า</b>";
+																echo"<div><b>ราคาเช่า</b>";
 																if($rsPsale['rdg_price_rent']){ echo  "<span style='color:red;font-weight:bold;'>".number_format($rsPsale['rdg_price_rent'])."</span> บาท";
 																}else{
 																	?>
-																	<button data-target="#contactFormModal" data-toggle="modal" class="btn-u btn-u-xs btn-u-green contactFormModal" type="button" id="<?=$rsPsale['cus_id']?>"><i class="fa fa-child "></i> ติดต่อผู้ลงประกาศ</button>
+																	--
+																	<!-- <button data-target="#contactFormModal" data-toggle="modal" class="btn-u btn-u-xs btn-u-green contactFormModal" type="button" id="<?=$rsPsale['cus_id']?>"><i class="fa fa-child "></i> ติดต่อผู้ลงประกาศ</button> -->
 																<?php
 																}
-																echo"</p>";
+																echo"</div>";
 																
 															}else if($rsPsale['rf_id']=="3"){//เพื่อขายและเช่า
 																//echo "rdg_price=".$rsPsale['rdg_price'];
-																echo"<p><b>ราคาขาย</b>";
+																echo"<div><b>ราคาขาย</b>";
 																if($rsPsale['rdg_price']!="" and $rsPsale['rdg_price']!='0'){ 
 																echo  "0 <span style='color:red;font-weight:bold;'>".number_format($rsPsale['rdg_price'])."</span> บาท";
 																}
@@ -313,22 +330,13 @@ while($rsSCCate=mysqli_fetch_array($resultSCCate)){
 																
 																if($rsPsale['rdg_price']=="" or $rsPsale['rdg_price']=='0'  or $rsPsale['rdg_price_rent']=="" or $rsPsale['rdg_price_rent']=="0"){														
 																	?>
-																	<button data-target="#contactFormModal" data-toggle="modal" class="btn-u btn-u-xs btn-u-green contactFormModal" type="button" id="<?=$rsPsale['cus_id']?>"><i class="fa fa-child "></i> ติดต่อผู้ลงประกาศ</button>
+																	<!-- <button data-target="#contactFormModal" data-toggle="modal" class="btn-u btn-u-xs btn-u-green contactFormModal" type="button" id="<?=$rsPsale['cus_id']?>"><i class="fa fa-child "></i> ติดต่อผู้ลงประกาศ</button> -->
 																<?php 
 																}
-																echo"</p>";
+																echo"</div>";
 															}
 															
 															?>
-															<p>
-															<b>ที่อยู่ </b>  
-															<?php if($rsPsale['PROVINCE_NAME'])echo"จังหวัด" .$rsPsale['PROVINCE_NAME'];?>
-															<?php if($rsPsale['AMPHUR_NAME'])echo"อำเภอ/เขต:" .$rsPsale['AMPHUR_NAME']; ?>
-															<?php if($rsPsale['DISTRICT_NAME'])echo"ตำบล/แขวง:" .$rsPsale['DISTRICT_NAME'];?>
-															<?php if($rsPsale['rdg_address_no'])echo"เลขที่: ". $rsPsale['rdg_address_no'];?>
-															<?php if($rsPsale['rdg_post_code'])echo"รหัสไปษณีย์:". $rsPsale['rdg_post_code'];?>
-															
-															</p>
 															
 															 
 															

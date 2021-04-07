@@ -1,5 +1,10 @@
+
 body{
-    font-size:15px;
+    font-size:14px;
+  
+}
+address{
+    font-size: 12px;
 }
 .container {
     margin-left: auto;
@@ -79,8 +84,8 @@ body{
 background: rgba(0, 0, 0, 0) url("../assets/img/patterns/breadcrumbs.png") repeat scroll 0 0;
 }
 .sky-form .select select{
-	padding: 6px 10px;
-	padding:0px;
+	padding: 5px;
+	/* padding:0px; */
 }
 
 .form-control {

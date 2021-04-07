@@ -40,7 +40,7 @@ function thai_date($time){
 <!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->  
 <head>
 <!--
-    <title>ศูนย์รวมป้ายโฆษณา ลงประกาศสื่อสิ่งพิมพ์ฟรี, สื่อสิ่งพิมพ์, สื่อโฆษณา, ป้ายบิลบอร์ด</title>
+    <title>ศูนย์รวมป้ายโฆษณา ลงประกาศสื่อสิ่งพิมพ์ฟรี ,สื่อสิ่งพิมพ์,สื่อโฆษณา,ป้ายบิลบอร์ด</title>
 -->
     <!-- Meta -->
   
@@ -125,19 +125,16 @@ function thai_date($time){
 	
 	<style>
 	.container{
-    max-width: none !important;
-    width: 1000px;
-  }
- 
+  max-width: none !important;
+  width: 1000px;
+}
 
 
 	</style>
 
 <style> 
 @import url(css/fonts/thsarabunnew.css);
-body{ font-family: 'THSarabunNew', sans-serif; 
-/* line-height: 1.7em; background: #e1e1e1;  */
-}
+body{ font-family: 'THSarabunNew', sans-serif; font-size: 0.95em; line-height: 1.7em; background: #e1e1e1; }
 </style>
 
 
@@ -278,10 +275,116 @@ if($rsLR['pic_name']){
 
 <div class="wrapper">
     <!--=== Header ===-->    
-    
-    
-    <div class='container  nav-tabs' style='font-size:14px; padding:5px;'>
-    <!-- ศูนย์รวมป้ายโฆษณา ลงประกาศสื่อสิ่งพิมพ์ฟรี, สื่อสิ่งพิมพ์, สื่อโฆษณา, ป้ายบิลบอร์ด -->
+    <div class="header">
+        <div class="container " style="margin-bottom: 0px;">
+            
+					<!-- 
+					<div class="col-xs-2">
+						
+						<a class="logo" href="index.html">
+							<img src="assets/img/logo1-default.png" alt="Logo">
+							
+						</a>
+						 
+					</div>
+					 -->
+					<div id="adHeader" style=" background:#dddddd; margin-top:2px; height:88px;" class="col-xs-8 ">
+				
+					<?php 
+					$strSLQBanner7="select * from banner_sum where pic_position='7'";
+					$resultBanner7=mysqli_query($conn,$strSLQBanner7);
+					$rsBanner7=mysqli_fetch_array($resultBanner7);
+					if($rsBanner7['pic_link']!=""){
+						?>
+						<a target="_blank" href="<?=$rsBanner7['pic_link']?>">
+						<?php
+					}
+					?>
+
+					 <img src="control-panel/mypicture/1/<?=$rsBanner7['pic_name']?>" width="100%" height="100%" />
+					 <?php
+					 if($rsBanner7['pic_link']!=""){
+						?>
+						</a>
+						<?php
+					}
+					?>
+
+					</div>
+					<div class="col-xs-4">
+					 <!-- Topbar -->
+						<div class="topbar" style="padding: 2px 0;">
+
+                            <div class="row">
+                                <div class="col-xs-6" style=" padding-left:2px;padding-right:1px;">
+                                   
+                                    <button class="btn btn-social btn-block btn-facebook-inversed " style="height:50px;" onclick="window.location.href='<?=$loginUrl?>'">
+                                      <i class="fa fa-facebook"></i> 
+                                      	
+                                      	เข้าสู่ระบบผ่านเฟสบุ๊ค
+                                      
+                                    </button>
+                                   
+                                </div>
+                                
+                                
+
+                                 <div class="col-xs-6" style="padding-left:0px;padding-right:0px;" > 
+                                  
+                                    <div id="google_translate_element" class="btn-block btn-android-inversed" style="height:50px;"></div>
+									<script>
+									function googleTranslateElementInit() {
+									  new google.translate.TranslateElement({
+									    pageLanguage: 'th'
+									  }, 'google_translate_element');
+									}
+									</script>
+									<script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                                </div>
+                                
+                                <div class="col-xs-6" style="padding-left:2px;padding-right:1px;">
+                                    <button data-target="#registerFormModal" data-toggle="modal"   class="btn btn-social  btn-block btn-xing-inversed" style="height:38px;">
+                                      
+                                      <i class="fa fa-rss"></i> สมัครสมาชิก
+                                    </button>
+                                </div>
+
+                                 <div class="col-xs-6"style="padding-left:0px;padding-right:0px;" >
+                                     	
+                                     	<?php 
+                                     
+                                     	if($_SESSION['ses_cus_email']!=""){
+                                     		?>
+                                     	
+                                     		<button onclick="location.href='member/index.php?loginType=loginForManage'" class="btn btn-social  btn-block btn-xing-inversed loginFormModal" style="height:38px;">
+		                                      <i class="fa fa-dropbox"></i> เข้าสู่ระบบ
+		                                    </button>
+                                     		<?php
+                                     	}else{
+                                     		?>
+                                     		<button  data-target="#loginFormModal" data-toggle="modal" class="btn btn-social  btn-block btn-xing-inversed loginFormModal" style="height:38px;">
+		                                      <i class="fa fa-dropbox"></i> เข้าสู่ระบบ
+		                                    </button>
+                                     		<?php
+                                     	}
+                                     	?>
+	                                   
+                                   
+                                </div>
+                            </div>
+
+							
+						</div>
+						<!-- End Topbar -->
+					</div>
+		
+			
+           
+
+           
+        </div><!--/end container-->
+
+
     </div>
     <!--=== End Header ===-->
 	
@@ -303,40 +406,40 @@ if($rsLR['pic_name']){
                         <a class='linkMainMenu ' href="index.php?page=home">
                             <i class="fa fa-home"></i> หน้าแรก
                         </a>
-                    </li>    
-                    
-                    <li>
+					</li>    
+					 
+					 <li>
                         <a class='linkMainMenu mainmenuTop' id='1' href="#">
                            <i class="fa fa-cc-amex "></i> ป้ายบิลบอร์ด
                         </a>
-                    </li>
-                    <li >
+					</li>
+					<li >
                         <a class='linkMainMenu mainmenuTop' id='2' href="#">
                           <i class="fa  fa-cc "></i> ป้ายแบนเนอร์
                         </a>
-                    </li> 
-                    <li>
+					</li> 
+					<li>
                         <a class='linkMainMenu mainmenuTop' id='3' href="#">
                            <i class="fa  fa-cube "></i> ป้าย LED
                         </a>
-                    </li> 
-                    
-                    <li>
+					</li> 
+					
+					<li>
                         <a class='linkMainMenu mainmenuTop'  id='4' href="#">
                            <i class="fa fa-slideshare "></i> ป้ายคัทเอ้าท์
                         </a>
-                    </li> 
-                    
-                    <li >
+					</li> 
+					
+					 <li >
                         <a class='linkMainMenu mainmenuTop' id='9' href="#">
                            <i class="fa fa-building "></i> ป้ายกล่องไฟ
                         </a>
-                    </li> 
-                    <li >
+					</li> 
+					 <li >
                         <a class='linkMainMenu mainmenuTop' id='10'href="#">
                          <i class="fa fa-cubes "></i> ป้ายสติ๊กเกอร์
                         </a>
-					          </li> 
+					</li> 
 					
 					 
 					

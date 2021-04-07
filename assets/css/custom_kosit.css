@@ -53,15 +53,21 @@ blockquote {
 	 padding: 2px;
 }
 .btn-search1{
-	 /*width: 480px;*/
+	 width: 100%;
 	 padding:5px;
-	 font-size: 15px;
+	 /* font-size: 15px; */
 	 
 }
+.btn-u{
+    border-radius:2px;
+  }
 .linkMainMenu{
    
-    color: white;
-    font-size: 16px;
+  
+
+    font-weight: bold;
+    color: #fafafa;
+    font-size: 15px;
    
 }
 .nav > li > a {
@@ -140,7 +146,7 @@ header.one-green {
 }
 .btn-post{
 	padding:5px;
-	 font-size: 15px;
+	/* font-size: 15px; */
 }
 .submitSearchL{
 	float: left;
