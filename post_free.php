@@ -80,14 +80,14 @@
 																}
 															}//else
 															//ปิดจัดการรูปภาพ
-
+															
 															if($thumbnailsFile==""){
 																					?>
-																					<img alt="" src="images/billboards_default.jpg" width="300" class="img-responsive">
+																					<img alt="" src="images/billboards_default.jpg" style='width: 300px;'  class="img-responsive  img-thumbnail">
 																					<?php
 																				}else{
 																					?>
-																					<img alt="" src="<?=$thumbnailsFile?>" width="300" class="img-responsive">
+																					<img alt="" src="<?=$thumbnailsFile?>" style='width: 300px;'  class="img-responsive  img-thumbnail">
 																					<?php
 																				}
 															

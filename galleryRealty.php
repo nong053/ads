@@ -8,7 +8,7 @@ if($_POST['paramRdgID']!=""){
 	$rdg_id=$rdg_id;
 }
 ?>
-<body style="padding: 0; margin: 0; font-family:Arial, Verdana;background-color:#fff;">
+<body>
     <!-- it works the same with all jquery version from 1.x to 2.x -->
     <!-- <script type="text/javascript" src="../js/jquery-1.9.1.min.js"></script>-->
     <!-- use jssor.slider.mini.js (40KB) instead for release -->

@@ -21,14 +21,14 @@ include_once 'config.inc.php';
 	
 	
 			";
-	$resultPostDetail=mysql_query($strSQLPostDetail);
+	$resultPostDetail=mysqli_query($conn,$strSQLPostDetail);
 	
 	$strSQLCus="
 	select * from customer 
 	WHERE  cus_id='$cus_id'
 	";
-	$resultPostCus=mysql_query($strSQLCus);
-	$rsCus=mysql_fetch_array($resultPostCus);
+	$resultPostCus=mysqli_query($conn,$strSQLCus);
+	$rsCus=mysqli_fetch_array($resultPostCus);
 	//$resultPostDetail=pu_query($dbname,$strSQLPostDetail);
 	
 	
@@ -78,16 +78,16 @@ include_once 'config.inc.php';
 																<div class="col-md-2" style="text-align:right; padding:2px;">
 																	<h3 style="margin:0px;"></h3>
 																	
-																	<?
+																	<?php
 
 																		if($rsCus['cus_pic']==""){
 																			?>
 																			<img alt="" src="images/person2.png" width="80" class="img-responsive">
-																			<?
+																			<?php
 																		}else{
 																			?>
 																			<img alt="" src="<?=$rsCus['cus_pic']?>" width="80" class="img-responsive">
-																			<?
+																			<?php
 																		}
 
 																	?>
@@ -117,7 +117,7 @@ include_once 'config.inc.php';
 										                </thead>
 										                <tbody>
 															<?php 
-															while($rsPostDetail=mysql_fetch_array($resultPostDetail)){															
+															while($rsPostDetail=mysqli_fetch_array($resultPostDetail)){															
 															?>
 															
 										                    <tr>
@@ -136,9 +136,9 @@ include_once 'config.inc.php';
 																		
 																		<?php 
 																			$strSQL="select * from realty_images where rdg_id='".$rsPostDetail['rdg_id']."' and  ri_set_first='0'  ORDER BY ri_set_first ";
-																			$result=mysql_query($strSQL);
+																			$result=mysqli_query($conn,$strSQL);
 																			$i=1;
-																			$rs=mysql_fetch_array($result);
+																			$rs=mysqli_fetch_array($result);
 																				//จัดการกับรูปภาพ
 																				$thumbnailsPath="realtyPicture/".$rsPostDetail['rdg_id']."/".$rs[ri_id]."/thumbnail/";
 																				if(!is_dir($thumbnailsPath)){
@@ -172,12 +172,12 @@ include_once 'config.inc.php';
 																				
 																				if($thumbnailsFile==""){
 																					?>
-																					<img alt="" src="images/billboards_default.jpg" width="300" class="img-responsive">
-																					<?
+																					<img alt="" src="images/billboards_default.jpg" width="300" class="img-responsive img-thumbnail">
+																					<?php
 																				}else{
 																					?>
-																					<img alt="" src="<?=$thumbnailsFile?>" width="300" class="img-responsive">
-																					<?
+																					<img alt="" src="<?=$thumbnailsFile?>" width="300" class="img-responsive img-thumbnail">
+																					<?php
 																				}
 
 																				?>

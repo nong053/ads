@@ -275,13 +275,128 @@ if($rsLR['pic_name']){
 
 	}
 ?>
+ 
 
-<div class="wrapper">
+<div class="wrapper bgMainMenu">
     <!--=== Header ===-->    
-    
-    
-    <div class='container  nav-tabs' style='font-size:14px; padding:5px;'>
-    <!-- ศูนย์รวมป้ายโฆษณา ลงประกาศสื่อสิ่งพิมพ์ฟรี, สื่อสิ่งพิมพ์, สื่อโฆษณา, ป้ายบิลบอร์ด -->
+    <div class="header">
+        <div class="container " style="margin-bottom: 0px;">
+            
+					<!-- 
+					<div class="col-xs-2">
+						
+						<a class="logo" href="index.html">
+							<img src="assets/img/logo1-default.png" alt="Logo">
+							
+						</a>
+						 
+					</div>
+					 -->
+					<div id="adHeader" style=" background:#dddddd; margin-top:2px; margin-bottom:2px; height:88px;" class="col-xs-10 ">
+				
+					<?php 
+					$strSLQBanner7="select * from banner_sum where pic_position='7'";
+					$resultBanner7=mysqli_query($conn,$strSLQBanner7);
+					$rsBanner7=mysqli_fetch_array($resultBanner7);
+					if($rsBanner7['pic_link']!=""){
+						?>
+						<a target="_blank" href="<?=$rsBanner7['pic_link']?>">
+						<?php
+					}
+					?>
+
+					 <img src="control-panel/mypicture/1/<?=$rsBanner7['pic_name']?>" width="100%" height="100%" />
+					 <?php
+					 if($rsBanner7['pic_link']!=""){
+						?>
+						</a>
+						<?php
+					}
+					?>
+
+					</div>
+					<div class="col-xs-2">
+					 <!-- Topbar -->
+						<div class="topbar" style="padding: 2px 0;">
+
+                            <div class="row">
+                                <!-- <div class="col-xs-6" >
+                                   
+                                    <button class="btn btn-social btn-block btn-facebook-inversed btn-right-top"  onclick="window.location.href='<?=$loginUrl?>'">
+                                      <i class="fa fa-facebook"></i> 
+                                      	
+                                      	เข้าสู่ระบบผ่านเฟสบุ๊ค
+                                      
+                                    </button>
+                                   
+                                </div> -->
+                                
+                                
+
+                                
+                                <div class="col-xs-12" >
+                                    <button data-target="#registerFormModal" data-toggle="modal"   class="btn btn-social  btn-block btn-xing-inversed btn-right-top">
+                                      
+                                      <i class="fa fa-rss"></i> สมัครสมาชิก
+                                    </button>
+                                </div>
+
+                                <div class="col-xs-12">
+                                     	
+                                     	<?php 
+                                     
+                                     	if($_SESSION['ses_cus_email']!=""){
+                                     		?>
+                                     	
+                                     		<button onclick="location.href='member/index.php?loginType=loginForManage'" class="btn btn-social  btn-block btn-xing-inversed loginFormModal btn-right-top" >
+		                                      <i class="fa fa-dropbox"></i> เข้าสู่ระบบ
+		                                    </button>
+                                     		<?php
+                                     	}else{
+                                     		?>
+                                     		<button  data-target="#loginFormModal" data-toggle="modal" class="btn btn-social  btn-block btn-xing-inversed loginFormModal btn-right-top" >
+		                                      <i class="fa fa-dropbox"></i> เข้าสู่ระบบ
+		                                    </button>
+                                     		<?php
+                                     	}
+                                     	?>
+                                </div>
+
+
+
+                                 <!-- <div class="col-xs-12" style="padding-left:0px;padding-right:0px;" > 
+                                  
+                                    <div id="google_translate_element" class="btn-block btn-android-inversed" ></div>
+                                    <script>
+                                    function googleTranslateElementInit() {
+                                        new google.translate.TranslateElement({
+                                        pageLanguage: 'th'
+                                        }, 'google_translate_element');
+                                    }
+                                    </script>
+                                    <script src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+                                </div>  -->
+
+                                 
+
+                               
+                              
+
+
+                            </div>
+
+							
+						</div>
+						<!-- End Topbar -->
+					</div>
+		
+			
+           
+
+           
+        </div><!--/end container-->
+
+
     </div>
     <!--=== End Header ===-->
 	
@@ -291,8 +406,8 @@ if($rsLR['pic_name']){
 </div>
 	<!--===End Top Buttons ===-->
 	<!--===Start Breadcrumbs ===-->
-    <div class="breadcrumbs">
-        <div class="container bgMainMenu" >
+    <div class="breadcrumbs bgMainMenu">
+        <div class="container " >
         
 			 <div class="pull-left" style="margin-bottom: 2px;margin-top: 0px;">
 			 

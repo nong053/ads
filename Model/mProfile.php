@@ -30,7 +30,7 @@ $cus_update=date("Y-m-d H:i:s");
 if($_POST['paramAction']=="updateProfile"){
 	//echo "cus_other".$cus_other;
 	//$strSQL1="update customer set ";
-	//$result1=mysql_query($strSQL1);
+	//$result1=mysqli_query($conn,$strSQL1);
 	$strSQL="update customer set 
 	cus_title_name='$cus_title_name',
 	cus_first_name='$cus_first_name',cus_last_name='$cus_last_name',
@@ -48,18 +48,18 @@ if($_POST['paramAction']=="updateProfile"){
 	
 	where cus_id='$cus_id'
 	";
-	$result=mysql_query($strSQL);
+	$result=mysqli_query($conn,$strSQL);
 	if($result){
 		echo'["success"]';
 	}else{
-		echo mysql_error();
+		echo mysqli_error();
 	}
 
 }
 if($_POST['paramAction']=="selectIDPDSD"){
 	$strSQLCus="select * from customer where cus_id='$ses_cus_id'";
-	$resultCus=mysql_query($strSQLCus);
-	$rsCus=mysql_fetch_array($resultCus);
+	$resultCus=mysqli_query($conn,$strSQLCus);
+	$rsCus=mysqli_fetch_array($resultCus);
 	echo "{\"cus_province\":\"".$rsCus['cus_province']."\",\"cus_district\":\"".$rsCus['cus_district']."\",\"cus_sub_district\":\"".$rsCus['cus_sub_district']."\"}";
 }
 
@@ -70,11 +70,11 @@ if($_POST['paramAction']=="updatePass"){
 	cus_pass='$cus_new_pass'
 	where cus_id='$cus_id'
 	";
-	$result=mysql_query($strSQL);
+	$result=mysqli_query($conn,$strSQL);
 	if($result){
 		echo'["success"]';
 	}else{
-		echo mysql_error();
+		echo mysqli_error();
 	}
 	
 }

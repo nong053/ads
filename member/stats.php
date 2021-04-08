@@ -6,8 +6,8 @@ $strSQLCountAll="select count(*) as countHit from realty_data_general rdg
 LEFT JOIN counter1_realty cr 
 ON cr.rdg_id=rdg.rdg_id
 where rdg.cus_id='$cus_id'";
-$resultCountAll=mysql_query($strSQLCountAll);
-$rsCountAll=mysql_fetch_array($resultCountAll);
+$resultCountAll=mysqli_query($conn,$strSQLCountAll);
+$rsCountAll=mysqli_fetch_array($resultCountAll);
 /*this count to day start*/
 $strSQLCountToDay="
 SELECT COUNT(DATE) AS CounterToday FROM realty_data_general rdg 
@@ -15,8 +15,8 @@ LEFT JOIN counter_realty cr
 ON rdg.rdg_id=cr.rdg_id
 where rdg.cus_id='$cus_id'
 and DATE = '".date("Y-m-d")."'";
-$resultCountToDay=mysql_query($strSQLCountToDay);
-$rsCountToDay=mysql_fetch_array($resultCountToDay);
+$resultCountToDay=mysqli_query($conn,$strSQLCountToDay);
+$rsCountToDay=mysqli_fetch_array($resultCountToDay);
 //echo $rsCountToDay['CounterToday']."<br>";
 /*this count to day end*/
 
@@ -28,8 +28,8 @@ ON rdg.rdg_id=dr.rdg_id
 where rdg.cus_id='$cus_id'
 and DATE = '".date('Y-m-d',strtotime("-1 day"))."'
 		";
-$resultCountYesterday=mysql_query($strSQLCountYesterday);
-$rsCountYesterday=mysql_fetch_array($resultCountYesterday);
+$resultCountYesterday=mysqli_query($conn,$strSQLCountYesterday);
+$rsCountYesterday=mysqli_fetch_array($resultCountYesterday);
 //echo $rsCountYesterday['NUM']."<br>";;
 /*this count Yesterday  end*/
 
@@ -41,8 +41,8 @@ ON rdg.rdg_id=dr.rdg_id
 where rdg.cus_id='$cus_id'
 and DATE_FORMAT(DATE,'%Y-%m')  = '".date('Y-m')."'
 		";
-$resultCountThisMonth=mysql_query($strSQLCountThisMonth);
-$rsCountThisMonth=mysql_fetch_array($resultCountThisMonth);
+$resultCountThisMonth=mysqli_query($conn,$strSQLCountThisMonth);
+$rsCountThisMonth=mysqli_fetch_array($resultCountThisMonth);
 //echo $rsCountThisMonth['NUM']."<br>";;
 /*this count this month  end*/
 
@@ -54,8 +54,8 @@ ON rdg.rdg_id=dr.rdg_id
 where rdg.cus_id='$cus_id'
 and DATE_FORMAT(DATE,'%Y-%m')  = '".date('Y-m',strtotime("-1 month"))."'
 		";
-$resultCountLastMonth=mysql_query($strSQLCountLastMonth);
-$rsCountLastMonth=mysql_fetch_array($resultCountLastMonth);
+$resultCountLastMonth=mysqli_query($conn,$strSQLCountLastMonth);
+$rsCountLastMonth=mysqli_fetch_array($resultCountLastMonth);
 //echo $rsCountLastMonth['NUM']."<br>";;
 /*this count last month  end*/
 
@@ -66,8 +66,8 @@ LEFT JOIN daily_realty dr
 ON rdg.rdg_id=dr.rdg_id
 where rdg.cus_id='$cus_id' and DATE_FORMAT(DATE,'%Y')  = '".date('Y')."' 
 		";
-$resultCountThisYear=mysql_query($strSQLCountThisYear);
-$rsCountThisYear=mysql_fetch_array($resultCountThisYear);
+$resultCountThisYear=mysqli_query($conn,$strSQLCountThisYear);
+$rsCountThisYear=mysqli_fetch_array($resultCountThisYear);
 //echo $rsCountThisYear['NUM']."<br>";;
 /*this count this year  end*/
 
@@ -79,8 +79,8 @@ ON rdg.rdg_id=dr.rdg_id
 where rdg.cus_id='$cus_id'
 and DATE_FORMAT(DATE,'%Y')  = '".date('Y',strtotime("-1 year"))."'
 		";
-$resultCountLastYear=mysql_query($strSQLCountLastYear);
-$rsCountLastYear=mysql_fetch_array($resultCountLastYear);
+$resultCountLastYear=mysqli_query($conn,$strSQLCountLastYear);
+$rsCountLastYear=mysqli_fetch_array($resultCountLastYear);
 //echo $rsCountLastYear['NUM']."<br>";;
 /*this count last year  end*/
 
@@ -169,15 +169,15 @@ $rsCountLastYear=mysql_fetch_array($resultCountLastYear);
 $strSQLCountByRealty="
 select * from realty_data_general rdg
 where rdg.cus_id='$cus_id'";
-$resultCountByRealty=mysql_query($strSQLCountByRealty);
+$resultCountByRealty=mysqli_query($conn,$strSQLCountByRealty);
 
 /*
 $strSQLCountAll="select count(*) as countHit from realty_data_general rdg
 LEFT JOIN counter1_realty cr
 ON cr.rdg_id=rdg.rdg_id
 where rdg.cus_id='$cus_id' and rdg.rdg_id='$rdg_id'";
-$resultCountAll=mysql_query($strSQLCountAll);
-$rsCountAll=mysql_fetch_array($resultCountAll);
+$resultCountAll=mysqli_query($conn,$strSQLCountAll);
+$rsCountAll=mysqli_fetch_array($resultCountAll);
 */
 /*this count to day start*/
 ?>
@@ -200,13 +200,13 @@ $rsCountAll=mysql_fetch_array($resultCountAll);
 						</thead>
 						<tbody>
 							<?php 
-							while($rsCountByRealty=mysql_fetch_array($resultCountByRealty)){
+							while($rsCountByRealty=mysqli_fetch_array($resultCountByRealty)){
 							$strSQLCountAll="select count(*) as countHit from realty_data_general rdg
 							LEFT JOIN counter1_realty cr
 							ON cr.rdg_id=rdg.rdg_id
 							where rdg.cus_id='$cus_id' and rdg.rdg_id='".$rsCountByRealty['rdg_id']."'";
-							$resultCountAll=mysql_query($strSQLCountAll);
-							$rsCountAll=mysql_fetch_array($resultCountAll);
+							$resultCountAll=mysqli_query($conn,$strSQLCountAll);
+							$rsCountAll=mysqli_fetch_array($resultCountAll);
 							
 							/*this count this month  start*/
 							$strSQLCountThisMonth="
@@ -217,8 +217,8 @@ $rsCountAll=mysql_fetch_array($resultCountAll);
 							and DATE_FORMAT(DATE,'%Y-%m')  = '".date('Y-m')."'
 							and rdg.rdg_id='".$rsCountByRealty['rdg_id']."'
 		";
-							$resultCountThisMonth=mysql_query($strSQLCountThisMonth);
-							$rsCountThisMonth=mysql_fetch_array($resultCountThisMonth);
+							$resultCountThisMonth=mysqli_query($conn,$strSQLCountThisMonth);
+							$rsCountThisMonth=mysqli_fetch_array($resultCountThisMonth);
 							/*this count this month  end*/
 							?>
 							<tr>

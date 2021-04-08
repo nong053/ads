@@ -79,15 +79,8 @@ while($rsSCCate=mysqli_fetch_array($resultSCCate)){
                                 <div class="row">
                                 
                                 <!--  grid special start here -->
-						        <table class="gridSpecialPost">
-									 <colgroup>
-										<col />
-									 </colgroup>
-									 <thead>
-									 <tr>
-										<th data-field="make">	</th>
-									 </tr>
-									 </thead>
+						        <table class="gridSpecialPost" style='width:100%;'>
+									
 									 <tbody>
                                 <?php 
                                
@@ -98,7 +91,7 @@ while($rsSCCate=mysqli_fetch_array($resultSCCate)){
 					                		<td>
 					                		<!--start  post  -->
 												<div class="col-xs-12 shadow-wrapper" >
-													<div class="tag-box tag-box-v1 box-shadow shadow-effect-2" style="background: #ffffce; min-height:200px;">
+													<div class="tag-box tag-box-v1 box-shadow shadow-effect-2" style="background: #ffffce; min-height:105px;">
 														
 														<!--start button top post -->
 														<!--
@@ -120,19 +113,19 @@ while($rsSCCate=mysqli_fetch_array($resultSCCate)){
 					                                	-->
 					                                	<!--end button top post -->
 														
-														
+<!-- 														
 														<div class="row">
-															<div class="col-xs-10 ">
+															<div class="col-xs-12">
 															<b>(#<?=$rsPsale['rdg_id']?>)
 															<?php 
 															if($rsPsale['rdg_title']){
 
-															 if(strlen($rsPsale['rdg_title'])>50){
-																$text=mb_substr($rsPsale['rdg_title'],0,50,"UTF-8")."...";
+															 if(strlen($rsPsale['rdg_title'])>200){
+																$text=mb_substr($rsPsale['rdg_title'],0,200,"UTF-8")."...";
 																echo"$text"."";
 																}else{
 																
-																echo $rsPsale['rdg_title'];
+																echo $rsPsale['rdg_title']."";
 																 }
 															}
 															?>
@@ -159,64 +152,11 @@ while($rsSCCate=mysqli_fetch_array($resultSCCate)){
 															</b>
 															</div>
 															
-															<div class="col-xs-2 ">
-															<a target="_blank" href="index.php?page=post_sub_detail&rdg_id=<?=$rsPsale['rdg_id']?>">		
-																<button  class="box-margin-top5 btn-u btn-u-red btn-left-right" type="button"><i class="fa  fa-eye "></i> คลิ๊กรายละเอียด</button>
-															</a>
-																	<div class="col-xs-12  useronlineSpecialPage">
-																	<div id="testimonials-9" class="carousel slide testimonials testimonials-v2 testimonials-bg-default">
-																		<div class="">
-																			<div class="item active">
-																			<?php 
-																			$strSQLCountHit="SELECT * FROM counter1_realty where  rdg_id='".$rsPsale['rdg_id']."'";
-																			$resultCountHit=mysqli_query($conn,$strSQLCountHit);
-																			$num=mysqli_num_rows($resultCountHit);
-																			?>																
-																				<p style='text-align:center'><i class='fa fa-thumbs-o-up '></i> ดู <?=number_format($num)?>ครั้ง</p>
-																				<!-- 
-																				<div class="testimonial-info">
-																					<span class="testimonial-author"><em>นับผู้เข้าชม</em>
-																					</span>
-																				</div>
-																				 -->
-																			</div>
-																			
-																		</div>
-																		
-																	</div>
-																	
-																	<!-- profile start -->
-																	<div>	
-																	<a href="index.php?page=profile_post&cus_id=<?=$rsPsale['cus_id']?>">
-																	<button id="161" type="button" class="btn-u btn-u-xs btn-u-green imageSlideModal btn100"><i class="fa  fa-info-circle "></i> โปรไฟล์</button>
-																	
-																	<?php
-
-																		if($rsCus['cus_pic']==""){
-																			?>
-																			<img alt="" style='margin-top:5px' src="images/person2.png" width="100" class="img-responsive rounded-x">
-																			<?php
-																		}else{
-																			?>
-																			<img alt="" style='margin-top:5px' src="<?=$rsCus['cus_pic']?>" width="100" class="img-responsive rounded-x">
-																			<?php
-																		}
-
-																	?>
-																		
-																		
-																	</a>
-																		
-																	</div>
-																	<!-- profile end -->
-																		
-																	</div>
-																	
 															
-															
-															</div>
 															<brstyle='clear:both'>
-														</div>
+														</div> -->
+
+														
 														<div class="row">
 															<div class="col-xs-4">
 															<?php 
@@ -258,20 +198,32 @@ while($rsSCCate=mysqli_fetch_array($resultSCCate)){
 																
 																?>
 																<a target="_blank" href="index.php?page=post_sub_detail&rdg_id=<?=$rsPsale['rdg_id']?>&rtc_id=<?=$rsSCCate['rtc_id']?>">
-																<img alt="" src="<?=$thumbnailsFile?>" width="300" class="img-responsive">
+																
+																<?php
+																
+																if($rsCus['thumbnailsFile']==""){
+																			?>
+																			<img alt="" src="images/billboards_default.jpg" width="300" class=" img-thumbnail img-responsive">
+																			<?php
+																		}else{
+																			?>
+																			<img alt="" src="<?=$thumbnailsFile?>" width="300" class=" img-thumbnail img-responsive">
+																			<?php
+																		}
+																?>
 																</a>
 																<?php 
 															}
 															?>
 																
 															</div>
-															<div class="col-xs-6">
+															<div class="col-xs-8">
 															<?php
 															
 															if($rsPsale['rdg_title']){
 																echo "<div>";
-															 	if(strlen($rsPsale['rdg_title'])>100){
-																$text=mb_substr($rsPsale['rdg_title'],0,100,"UTF-8")."...";
+															 	if(strlen($rsPsale['rdg_title'])>200){
+																$text=mb_substr($rsPsale['rdg_title'],0,200,"UTF-8")."...";
 																echo"$text"."";
 																}else{
 																
@@ -336,8 +288,71 @@ while($rsSCCate=mysqli_fetch_array($resultSCCate)){
 																echo"</div>";
 															}
 															
-															?>
 															
+															?>
+																
+															
+																<div id="testimonials-9" class="">
+																		<div class="font-small">
+																			<div class="item active">
+																			<?php 
+																			$strSQLCountHit="SELECT * FROM counter1_realty where  rdg_id='".$rsPsale['rdg_id']."'";
+																			$resultCountHit=mysqli_query($conn,$strSQLCountHit);
+																			$num=mysqli_num_rows($resultCountHit);
+																			?>	
+																				<a target="_blank" href="index.php?page=post_sub_detail&rdg_id=<?=$rsPsale['rdg_id']?>">		
+																					<span  class="box-margin-top5" type="button"><i class="fa  fa-eye "></i> รายละเอียด</span>
+																				</a>															
+																				<span style='text-align:center'> ดู <?=number_format($num)?> ครั้ง</span>
+																				<!-- 
+																				<div class="testimonial-info">
+																					<span class="testimonial-author"><em>นับผู้เข้าชม</em>
+																					</span>
+																				</div>
+																				 -->
+																			</div>
+																			
+																		</div>
+																		
+																	</div>
+
+																
+
+
+
+
+																	<!--new -->
+																		
+																		
+																	
+																	
+																	<!-- profile start -->
+																	<div>	
+																	<a href="index.php?page=profile_post&cus_id=<?=$rsPsale['cus_id']?>">
+																	
+																	
+																	<?php
+	/*
+																		if($rsCus['cus_pic']==""){
+																			?>
+																			<img alt="" style='margin-top:5px; opacity:0.3;' src="images/person2.png" width="50" class="img-responsive rounded-x">
+																			<?php
+																		}else{
+																			?>
+																			<img alt="" style='margin-top:5px;' src="<?=$rsCus['cus_pic']?>" width="50" class="img-responsive rounded-x">
+																			<?php
+																		}
+*/
+																	?>
+																		
+																	<div class='font-small' style=''><i class="fa  fa-info-circle "></i> โปรไฟล์</div>
+																	</a>
+																		
+																	</div>
+																	<!-- profile end -->
+																		
+																	
+																	<!--new -->
 															 
 															
 															

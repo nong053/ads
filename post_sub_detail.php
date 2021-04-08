@@ -105,7 +105,7 @@ $rdg_id=$rs1['rdg_id'];
 
 		<div class="blog margin-bottom-5">
 		 <div class="row">
-								<div class="panel  panel-red" style="margin-bottom: 5px;">
+								<div class="panel  panel-sea" style="margin-bottom: 5px;">
 									<div class="panel-heading">
 										<h3 class="panel-title"><i class="fa fa-tasks"></i> รายละเอียด "<?=$rs1['rt_name']?>(<?=$rs1['rf_name']?>)"</h3>
 									</div>
@@ -130,7 +130,7 @@ $rdg_id=$rs1['rdg_id'];
 													$resultBanner6=mysqli_query($conn,$strSLQBanner6);
 													$rsBanner6=mysqli_fetch_array($resultBanner6);
 													?>
-													 <img src="control-panel/mypicture/1/<?=$rsBanner6['pic_name']?>" width="100%" height="100%" />
+													 <img class='img-thumbnail' src="control-panel/mypicture/1/<?=$rsBanner6['pic_name']?>" width="100%" height="100%" />
 												
 											</div>
 											<!--end ads-->
@@ -174,6 +174,10 @@ $rdg_id=$rs1['rdg_id'];
 																include 'galleryRealty.php';
 																
 																?>
+																<div style='text-align:right;'>
+																	<em>ลงประกาศเมือ: <?=$rs1['rdg_update']?> </em>
+																</div>
+<!-- 																
 																<div class="tag-box tag-box-v1 box-shadow shadow-effect-2" style="margin-bottom:5px;">
 																	<h2> <?=$rs1['rt_name']?>(<?=$rs1['rf_name']?>)</h2>
 																	<p><?=$rs1['rdg_title']?> </p>
@@ -182,7 +186,7 @@ $rdg_id=$rs1['rdg_id'];
 																	
 																	
 																	<em>ลงประกาศเมือ: <?=$rs1['rdg_update']?> </em>
-																</div>
+																</div> -->
 
 
 																
@@ -425,74 +429,7 @@ $rdg_id=$rs1['rdg_id'];
 															</p>
 														</div>
 												<!-- end main box4 -->
-												<!-- start main box5 -->
-														<div class="tag-box tag-box-v1 box-shadow shadow-effect-2">
-															<h2>ติดต่อสอบถามทาง E-mail</h2>
-															<p>
-															<!--  form contact email start -->
-															<form name="contactUsForm" id="contactUsForm" action="#" class="sky-form">
-																<fieldset>                  
-																			
-																			<section>
-																				<label class="label">พิมพ์ข้อความ</label>
-																				<label class="textarea textarea-resizable">
-																					<textarea name="contact_detail" id="contact_detail" rows="5" style='height: 100px;'></textarea>
-																				</label>
-																			</section>
-																			
-																			<section>
-																				<label class="label">ชื่อ</label>
-																				<label class="input">
-																					<input type="text" name="contact_fullname" id="contact_fullname">
-																				</label>
-																			</section>
-																			<section>
-																				<label class="label">เบอร์โทร</label>
-																				<label class="input">
-																					<input type="text" name="contact_tel" id="contact_tel">
-																				</label>
-																			</section>
-																			<section>
-																				<label class="label">อีเมลล์</label>
-																				<label class="input">
-																					<input type="text" name="contact_email" id="contact_email">
-																				</label>
-																			</section>
-																			
-																			<section>
-																				<label class="label"><?
-																				$rand1=rand(1,10);
-																				$rand2=rand(1,10);
-																				$confrim=$rand1+$rand2;
-																				$_SESSION['sesConfrim2']=$confrim;
-																				?>
-																				<b><? echo "$rand1 + $rand2 =?"; ?></b>
-																				<span class="color-red">*</span>
-																				</label>
-																				<label class="input" style='wdith:100px;'>
-																					<input type="text" name="cus_confrim" id="cus_confrim" class="form-control margin-bottom-20">
-																				</label>
-																				
-																			</section>
-																			
-																			
-																			
-																			
-																</fieldset>
-																<footer>
-																
-																<input type="hidden" name="admin_id" value="<?=$rs1['cus_id']?>">
-																<input type="hidden" name="robot_gen" id="robot_gen" value="<?=$confrim?>">
-																<input type="hidden" name="rdg_id" id="rdg_id" value="<?=$rs1['rdg_id']?>">
-																<input type="hidden" name="paramAction" value="sendEmail">
-																<button type="submit" id="btnContactUsForm" class="btn-u">คลิ๊กเพื่อส่งอีเมลล์</button>
-																
-																</footer>
-															</form>
-															<!--  form contact email end -->
-															</p>
-														</div>
-												<!-- end main box5 -->
+												
 
 							  </div>
 				</div>

@@ -8,8 +8,8 @@ $sqlSQLRT="select rdg.*,rt.rt_name from realty_data_general rdg
 LEFT JOIN realty_type rt
 ON rdg.rt_id=rt.rt_id
 where rdg_id='$rdg_id'";
-$resultRT=mysql_query($sqlSQLRT);
-$rsRT=mysql_fetch_array($resultRT);
+$resultRT=mysqli_query($conn,$sqlSQLRT);
+$rsRT=mysqli_fetch_array($resultRT);
 
 
 ?>

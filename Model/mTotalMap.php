@@ -29,11 +29,11 @@ AND (rf_id='$rf_id' OR 'All' ='$rf_id')
 AND (rt_id='$rt_id' OR 'All' ='$rt_id')
 AND rdg_map!=','
 ";
-$result=mysql_query($strSQL);
+$result=mysqli_query($conn,$strSQL);
 
 
 $rows = array();
-while($rs=mysql_fetch_array($result)) {
+while($rs=mysqli_fetch_array($result)) {
     $rows[] = $rs;
 }
 print json_encode($rows);

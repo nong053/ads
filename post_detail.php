@@ -142,7 +142,7 @@ if($_POST['paramAction']=="searchQuick"){
 <div class="blog margin-bottom-5">
 		 <div class="row" >
 				<div class=''>
-					<img src='fixBanner/banner668x85.jpg' height="80" width='100%'>
+					<img src='fixBanner/banner668x85.jpg' height="80" width='100%' class='img-thumbnail'>
 				</div>
 			</div>
 
@@ -155,7 +155,7 @@ if($_POST['paramAction']=="searchQuick"){
 
 
 		 <div class="row">
-					<div class="panel  panel-red" style="margin-bottom: 5px;">
+					<div class="panel  panel-sea" style="margin-bottom: 5px;">
 						<div class="panel-heading">
 							<h3 class="panel-title"><i class="fa fa-tasks"></i> ผลการค้นหา "
 							
@@ -308,11 +308,11 @@ if($_POST['paramAction']=="searchQuick"){
 																				
 																				if($thumbnailsFile==""){
 																					?>
-																					<img alt="" src="images/billboards_default.jpg" width="300" class="img-responsive">
+																					<img alt="" src="images/billboards_default.jpg" width="300" class="img-responsive img-thumbnail">
 																					<?php
 																				}else{
 																					?>
-																					<img alt="" src="<?=$thumbnailsFile?>" width="300" class="img-responsive">
+																					<img alt="" src="<?=$thumbnailsFile?>" width="300" class="img-responsive img-thumbnail">
 																					<?php
 																				}
 																				?>

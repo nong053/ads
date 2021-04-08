@@ -48,7 +48,7 @@ blockquote {
     width: 9px;
 }
 .bgMainMenu{
-	background: #4765a0 none repeat scroll 0 0;
+	background: #324c80  none repeat scroll 0 0;
 	 border-radius: 0px;
 	 padding: 2px;
 }
@@ -166,7 +166,13 @@ header.one-green {
     background: #fafafa none repeat scroll 0 0;
     border: 1px solid #4765a0;
 }
-
+.btn-right-top{
+    margin:5px;
+    background-color: red;
+}
+.font-small{
+    font-size: 12px;
+}
 
 
 

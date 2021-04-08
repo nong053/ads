@@ -1,6 +1,6 @@
 $(document).ready(function(){
 	
-	$("table.gridSpecialPost").kendoGrid({
+	//$("table.gridSpecialPost").kendoGrid({
 		//height: 550,
        // groupable: true,
         //sortable: true,
@@ -9,8 +9,8 @@ $(document).ready(function(){
 //            pageSizes: true,
 //            buttonCount: 5
 //        },
-		scrollable: false,
-	});
+		//scrollable: false,
+	//});
 	
 	//call main function click contract from start
 	contactFormModalFn();

@@ -6,8 +6,8 @@ include("../config.inc.php");
 //echo $ses_cus_id;
 $ses_cus_id=$_SESSION['ses_cus_id'];
 $strSQLCus="select * from customer where cus_id='$ses_cus_id'";
-$resultCus=mysql_query($strSQLCus);
-$rsCus=mysql_fetch_array($resultCus);
+$resultCus=mysqli_query($conn,$strSQLCus);
+$rsCus=mysqli_fetch_array($resultCus);
 ?>
 
 <div class="tag-box tag-box-v2 box-shadow shadow-effect-2">

@@ -19,7 +19,7 @@ if($_POST['paramAction']=="showCurrentPost"){
 	ON rdg.rt_id=rt.rt_id
 	where cus_id='$ses_cus_id' and rdg_status='$status' order by rdg_id 
 ";
-	$result=mysql_query($strSQL);
+	$result=mysqli_query($conn,$strSQL);
 	?>
 	<table id="gridCurentPost<?=$idArea?>">
                 <colgroup>
@@ -47,7 +47,7 @@ if($_POST['paramAction']=="showCurrentPost"){
                 </thead>
                 <tbody >
 	<?php
-	while($rs=mysql_fetch_array($result)){
+	while($rs=mysqli_fetch_array($result)){
 		?>
 		<tr>
 			<td>#<?=$rs[rdg_id]?></td>
@@ -173,7 +173,7 @@ function delePictureFn($rdg_id,$ri_id){
 
 if($_POST['paramAction']=="disableOrAblePost"){
 		$strSQL="update realty_data_general set rdg_status='$status'  where rdg_id='$rdg_id'";
-		$result=mysql_query($strSQL);
+		$result=mysqli_query($conn,$strSQL);
 		if($result){
 			echo'["success"]';
 		}
@@ -186,17 +186,17 @@ if($_POST['paramAction']=="delCurrentPost"){
 	$strSQLChecked="
 	select * from realty_detail where rdg_id='$rdg_id'
 	";
-	$resultChecked=mysql_query($strSQLChecked);
-	$rsChecked=mysql_num_rows($resultChecked);
+	$resultChecked=mysqli_query($conn,$strSQLChecked);
+	$rsChecked=mysqli_num_rows($resultChecked);
 	
 	//if($rsChecked>0){
 
 
 
 		$sqlSelectRI="select * from realty_images where rdg_id='$rdg_id'";
-		$resultRI=mysql_query($sqlSelectRI);
+		$resultRI=mysqli_query($conn,$sqlSelectRI);
 		if($resultRI){
-			while($rsRI=mysql_fetch_array($resultRI)){
+			while($rsRI=mysqli_fetch_array($resultRI)){
 				delePictureFn($rdg_id,$rsRI['ri_id']);
 			};
 			
@@ -208,9 +208,9 @@ if($_POST['paramAction']=="delCurrentPost"){
 		$sqlRealtyEmbedVideo="delete from realty_embed_video rdg_id='$rdg_id'";
 		$sqlRealtyDetailRoom="delete from realty_detail_room rdg_id='$rdg_id'";
 		
-		$resultDelRealtyImages=mysql_query($sqlRealtyImages);
-		$resultDelRealtyEmbedVideo=mysql_query($sqlRealtyEmbedVideo);
-		$resultDelRealtyDetailRoom=mysql_query($sqlRealtyDetailRoom);
+		$resultDelRealtyImages=mysqli_query($conn,$sqlRealtyImages);
+		$resultDelRealtyEmbedVideo=mysqli_query($conn,$sqlRealtyEmbedVideo);
+		$resultDelRealtyDetailRoom=mysqli_query($conn,$sqlRealtyDetailRoom);
 		
 		if($resultDelRealtyImages || $resultDelRealtyEmbedVideo || $resultDelRealtyDetailRoom){
 			//start delete floder
@@ -228,7 +228,7 @@ if($_POST['paramAction']=="delCurrentPost"){
 	$strSQL="
 	delete from realty_data_general where rdg_id='$rdg_id'
 	";
-	$result=mysql_query($strSQL);
+	$result=mysqli_query($conn,$strSQL);
 	
 }
 ?>
