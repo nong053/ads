@@ -282,7 +282,7 @@ if($rsLR['pic_name']){
     <div class="header">
         <div class="container " style="margin-bottom: 0px;">
             
-					<!-- 
+					
 					<div class="col-xs-2">
 						
 						<a class="logo" href="index.html">
@@ -291,30 +291,12 @@ if($rsLR['pic_name']){
 						</a>
 						 
 					</div>
-					 -->
-					<div id="adHeader" style=" background:#dddddd; margin-top:2px; margin-bottom:2px; height:88px;" class="col-xs-10 ">
-				
-					<?php 
-					$strSLQBanner7="select * from banner_sum where pic_position='7'";
-					$resultBanner7=mysqli_query($conn,$strSLQBanner7);
-					$rsBanner7=mysqli_fetch_array($resultBanner7);
-					if($rsBanner7['pic_link']!=""){
-						?>
-						<a target="_blank" href="<?=$rsBanner7['pic_link']?>">
-						<?php
-					}
-					?>
 
-					 <img src="control-panel/mypicture/1/<?=$rsBanner7['pic_name']?>" width="100%" height="100%" />
-					 <?php
-					 if($rsBanner7['pic_link']!=""){
-						?>
-						</a>
-						<?php
-					}
-					?>
-
-					</div>
+                    <?php
+                   //  include("banner/banner_header.php");
+                    ?>
+					 
+					
 					<div class="col-xs-2">
 					 <!-- Topbar -->
 						<div class="topbar" style="padding: 2px 0;">
@@ -335,7 +317,7 @@ if($rsLR['pic_name']){
 
                                 
                                 <div class="col-xs-12" >
-                                    <button data-target="#registerFormModal" data-toggle="modal"   class="btn btn-social  btn-block btn-xing-inversed btn-right-top">
+                                    <button data-target="#registerFormModal" data-toggle="modal"   class="btn btn-social  btn-block btn-disqus-inversed-header btn-right-top">
                                       
                                       <i class="fa fa-rss"></i> สมัครสมาชิก
                                     </button>
@@ -348,13 +330,13 @@ if($rsLR['pic_name']){
                                      	if($_SESSION['ses_cus_email']!=""){
                                      		?>
                                      	
-                                     		<button onclick="location.href='member/index.php?loginType=loginForManage'" class="btn btn-social  btn-block btn-xing-inversed loginFormModal btn-right-top" >
+                                     		<button onclick="location.href='member/index.php?loginType=loginForManage'" class="btn btn-social  btn-block btn-disqus-inversed-header loginFormModal btn-right-top" >
 		                                      <i class="fa fa-dropbox"></i> เข้าสู่ระบบ
 		                                    </button>
                                      		<?php
                                      	}else{
                                      		?>
-                                     		<button  data-target="#loginFormModal" data-toggle="modal" class="btn btn-social  btn-block btn-xing-inversed loginFormModal btn-right-top" >
+                                     		<button  data-target="#loginFormModal" data-toggle="modal" class="btn btn-social  btn-block btn-disqus-inversed-header loginFormModal btn-right-top" >
 		                                      <i class="fa fa-dropbox"></i> เข้าสู่ระบบ
 		                                    </button>
                                      		<?php

@@ -37,6 +37,19 @@
     background-color: transparent;
     color: #2e9fff; }
 
+.btn-disqus-inversed-header {
+  background-color: transparent;
+  color:white ; 
+  border-color: #2e9fff;
+}
+.btn-disqus-inversed-header:hover {
+    
+  background-color: #2e9fff;
+  border-color: #2e9fff;
+  color: white; 
+}
+    
+
 .btn-eventbrite-inversed {
   background-color: #ff5616;
   border-color: #ff5616;
