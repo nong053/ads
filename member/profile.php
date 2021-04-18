@@ -38,7 +38,7 @@ $rsCus=mysqli_fetch_array($resultCus);
 		<div class="col-lg-5">
 		
 			<input type='hidden' name='actionProfile' value='reback_profile'>
-			<input type='hidden' name='cus_id' value='<?=$rsCus[cus_id]?>'>
+			<input type='hidden' name='cus_id' value='<?=$rsCus['cus_id']?>'>
 			<input type='submit' class='btn-u btn-u-green' value='อัปโหลดรูปภาพ'>
 		</div>
 	</div>

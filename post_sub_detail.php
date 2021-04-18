@@ -107,7 +107,7 @@ $rdg_id=$rs1['rdg_id'];
 		 <div class="row">
 								<div class="panel  panel-sea" style="margin-bottom: 5px;">
 									<div class="panel-heading">
-										<h3 class="panel-title"><i class="fa fa-tasks"></i> รายละเอียด "<?=$rs1['rt_name']?>(<?=$rs1['rf_name']?>)"</h3>
+										<h3 class="panel-title"><i class="glyphicon glyphicon-blackboard"></i> รายละเอียด "<?=$rs1['rt_name']?>(<?=$rs1['rf_name']?>)"</h3>
 									</div>
 									<div class="panel-body">
 										
@@ -118,21 +118,10 @@ $rdg_id=$rs1['rdg_id'];
 
 											</div>
 											<!--start ads-->
-											<div class="shadow-wrapper">
 											
-													<!--  
-													<p style="height:80px;">
-													Ads IMG
-													</p>
-													-->
-													<?php 
-													$strSLQBanner6="select * from banner_sum where pic_position='6'";
-													$resultBanner6=mysqli_query($conn,$strSLQBanner6);
-													$rsBanner6=mysqli_fetch_array($resultBanner6);
-													?>
-													 <img class='img-thumbnail' src="control-panel/mypicture/1/<?=$rsBanner6['pic_name']?>" width="100%" height="100%" />
-												
-											</div>
+											<?php
+												//include("ads_top_post_sub_detail.php");
+											?>
 											<!--end ads-->
 
 
@@ -159,7 +148,7 @@ $rdg_id=$rs1['rdg_id'];
 																	<!--<h3 style="margin:0px;"><?=$rs1['rf_name']?><?=$rs1['rt_name']?></h3>-->
 																</div>
 																<div class="col-md-6" style="text-align:right; padding:2px;">
-																	<h3 style="margin:0px;">รหัสประกาศเลขที่ #<font color="red"><?=$rs1['rdg_id']?></font></h3>
+																	<h3 style="margin:0px;">เลขที่ประกาศ #<font color="red"><?=$rs1['rdg_id']?></font></h3>
 																</div>
 														</div>
 													</div>

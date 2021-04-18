@@ -50,12 +50,12 @@ if($_POST['paramAction']=="showCurrentPost"){
 	while($rs=mysqli_fetch_array($result)){
 		?>
 		<tr>
-			<td>#<?=$rs[rdg_id]?></td>
-			<td><?=$rs[rt_name]?></td>
+			<td>#<?=$rs['rdg_id']?></td>
+			<td><?=$rs['rt_name']?></td>
 			<td>
 			
 			<?php 
-			if(strlen($rs[rdg_title])>50){
+			if(strlen($rs['rdg_title'])>50){
 				$text=mb_substr($rs['rdg_title'],0,50,"UTF-8")."...";
 				echo"$text"."";
 			}else{
@@ -90,16 +90,16 @@ if($_POST['paramAction']=="showCurrentPost"){
 			</td>
 			 -->
 			<!-- <td>1250,000</td> -->
-			<td><?=$rs[rdg_create]?></td>
+			<td><?=$rs['rdg_create']?></td>
 			<td>
 			<?php 
-			if($rs[rdg_status_post]=="N"){
+			if($rs['rdg_status_post']=="N"){
 			
 			echo "<font color='green'>ยังไม่ขาย/เช่า</font>";
 				
-			}else if($rs[rdg_status_post]=="soldOut"){
+			}else if($rs['rdg_status_post']=="soldOut"){
 				echo "<font color='red'>ขายแล้ว</font>";
-			}else if($rs[rdg_status_post]=="rented"){
+			}else if($rs['rdg_status_post']=="rented"){
 				echo "<font color='red'>เช่าแล้ว</font>";
 			}else{
 				echo "<font color='green'>ยังไม่ขาย/เช่า</font>";
@@ -110,7 +110,7 @@ if($_POST['paramAction']=="showCurrentPost"){
 			</td>
 			<td>
 			<?php 
-			if($rs[rdg_special]=="Y"){
+			if($rs['rdg_special']=="Y"){
 				echo"<font color='green'>ประกาศพิเศษ</font>";
 			}ELSE{
 				echo"ประกาศฟรี";
@@ -118,16 +118,16 @@ if($_POST['paramAction']=="showCurrentPost"){
 			?>
 			</td>
 			<td>
-			<button class="btn btn-danger btn-xs btnDelPost<?=$idArea?>" id='delPostId-<?=$rs[rdg_id]?>'><i class="fa fa-trash-o"></i> ลบ </button>
-			<button class="btn btn-warning btn-xs btnEditPost<?=$idArea?>" id='editPostId-<?=$rs[rdg_id]?>'><i class="fa fa-pencil"></i> แก้ไข</button>
+			<button class="btn btn-danger btn-xs btnDelPost<?=$idArea?>" id='delPostId-<?=$rs['rdg_id']?>'><i class="fa fa-trash-o"></i> ลบ </button>
+			<button class="btn btn-warning btn-xs btnEditPost<?=$idArea?>" id='editPostId-<?=$rs['rdg_id']?>'><i class="fa fa-pencil"></i> แก้ไข</button>
 			<?php 
 			if($status=="Y"){
 				?>
-				<button class="btn btn-success btn-xs btnDisablePost<?=$idArea?>" id='disablePostId-<?=$rs[rdg_id]?>'><i class="fa fa-share"></i> ไม่แสดง</button>
+				<button class="btn btn-success btn-xs btnDisablePost<?=$idArea?>" id='disablePostId-<?=$rs['rdg_id']?>'><i class="fa fa-share"></i> ไม่แสดง</button>
 				<?php
 			}else{
 				?>
-				<button class="btn btn-success btn-xs btnAblePost<?=$idArea?>" id='ablePostId-<?=$rs[rdg_id]?>'><i class="fa fa-share"></i> แสดง</button>
+				<button class="btn btn-success btn-xs btnAblePost<?=$idArea?>" id='ablePostId-<?=$rs['rdg_id']?>'><i class="fa fa-share"></i> แสดง</button>
 				<?php
 			}
 			?>

@@ -62,9 +62,10 @@ if($_POST['paramAction']=="forgotPassword"){
 }
 
 if($_POST['paramAction']=="logoutAction"){
-	session_unset( $_SESSION['ses_cus_id'] );
-	session_unset( $_SESSION['ses_cus_email'] );
-	session_unset( $_SESSION['ses_cus_password'] );
+	// session_unset( $_SESSION['ses_cus_id'] );
+	// session_unset( $_SESSION['ses_cus_email'] );
+	// session_unset( $_SESSION['ses_cus_password'] );
+	session_destroy();
 	
 	echo'["success"]';
 }

@@ -87,7 +87,7 @@
 																					<?php
 																				}else{
 																					?>
-																					<img alt="" src="<?=$thumbnailsFile?>" style='width: 300px;'  class="img-responsive  img-thumbnail">
+																					<img alt="" src="<?=$thumbnailsFile?>" style='width: 300px; max-height:85px;'  class="img-responsive  img-thumbnail">
 																					<?php
 																				}
 															
@@ -96,7 +96,7 @@
 															<img alt="" src="<?=$thumbnailsFile?>" width="300" class="img-responsive">
 															-->
 															<a href="index.php?page=post_sub_detail&rdg_id=<?=$rsPostDetail['rdg_id']?>" target="_blank">
-															<button type="button" class="btn-u  btn-u-xs btn-u-red" style='width:100%;'    type="button"><i class="fa fa-building "></i> ดูรายละเอียด</button>
+															<button type="button" class="btn-u  btn-u-xs btn-u-red" style='width:100%;'    type="button"><i class="fa  fa-eye "></i> ดูรายละเอียด</button>
 															</a>
 														<!-- PIC -->
 

@@ -140,12 +140,13 @@ if($_POST['paramAction']=="searchQuick"){
 
 <script src="Controller/page/cPostDetail.js"></script>    	
 <div class="blog margin-bottom-5">
-		 <div class="row" >
+		 <!--
+			<div class="row" >
 				<div class=''>
 					<img src='fixBanner/banner668x85.jpg' height="80" width='100%' class='img-thumbnail'>
 				</div>
 			</div>
-
+		-->
 			<div class="row" >
 	
 				<div class='' id='totalMap' style='height:250px;'>
@@ -157,7 +158,7 @@ if($_POST['paramAction']=="searchQuick"){
 		 <div class="row">
 					<div class="panel  panel-sea" style="margin-bottom: 5px;">
 						<div class="panel-heading">
-							<h3 class="panel-title"><i class="fa fa-tasks"></i> ผลการค้นหา "
+							<h3 class="panel-title"><i class="glyphicon glyphicon-blackboard"></i> ผลการค้นหา "
 							
 							<?php 
 							if($rt_id=='All'){
@@ -266,7 +267,7 @@ if($_POST['paramAction']=="searchQuick"){
 															<!-- start list realty -->
 															<div class="col-md-12 shadow-wrapper">
 																<div class="tag-box tag-box-v1 box-shadow shadow-effect-2">
-																	<h2><?=$rsPostDetail['rdg_title']?></h2>
+																	<!-- <h2><?=$rsPostDetail['rdg_title']?></h2> -->
 																	<div class="row">
 																		<div class="col-md-3">
 																		
@@ -332,8 +333,8 @@ if($_POST['paramAction']=="searchQuick"){
 																		</div>
 																		<div class="col-md-9">
 																		
-																		<?php if(strlen($rsPostDetail['rdg_title'])>200){
-																		$rdg_title=mb_substr($rsPostDetail['rdg_title'],0,200,"UTF-8")."...";
+																		<?php if(strlen($rsPostDetail['rdg_title'])>300){
+																		$rdg_title=mb_substr($rsPostDetail['rdg_title'],0,300,"UTF-8")."...";
 																		echo"$rdg_title"."<br>";
 																		}else{
 																		?>

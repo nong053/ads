@@ -51,9 +51,9 @@
             <div class="col-md-12  col-sm-8">
                 <form class="reg-page" id='form_regis' name='form_regis' method=post action="action/register_process.php">
                     <div class="reg-header">
-                        <div class="headline headline-md">
+                        <!-- <div class="headline headline-md">
 							<h2><i class="fa fa fa-user"></i> สมัครสมาชิก</h2>
-						</div>
+						</div> -->
                         <p>สมัครสมาชิกแล้ว? คลิ๊ก <a class="color-green" href="member/index.php">ลงชื่อเข้าใข้งาน</a> ด้วยบัญชีของคุณ.</p>                    
                     </div>
 
@@ -82,13 +82,13 @@
                      <div class="row">
                         <div class="col-sm-6">
                             <label> 
-                            	<?
+                            	<?php
 								$rand1=rand(1,10);
 								$rand2=rand(1,10);
 								$confrim=$rand1+$rand2;
 								$_SESSION['confrim']=$confrim;
 								?>
-								<b><? echo "$rand1 + $rand2 =?"; ?></b>
+								<b><?php echo "$rand1 + $rand2 =?"; ?></b>
 								<span class="color-red">*</span>
 							</label>
                             <input type="text" name="cus_confrim" id="cus_confrim" class="form-control margin-bottom-5">

@@ -272,7 +272,7 @@ if($rsLR['pic_name']){
 		
 		</script>
 		<?php
-
+    include("right_content.php");
 	}
 ?>
  
@@ -297,7 +297,7 @@ if($rsLR['pic_name']){
                     ?>
 					 
 					
-					<div class="col-xs-2">
+					<div class="col-xs-4 col-md-offset-6">
 					 <!-- Topbar -->
 						<div class="topbar" style="padding: 2px 0;">
 
@@ -316,35 +316,53 @@ if($rsLR['pic_name']){
                                 
 
                                 
-                                <div class="col-xs-12" >
-                                    <button data-target="#registerFormModal" data-toggle="modal"   class="btn btn-social  btn-block btn-disqus-inversed-header btn-right-top">
-                                      
-                                      <i class="fa fa-rss"></i> สมัครสมาชิก
-                                    </button>
+                                <div class="col-xs-6" >
+                                    <?php 
+                                     
+                                    if($_SESSION['ses_cus_email']!=""){
+                                    ?>
+                                        <button  onclick="location.href='member/index.php?loginType=loginForManage'"  class="btn btn-social  btn-block btn-disqus-inversed-header loginFormModal btn-right-top" >
+                                            <i class="glyphicon glyphicon-user"></i> <?=$_SESSION['ses_cus_email']?>
+                                        </button>
+
+                                    <?php
+                                    }else{
+                                        ?>
+                                        
+                                        <button data-target="#registerFormModal" data-toggle="modal"   class="btn btn-social  btn-block btn-disqus-inversed-header btn-right-top">
+                                        <i class="glyphicon glyphicon-user"></i> สมัครสมาชิก
+                                        </button>
+
+                                        <?php
+                                    }
+                                    ?>
                                 </div>
 
-                                <div class="col-xs-12">
+                                <div class="col-xs-6">
                                      	
                                      	<?php 
                                      
                                      	if($_SESSION['ses_cus_email']!=""){
                                      		?>
                                      	
-                                     		<button onclick="location.href='member/index.php?loginType=loginForManage'" class="btn btn-social  btn-block btn-disqus-inversed-header loginFormModal btn-right-top" >
-		                                      <i class="fa fa-dropbox"></i> เข้าสู่ระบบ
-		                                    </button>
+                                     		<!-- <button onclick="location.href='member/index.php?loginType=loginForManage'" class="btn btn-social  btn-block btn-disqus-inversed-header loginFormModal btn-right-top" >
+		                                      <i class="glyphicon glyphicon-lock"></i> เข้าสู่ระบบ
+		                                    </button> -->
+                                            <button class="btn btn-social linkMainMenu btn-block btn-disqus-inversed-header loginFormModal btn-right-top"  id="logout" >
+                                            <i class="glyphicon glyphicon-off"></i> ออกจากระบบ
+                                            </button>
                                      		<?php
                                      	}else{
                                      		?>
                                      		<button  data-target="#loginFormModal" data-toggle="modal" class="btn btn-social  btn-block btn-disqus-inversed-header loginFormModal btn-right-top" >
-		                                      <i class="fa fa-dropbox"></i> เข้าสู่ระบบ
+		                                      <i class="glyphicon glyphicon-lock"></i> เข้าสู่ระบบ
 		                                    </button>
                                      		<?php
                                      	}
                                      	?>
                                 </div>
 
-
+                             
 
                                  <!-- <div class="col-xs-12" style="padding-left:0px;padding-right:0px;" > 
                                   
@@ -445,17 +463,18 @@ if($rsLR['pic_name']){
 					</li> 
 					 -->
 					<?php 
-					if($_SESSION['ses_cus_id']){
-				
+                    
+					//if($_SESSION['ses_cus_id']){
 					?>
-				
-					<li >
+					<!-- <li >
                         <a id="logout" class='linkMainMenu' href="#">
                           <i class="fa fa-rss"></i> ออกจากระบบ
                         </a>
-					</li> 
+					</li>  -->
 					 <?php 
-					 }
+
+					// }
+
 					 ?>
                 </ul>
             </div>
@@ -567,9 +586,11 @@ if($rsLR['pic_name']){
 			
 			<?php
 			
-				if($_GET['page']!="contact"){
-				include("right_content.php");
-				}
+				// if($_GET['page']!="contact"){
+				// include("right_content.php");
+				// }
+                
+                include("right_content.php");
 			
 			?>
 
@@ -767,7 +788,7 @@ if($rsLR['pic_name']){
       <div class="modal-content">
         <div class="modal-header">
           <button aria-label="Close" data-dismiss="modal" class="close" type="button"><span aria-hidden="true">×</span></button>
-          <h4 id="gridModalLabel" class="modal-title">สมัครสมาชิก<font color='red'><b>ฟรี</b></font></h4>
+          <h4 id="gridModalLabel" class="modal-title">สมัครสมาชิก</h4>
         </div>
         <div class="modal-body">
         

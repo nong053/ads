@@ -39,12 +39,12 @@ if($conn){
 					//include("right_ads.php");
 					?>
 					<?php
-						if($_GET["page"]=="post_sub_detail" or $_GET["page"]=="home"){
+						//if($_GET["page"]=="post_sub_detail" or $_GET["page"]=="home"){
 						?>
 						<!--start  box near realty -->
 						<div class="panel panel-sea" style='width:330px'>
                             <div class="panel-heading">
-                                <h3 class="panel-title"><i class="fa fa-tasks"></i>ประกาศใกล้เคียง</h3>
+                                <h3 class="panel-title"><i class="glyphicon glyphicon-blackboard"></i>ประกาศใกล้เคียง</h3>
                             </div>
                             <div class="panel-body">
 							 <!--  grid special start here -->
@@ -113,7 +113,7 @@ if($conn){
 																					<?php
 																				}else{
 																					?>
-																					<img alt="" src="<?=$thumbnailsFile?>" width="300" class="img-thumbnail img-responsive">
+																					<img alt="" src="<?=$thumbnailsFile?>"  style='width: 300px; max-height:85px;' class="img-thumbnail img-responsive">
 																					<?php
 																				}
 														?>
@@ -137,7 +137,7 @@ if($conn){
 											<?php }?>
 											</a>
 											
-											<font color="red"><?=number_format($rsSimilar['rdg_price']);?>  บาท</font>
+											<div><font color="red"><?=number_format($rsSimilar['rdg_price']);?>  บาท</font></div>
 											</div>
 								   </div>
 								    <hr>
@@ -157,7 +157,7 @@ if($conn){
                         </div>
 						<!--start box near realty -->
 						<?php
-						}
+						//}
 					?>
 				
 

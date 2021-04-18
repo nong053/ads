@@ -29,7 +29,7 @@
                                                  
                         </div>
 
-                        <div class="col-md-12" style='text-align: right;'>
+                        <div class="col-md-12" style='text-align: right; margin-top:10px;'>
                              <a href="#" onclick="window.location.href='<?=$loginUrl?>'">หรือลงชื่อเข้าใช้งานผ่าน facebook</a>  
                         </div>
                          <div class="col-md-12" style='text-align: right;'>
