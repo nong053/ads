@@ -189,10 +189,25 @@ if($_POST['paramRdgID']!=""){
 
            
 		?>
-		 <div>
+		 <div >
 		 	
-            <img u="image" src="<?=$bigPicFile?>" />
-            <img u="thumb" src="<?=$thumbnailsFile?>" />
+           
+
+            <?php
+            if($bigPicFile==""){
+                ?>
+                 <img u="image" src="images/billboards_default.jpg"  />
+                 <img u="thumb" src="images/billboards_default.jpg" class="img-thumbnail" />
+                <?php
+            }else{
+                ?>
+                 <img u="image" src="<?=$bigPicFile?>"  />
+                 <img u="thumb" src="<?=$thumbnailsFile?>" class="img-thumbnail" />
+                <?php
+            }
+            
+            
+            ?>
             <meta property="og:image" content="http://adskosana.com/<?=$thumbnailsFile?>"/>
          </div>
 		<?php

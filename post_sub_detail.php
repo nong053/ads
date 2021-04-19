@@ -227,7 +227,7 @@ $rdg_id=$rs1['rdg_id'];
 														<button type="button" onClick="window.open('https://plus.google.com/share?url=adsthaidd.com/<?=$_SERVER['REQUEST_URI']?>')"; class="btn-u  btn-u-xs btn-googleplus-inversed"><i class="fa fa-google-plus"></i> แชร์ไปที่กูเกิล</button>
 														-->
 
-														<button type="button" data-target="#sendToMyFriendsFormModal" data-toggle="modal"   class="btn-u  btn-u-xs btn-u-green"><i class="fa fa-bell-o"></i>ส่งหน้านี้ให้เพิ่อน</button>
+														<button type="button" data-target="#sendToMyFriendsFormModal" data-toggle="modal"   class="btn-u  btn-u-xs btn-u-green"><i class="fa fa-bell-o"></i> ส่งหน้านี้ให้เพิ่อน</button>
 
 														<!--
 <button type="button"  onClick="window.open('http://www.facebook.com/sharer.php?u=adsthaidd.com/<?=$_SERVER['REQUEST_URI']?>')"; class=" btn-u-xs btn btn-facebook-inversed"><i class="fa fa-facebook"></i> แชร์ไปที่เฟสบุ๊ค</button>
@@ -239,7 +239,7 @@ $rdg_id=$rs1['rdg_id'];
 														<button type="button" class="btn-u  btn-u-xs btn-u-green"><i class="fa fa-download"></i>คลิ๊กดูหน้าที่จัดเก็บไว้</button>
 														 -->
 
-														<button type="button"  class=" print btn-u  btn-u-xs btn-u-green"><i class="fa fa-download"></i>ปริ้น</button>
+														<button type="button"  class=" print btn-u  btn-u-xs btn-u-green"><i class="glyphicon glyphicon-print"></i> ปริ้น</button>
 														<!--
 														<div class="fb-like" data-href="http://adsthaidd.com/index.php?page=post_sub_detail&amp;rdg_id=<?=$rs1['rdg_id']?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 														-->
@@ -396,10 +396,6 @@ $rdg_id=$rs1['rdg_id'];
 	?>
 	<br>
 	</div>
-													
-														
-
-												
 
 												<!-- start main box4 -->
 														<div class="tag-box tag-box-v1 box-shadow shadow-effect-2">

@@ -5,12 +5,12 @@
             <div class="col-md-12  col-sm-6">
                 <form class="reg-page" name="frmTofriend" id="frmTofriend">
                   
-                    <div class="input-group margin-bottom-20">
+                    <div class="input-group margin-bottom-10">
                         <span class="input-group-addon"><i class="fa fa-user"></i></span>
                         <input type="text" class="form-control" id="email_my_friend" name="email_my_friend" placeholder="อีเมลล์">
                     </div>  
                     
-                      <div class="input-group margin-bottom-20">
+                      <div class="input-group margin-bottom-10">
                         <span class="input-group-addon"><i class="fa fa-stack-overflow"></i></span>
                         <textarea class="form-control" id="detail_to_my_friend" name="detail_to_my_friend" placeholder="รายละเอียด"></textarea>
                     </div>                      
