@@ -119,7 +119,7 @@ date_default_timezone_set('Asia/Jakarta');
 	
     <!--=== Breadcrumbs ===-->
    
-    <div class="breadcrumbs margin-bottom5">
+    <!-- <div class="breadcrumbs margin-bottom5"> -->
         <div class="container">
             <h1 class="pull-left">ประกาศของฉัน(<?=$_SESSION['ses_cus_email']?> #<?=$_SESSION['ses_cus_id']?>)</h1>
             <!-- 
@@ -137,7 +137,8 @@ date_default_timezone_set('Asia/Jakarta');
             </ul>
              -->
         </div>
-    </div><!--/breadcrumbs-->
+    <!-- </div> -->
+    <!--/breadcrumbs-->
     <!--=== End Breadcrumbs ===-->
 
     

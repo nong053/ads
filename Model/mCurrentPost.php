@@ -123,7 +123,7 @@ if($_POST['paramAction']=="showCurrentPost"){
 			<?php 
 			if($status=="Y"){
 				?>
-				<button class="btn btn-success btn-xs btnDisablePost<?=$idArea?>" id='disablePostId-<?=$rs['rdg_id']?>'><i class="fa fa-share"></i> ไม่แสดง</button>
+				<button class="btn btn-danger btn-xs btnDisablePost<?=$idArea?>" id='disablePostId-<?=$rs['rdg_id']?>'><i class="fa fa-share"></i> ไม่แสดง</button>
 				<?php
 			}else{
 				?>
