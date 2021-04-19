@@ -40,9 +40,9 @@ include_once 'config.inc.php';
 <div class="blog margin-bottom-5">
 		
 		 <div class="row">
-					<div class="panel  panel-red" style="margin-bottom: 5px;">
+					<div class="panel  panel-sea" style="margin-bottom: 5px;">
 						<div class="panel-heading">
-							<h3 class="panel-title"><i class="fa fa-tasks"></i> โปรไฟล์ของ<?=$rsCus['cus_first_name']?></h3>
+							<h3 class="panel-title"><i class="glyphicon glyphicon-user"></i> โปรไฟล์ของ<?=$rsCus['cus_first_name']?></h3>
 						</div>
 						<div class="panel-body">
 
@@ -58,10 +58,10 @@ include_once 'config.inc.php';
 													<!-- start button link -->
 													<p>
 														<button type="button" class="btn-u  btn-u-xs  btn-u-green"><i class="fa fa-cloud"></i> แชร์ไปที่เฟสบุ๊ค/กูเกิล</button>
-														<button type="button" class="btn-u  btn-u-xs  btn-u-green"><i class="fa fa-bell-o"></i>ส่งหน้านี้ให้เพิ่อน</button>
+														<button type="button" class="btn-u  btn-u-xs  btn-u-green"><i class="fa fa-bell-o"></i> ส่งหน้านี้ให้เพิ่อน</button>
 														<!-- <button type="button" class="btn-u  btn-u-xs  btn-u-green"><i class="fa fa-envelope-o"></i> เก็บหน้านี้ไว้ดูครั้งหน้า</button> -->
-														<button type="button" class="btn-u  btn-u-xs  btn-u-green"><i class="fa fa-download"></i>คลิ๊กดูหน้าที่จัดเก็บไว้</button>
-														<button type="button" class="btn-u  btn-u-xs  btn-u-green"><i class="fa fa-download"></i>ปริ้น</button>
+														<button type="button" class="btn-u  btn-u-xs  btn-u-green"><i class="fa fa-download"></i> คลิ๊กดูหน้าที่จัดเก็บไว้</button>
+														<button type="button" class="btn-u  btn-u-xs  btn-u-green"><i class="fa fa-download"></i> ปริ้น</button>
 													
 													</p>
 													<!--end  button link -->
@@ -196,7 +196,7 @@ include_once 'config.inc.php';
 																		<button type="button" class="btn-u  btn-u-xs btn-u-green"><i class="fa  fa-car"></i> แผนที่</button>
 																		<button type="button" id="<?=$rsPostDetail['rdg_id']?>" class="btn-u  btn-u-xs btn-u-green btnSavePost"><i class="fa fa-download"></i> เก็บไว้ดูภายหลัง</button>
 																		 -->
-																		<button type="button" class="btn-u  btn-u-xs btn-u-red"  onclick="window.location.href='index.php?page=post_sub_detail&rdg_id=<?=$rsPostDetail['rdg_id']?>'"  type="button"><i class="fa fa-building "></i> ดูรายละเอียด</button>
+																		<button type="button" class="btn-u  btn-u-xs btn-u-red"  onclick="window.location.href='index.php?page=post_sub_detail&rdg_id=<?=$rsPostDetail['rdg_id']?>'"  type="button"><i class="fa fa-search"></i> ดูรายละเอียด</button>
 																		
 																		</p>
 																		</div>
