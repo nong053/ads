@@ -285,7 +285,7 @@ if($rsLR['pic_name']){
 					
 					<div class="col-xs-2">
 						
-						<a class="logo" href="index.html">
+						<a class="logo" href="#">
 							<img src="assets/img/logo1-default.png" alt="Logo">
 							
 						</a>
@@ -409,7 +409,7 @@ if($rsLR['pic_name']){
     <div class="breadcrumbs bgMainMenu">
         <div class="container " >
         
-			 <div class="pull-left" style="margin-bottom: 2px;margin-top: 0px;">
+			 <!-- <div class="pull-left" style="margin-bottom: 2px;margin-top: 0px;"> -->
 			 
 			 
                <ul class="nav navbar-nav">
@@ -477,7 +477,12 @@ if($rsLR['pic_name']){
 
 					 ?>
                 </ul>
-            </div>
+
+
+
+
+                
+            <!-- </div> -->
 
 			
 			
