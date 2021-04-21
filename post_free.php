@@ -31,12 +31,12 @@
 										?>
 								
 										<!-- start list realty -->
-										<div class="col-md-6 shadow-wrapper">
+										<div class="col-md-6 shadow-wrapper" >
 											<div class="tag-box tag-box-v1 box-shadow shadow-effect-2">
 												 <!--
 												 <h2>1-><?=$rsPostDetail['rdg_title']?></h2> 
 												  <h2>2-><?=$rsPostDetail['rdg_id']?></h2> 
-													-->
+													-->	
 												<div class="row postFreeHome">
 													<div class="col-md-4">
 												
@@ -83,11 +83,11 @@
 															
 															if($thumbnailsFile==""){
 																					?>
-																					<img alt="" src="images/billboards_default.jpg" style='width: 300px;'  class="img-responsive  img-thumbnail">
+																					<img alt="<?=$rsPostDetail['rdg_title']?>" src="images/billboards_default.jpg" style='width: 100%;'  class="img-responsive  img-thumbnail">
 																					<?php
 																				}else{
 																					?>
-																					<img alt="" src="<?=$thumbnailsFile?>" style='width: 300px; max-height:85px;'  class="img-responsive  img-thumbnail">
+																					<img alt="<?=$rsPostDetail['rdg_title']?>" src="<?=$thumbnailsFile?>" style='width: 100%;'  class="img-responsive  img-thumbnail">
 																					<?php
 																				}
 															
@@ -123,6 +123,7 @@
 												</div>
 											</div>
 										</div>
+										<!-- <br style='clear:both'> -->
 										<!-- end list realty -->
 										<?php
 										}
