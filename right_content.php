@@ -25,7 +25,7 @@ if($conn){
 <script src="Controller/page/cRight_content.js"></script>
 <style>
 	.right_content{
-	margin-left:2px;
+	/* margin-left:2px; */
 	}
 	.magazine-posts-img{
 		padding-left: 5px;
@@ -33,6 +33,7 @@ if($conn){
 	}
 </style>
 <!--Start Right Content -->
+<div class='row'>
         	<div class="col-md-4 magazine-page "> 
                 <!-- Blog Posts -->
 					<?php
@@ -165,3 +166,4 @@ if($conn){
                 <!-- End Blog Posts -->
             </div>
             <!-- End Right Content -->
+			</div>

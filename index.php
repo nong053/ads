@@ -557,7 +557,7 @@ $rsLR=mysqli_fetch_array($resultBannerLR);
 
     <div class="container content">		
     	<div class="row blog-page"> 
-    	<!-- <div class='col-md-12'>    -->
+    	<div class='col-md-12'>   
             <!-- Left Content -->
         	<div class="col-md-8">
               <div id="mainContrainArea">
@@ -605,7 +605,7 @@ $rsLR=mysqli_fetch_array($resultBannerLR);
 			?>
 
 			<!-- End Right Content -->
-        <!-- </div>  -->
+        </div> 
         <!-- col-md-12 --> 
         </div><!--/row-->      
     </div> 
