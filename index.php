@@ -153,6 +153,15 @@ function thai_date($time){
 .navbar-default .navbar-toggle {
     border-color: #2e9fff;
 }
+.navbar-default .navbar-toggle:focus {
+    background-color: #2e9fff;
+}
+
+.navbar-default .navbar-toggle:focus,.navbar-default .navbar-toggle:hover{
+    background-color: #003580 ;
+    border-color: white;
+}
+
 .navbar-default .navbar-toggle .icon-bar {
     background-color: #2e9fff;
 }

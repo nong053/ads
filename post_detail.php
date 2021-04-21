@@ -220,9 +220,9 @@ if($_POST['paramAction']=="searchQuick"){
 																	
 																	</h3>
 																</div>
-																<div class="col-md-6" style="text-align:right; padding:2px;">
+																<!-- <div class="col-md-6" style="text-align:right; padding:2px;">
 																	<h3 style="margin:0px;"><?=$rsPostDetail2['rt_name']?></h3>
-																</div>
+																</div> -->
 														</div>
 													</div>
 
