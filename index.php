@@ -138,6 +138,17 @@ function thai_date($time){
     color: white;
     font-weight: bold;
 }
+.navbar-default .navbar-nav>li>a:hover{
+    color: #cccc;
+}
+.navbar-default .navbar-nav>li>a:active{
+    color: #cccc;
+}
+.navbar-default .navbar-nav>li>a:focus{
+    color: #cccc;
+}
+
+
 
 .navbar-default .navbar-toggle {
     border-color: #2e9fff;
