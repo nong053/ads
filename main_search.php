@@ -2,12 +2,12 @@
 
         <div class="container" style="margin-top:1px;">
         	<div class='row'>
-                    <div class="col-xs-12 shadow-wrapper">
+                    <div class="col-md-12 shadow-wrapper">
                         <div class="tag-box tag-box-v2 box-shadow shadow-effect-1 bgSearch">
                             
                            
  <!-- search start here-->
-                                <div class="col-xs-12" style="padding-right:5px;">
+                                <div class="col-md-12" style="padding-right:5px;">
             
                                     <!-- tab1-->
                                    <div class="tab-v1" >

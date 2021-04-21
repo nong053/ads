@@ -125,10 +125,29 @@ function thai_date($time){
 	
 	<style>
 	.container{
-    max-width: none !important;
-    width: 1000px;
+    /* max-width: none !important;
+    width: 1000px; */
   }
- 
+
+  .navbar-default {
+    background-color: #003580 ;
+    border-color: #003580 ;
+  }
+
+  .navbar-default .navbar-nav>li>a {
+    color: white;
+    font-weight: bold;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: #2e9fff;
+}
+.navbar-default .navbar-toggle .icon-bar {
+    background-color: #2e9fff;
+}
+.navbar{
+    margin-bottom: 0px;
+}
 
 
 	</style>
@@ -242,23 +261,13 @@ $rsLR=mysqli_fetch_array($resultBannerLR);
 ?>
 
 
-<div class='adLeft adsLR'  >
 
-<?php 
-if($rsLR['pic_name']){
+<?php
+    // include('banner/adRight.php');
+    // include('banner/adLeft.php');
 ?>
-	  <img src="control-panel/mypicture/1/<?=$rsLR['pic_name']?>" width="100%" height="100%" /> 
-<?php 
-}
- ?>
-</div>
-<div class='adRight adsLR' >
-<?php 
-if($rsLR['pic_name']){
-?>
-	 <img src="control-panel/mypicture/1/<?=$rsLR['pic_name']?>" width="100%" height="100%" />
-<?php }?>
-</div>
+
+
 <?php 
 
 	if($_GET['modal']=="login"){
@@ -283,26 +292,26 @@ if($rsLR['pic_name']){
         <div class="container " style="margin-bottom: 0px;">
             
 					
-					<div class="col-xs-2">
+					<!-- <div class="col-md-2">
 						
 						<a class="logo" href="#">
 							<img src="assets/img/logo1-default.png" alt="Logo">
 							
 						</a>
 						 
-					</div>
+					</div> -->
 
                     <?php
                    //  include("banner/banner_header.php");
                     ?>
 					 
 					
-					<div class="col-xs-4 col-md-offset-6">
+					<div class="col-md-4 col-md-offset-6">
 					 <!-- Topbar -->
 						<div class="topbar" style="padding: 2px 0;">
 
                             <div class="row">
-                                <!-- <div class="col-xs-6" >
+                                <!-- <div class="col-md-6" >
                                    
                                     <button class="btn btn-social btn-block btn-facebook-inversed btn-right-top"  onclick="window.location.href='<?=$loginUrl?>'">
                                       <i class="fa fa-facebook"></i> 
@@ -316,7 +325,7 @@ if($rsLR['pic_name']){
                                 
 
                                 
-                                <div class="col-xs-6" >
+                                <div class="col-md-6" >
                                     <?php 
                                      
                                     if($_SESSION['ses_cus_email']!=""){
@@ -338,7 +347,7 @@ if($rsLR['pic_name']){
                                     ?>
                                 </div>
 
-                                <div class="col-xs-6">
+                                <div class="col-md-6">
                                      	
                                      	<?php 
                                      
@@ -364,7 +373,7 @@ if($rsLR['pic_name']){
 
                              
 
-                                 <!-- <div class="col-xs-12" style="padding-left:0px;padding-right:0px;" > 
+                                 <!-- <div class="col-md-12" style="padding-left:0px;padding-right:0px;" > 
                                   
                                     <div id="google_translate_element" class="btn-block btn-android-inversed" ></div>
                                     <script>
@@ -406,15 +415,33 @@ if($rsLR['pic_name']){
 </div>
 	<!--===End Top Buttons ===-->
 	<!--===Start Breadcrumbs ===-->
+
+
+
+
+    
     <div class="breadcrumbs bgMainMenu">
-        <div class="container " >
-        
-			 <!-- <div class="pull-left" style="margin-bottom: 2px;margin-top: 0px;"> -->
-			 
-			 
-               <ul class="nav navbar-nav">
-                  
-                    <li >
+
+        <nav class="navbar navbar-default">
+            <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                </button>
+                <!-- <a class="navbar-brand" href="#">Project name</a> -->
+                <a class="logo" href="#">
+                    <img src="assets/img/logo1-default.png" alt="Logo">
+                    
+                </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse in" aria-expanded="true" style="">
+                <ul class="nav navbar-nav">
+                
+
+                <li >
                         <a class='linkMainMenu ' href="index.php?page=home">
                             <i class="fa fa-home"></i> หน้าแรก
                         </a>
@@ -451,38 +478,16 @@ if($rsLR['pic_name']){
                         <a class='linkMainMenu mainmenuTop' id='10'href="#">
                          <i class="fa fa-cubes "></i> ป้ายสติ๊กเกอร์
                         </a>
-					          </li> 
-					
-					 
-					
-					 <!-- 
-					 <li >
-                        <a class='linkMainMenu' href="index.php?page=advertise">
-                          <i class="fa fa-rss"></i> ติดต่อโฆษณา
-                        </a>
 					</li> 
-					 -->
-					<?php 
-                    
-					//if($_SESSION['ses_cus_id']){
-					?>
-					<!-- <li >
-                        <a id="logout" class='linkMainMenu' href="#">
-                          <i class="fa fa-rss"></i> ออกจากระบบ
-                        </a>
-					</li>  -->
-					 <?php 
-
-					// }
-
-					 ?>
-                </ul>
-
-
-
-
                 
-            <!-- </div> -->
+                </ul>
+                
+            </div><!--/.nav-collapse -->
+            </div><!--/.container-fluid -->
+        </nav>
+        <div class="container " >
+        
+			
 
 			
 			
@@ -550,11 +555,11 @@ if($rsLR['pic_name']){
 
           
 
-    <div class="container content">		
+    <div class="container1 content">		
     	<div class="row blog-page"> 
-    	<div class='col-xs-12'>   
+    	<div class='col-md-12'>   
             <!-- Left Content -->
-        	<div class="col-xs-8">
+        	<div class="col-md-8">
               <div id="mainContrainArea">
 
 			<?php
@@ -601,7 +606,7 @@ if($rsLR['pic_name']){
 
 			<!-- End Right Content -->
         </div><!--/row-->   
-        </div><!-- col-xs-12 -->     
+        </div><!-- col-md-12 -->     
     </div> 
     <!--=== End Content Part ===-->
 
@@ -619,18 +624,18 @@ if($rsLR['pic_name']){
                 <div class="row rowFooter">
                     <!-- About -->
 					<!--
-                    <div class="col-xs-3 xs-margin-bottom-40">
+                    <div class="col-md-3 xs-margin-bottom-40">
                         <a href="index.html"><img id="logo-footer" class="footer-logo" src="assets/img/logo2-default.png" alt=""></a>
                         <p>About Unify dolor sit amet, consectetur adipiscing elit. Maecenas eget nisl id libero tincidunt sodales.</p>
                         <p>Duis eleifend fermentum ante ut aliquam. Cras mi risus, dignissim sed adipiscing ut, placerat non arcu.</p>    
                     </div>
-					--><!--/col-xs-3-->
+					--><!--/col-md-3-->
                     <!-- End About -->
 
                     
                     
                     <!-- Link List -->
-                    <div class="col-xs-4 xs-margin-bottom-40">
+                    <div class="col-md-4 xs-margin-bottom-40">
                         <div class="headline"><h2>เมนูหลัก</h2></div>
                         <ul class="list-unstyled link-list">
                             <li><a href="index.php">หน้าแรก</a><i class="fa fa-angle-right " ></i></li>
@@ -642,13 +647,13 @@ if($rsLR['pic_name']){
 
 						
                         </ul>
-                    </div><!--/col-xs-3-->
+                    </div><!--/col-md-3-->
 					
 					<!-- End Link List -->    
 					   
                     <!-- End Link List -->    
 					  <!-- Link List -->
-                    <div class="col-xs-4 xs-margin-bottom-40">
+                    <div class="col-md-4 xs-margin-bottom-40">
                         <div class="headline"><h2>เกี่ยวกับเรา</h2></div>
                         <ul class="list-unstyled link-list">
                             <li>
@@ -657,7 +662,7 @@ if($rsLR['pic_name']){
 
 
                         </ul>
-                    </div><!--/col-xs-3-->
+                    </div><!--/col-md-3-->
                     <!-- End Link List -->    
 
 					<!-- End Link List -->    
@@ -667,7 +672,7 @@ if($rsLR['pic_name']){
 				
 
                     <!-- Address -->
-                    <div class="col-xs-4 map-img xs-margin-bottom-40">
+                    <div class="col-md-4 map-img xs-margin-bottom-40">
                         <div class="headline"><h2>ติดต่อเรา</h2></div>                         
                         <address class="xs-margin-bottom-40">
                        	หมู่บ้านรื่นฤดี 5 ถนนหทัยราษฎร์ 10<br>
@@ -679,7 +684,7 @@ if($rsLR['pic_name']){
                         Chat Control Panel: <a target='_blank' href="https://s2.mylivechat.com/webconsole/" class="">Click</a>
                         
                         </address>
-                    </div><!--/col-xs-3-->
+                    </div><!--/col-md-3-->
                     <!-- End Address -->
                 </div>
             </div> 
@@ -688,7 +693,7 @@ if($rsLR['pic_name']){
         <div class="copyright ">
             <div class="container">
                 <div class="row rowFooter">
-                    <div class="col-xs-6">                     
+                    <div class="col-md-6">                     
                         <p>
                             2021 &copy; All Rights Reserved.
                            <a href="#">Privacy Policy</a> | <a href="http://www.adskosana.com">www.adskosana.com</a>
@@ -697,7 +702,7 @@ if($rsLR['pic_name']){
 
                     <!-- Social Links -->
                     <!-- 
-                    <div class="col-xs-6">
+                    <div class="col-md-6">
                         <ul class="footer-socials list-inline">
                             <li>
                                 <a href="#" class="tooltips" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook">

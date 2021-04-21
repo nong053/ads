@@ -62,7 +62,7 @@ if($conn){
 										<fieldset>  
 										
 	  										<div class="row">
-	  											<div class="col-xs-2 col-padding-2">
+	  											<div class="col-md-2 col-padding-2">
 													 <section>
 														<label class="select">
 															<select name="rt_id" id='rt_id'>
@@ -80,7 +80,7 @@ if($conn){
 														</section>
 												</div>
 												
-												<div class="col-xs-2 col-padding-2">
+												<div class="col-md-2 col-padding-2">
 													 <section>
 														<label class="select">
 															<select name="rf_id">
@@ -99,7 +99,7 @@ if($conn){
 												</div>
 												
 	  										
-													<div class="col-xs-2 col-padding-2">
+													<div class="col-md-2 col-padding-2">
 															<section>
 																<label class="select" id="provinceArea" >
 																
@@ -108,7 +108,7 @@ if($conn){
 																<i></i>
 															</section>
 													</div>
-													<div class="col-xs-2 col-padding-2">
+													<div class="col-md-2 col-padding-2">
 															<section>
 																<label class="select" id="districtArea">
 																				<select name="rdg_address_district_id" id="rdg_address_district_id">
@@ -120,7 +120,7 @@ if($conn){
 																</label>
 															</section>
 													</div>
-													<div class="col-xs-2 col-padding-2">
+													<div class="col-md-2 col-padding-2">
 															<section>
 																<label class="select" id="subDistrictArea">
 																	<select name="rdg_address_sub_district_id" id="rdg_address_sub_district_id">
@@ -131,13 +131,13 @@ if($conn){
 															</section>
 													</div>
 
-													<div class="col-xs-2 col-padding-2">
+													<div class="col-md-2 col-padding-2">
 														<button type="submit"  class="btn-u btn-u-green btn-search1">
 														<i class="fa fa-search"></i> ค้นหา
 														</button>
 													</div>
 
-													<!-- <div class="col-xs-6 col-padding-2">
+													<!-- <div class="col-md-6 col-padding-2">
 														<section>
 																<input type="text" name="rdg_id" class="form-control" placeholder="กรอกเลขที่ประกาศ">
 														</section>
