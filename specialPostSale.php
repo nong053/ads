@@ -55,7 +55,7 @@ while($rsSCCate=mysqli_fetch_array($resultSCCate)){
 <!--Blog Post--> 
 <!-- 
 <div class="row" >
-	<div class='col-xs-12'>
+	<div class='col-md-12'>
 		<img src='assets/img/main/img1.jpg' height="80" width='100%'>
 	</div>
 </div>
@@ -90,13 +90,13 @@ while($rsSCCate=mysqli_fetch_array($resultSCCate)){
                                 		<tr >
 					                		<td>
 					                		<!--start  post  -->
-												<div class="col-xs-12 shadow-wrapper" >
+												<div class="col-md-12 shadow-wrapper" >
 													<div class="tag-box tag-box-v1 box-shadow shadow-effect-2" style="background: #ffffce; min-height:105px;">
 														
 														<!--start button top post -->
 														<!--
 														<div class="row">
-					                                		<div class="col-xs-12">
+					                                		<div class="col-md-12">
 					                                			<p>
 
 																	<button class="btn-u btn-u-xs btn-u-orange" type="button"><i class=" fa fa-search-plus"></i> ค้นหาพบ1<?=numResultFn("1")?> ประกาศหน้าที่ 1 จาก <?=numResultFn("1")?> ประกาศ</button>
@@ -115,7 +115,7 @@ while($rsSCCate=mysqli_fetch_array($resultSCCate)){
 														
 <!-- 														
 														<div class="row">
-															<div class="col-xs-12">
+															<div class="col-md-12">
 															<b>(#<?=$rsPsale['rdg_id']?>)
 															<?php 
 															if($rsPsale['rdg_title']){
@@ -158,7 +158,7 @@ while($rsSCCate=mysqli_fetch_array($resultSCCate)){
 
 														
 														<div class="row">
-															<div class="col-xs-4">
+															<div class="col-md-4 col-xs-12">
 															<?php 
 															$strSQL="select * from realty_images where rdg_id='".$rsPsale['rdg_id']."' and  ri_set_first='0'  ORDER BY ri_set_first ";
 															$result=mysqli_query($conn,$strSQL);
@@ -203,11 +203,11 @@ while($rsSCCate=mysqli_fetch_array($resultSCCate)){
 																
 																if($rsCus['thumbnailsFile']==""){
 																			?>
-																			<img alt="" src="images/billboards_default.jpg" width="300" class=" img-thumbnail img-responsive">
+																			<img alt="" src="images/billboards_default.jpg" width='100%' class=" img-thumbnail img-responsive">
 																			<?php
 																		}else{
 																			?>
-																			<img alt="" src="<?=$thumbnailsFile?>" width="300" class=" img-thumbnail img-responsive">
+																			<img alt="" src="<?=$thumbnailsFile?>" width='100%' class=" img-thumbnail img-responsive">
 																			<?php
 																		}
 																?>
@@ -217,7 +217,7 @@ while($rsSCCate=mysqli_fetch_array($resultSCCate)){
 															?>
 																
 															</div>
-															<div class="col-xs-8">
+															<div class="col-md-8">
 															<?php
 															
 															if($rsPsale['rdg_title']){
@@ -372,7 +372,7 @@ while($rsSCCate=mysqli_fetch_array($resultSCCate)){
 														</div>
 														<!-- 
 														<div class="row box-margin-top5">
-															<div class="col-xs-8">
+															<div class="col-md-8">
 																<p>
 																<button data-target="#contactFormModal" data-toggle="modal" class="btn-u btn-u-xs btn-u-green contactFormModal" type="button" id="<?=$rsPsale['cus_id']?>"><i class="fa fa-child "></i> ติดต่อผู้ลงประกาศ</button>
 																<button data-target="#mapContactModal" data-toggle="modal" class="btn-u btn-u-xs btn-u-green mapContactModal" type="button" id="<?=$rsPsale['rdg_id']?>"><i class="fa  fa-car"></i> แผนที่</button>

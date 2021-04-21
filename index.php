@@ -306,7 +306,7 @@ $rsLR=mysqli_fetch_array($resultBannerLR);
                     ?>
 					 
 					
-					<div class="col-md-4 col-md-offset-6">
+					<div class="col-md-4 col-md-offset-8">
 					 <!-- Topbar -->
 						<div class="topbar" style="padding: 2px 0;">
 
@@ -555,9 +555,9 @@ $rsLR=mysqli_fetch_array($resultBannerLR);
 
           
 
-    <div class="container1 content">		
+    <div class="container content">		
     	<div class="row blog-page"> 
-    	<div class='col-md-12'>   
+    	<!-- <div class='col-md-12'>    -->
             <!-- Left Content -->
         	<div class="col-md-8">
               <div id="mainContrainArea">
@@ -605,8 +605,9 @@ $rsLR=mysqli_fetch_array($resultBannerLR);
 			?>
 
 			<!-- End Right Content -->
-        </div><!--/row-->   
-        </div><!-- col-md-12 -->     
+        <!-- </div>  -->
+        <!-- col-md-12 --> 
+        </div><!--/row-->      
     </div> 
     <!--=== End Content Part ===-->
 
@@ -675,12 +676,12 @@ $rsLR=mysqli_fetch_array($resultBannerLR);
                     <div class="col-md-4 map-img xs-margin-bottom-40">
                         <div class="headline"><h2>ติดต่อเรา</h2></div>                         
                         <address class="xs-margin-bottom-40">
-                       	หมู่บ้านรื่นฤดี 5 ถนนหทัยราษฎร์ 10<br>
-						แขวงบางชัน เขต คลองสามวา กรุงเทพ 10510<br>
-						เลขประจำตัวผู้เสียภาษี 010355302604<br>
+                       	553/80 ฟส.1 ถนนเดชะตุงคะ<br>
+						แขวงสีกัน เขต ดอนเมือง กรุงเทพ 10210<br>
+						<!-- เลขประจำตัวผู้เสียภาษี 010355302604<br> -->
 						โทร: +6680-992-6565 <br>
-						Email1: <a href="mailto:adsthaidd@hotmail.com" class="">adsthaidd@hotmail.com</a><br>
-                        Email2: <a href="mailto:sale@adsthaidd.com" class="">sale@adsthaidd.com</a><br>
+						Email: <a href="mailto:kosit.arom@gmail.com" class="">kosit.arom@gmail.com</a><br>
+                        <!-- Email2: <a href="mailto:sale@adsthaidd.com" class="">sale@adsthaidd.com</a><br> -->
                         Chat Control Panel: <a target='_blank' href="https://s2.mylivechat.com/webconsole/" class="">Click</a>
                         
                         </address>

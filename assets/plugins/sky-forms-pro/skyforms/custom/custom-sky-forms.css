@@ -82,17 +82,17 @@
   font-size: 14px;
   color: #404040;
 }
-/*
+
 .sky-form .select select {
   height: 33px;
   padding: 6px 10px;
 }
 
-*/
-.sky-form .select select {
+
+/* .sky-form .select select {
   height: 25px;
   padding: 6px 10px;
-}
+} */
 .sky-form .select-multiple select {
   height: auto;
 }

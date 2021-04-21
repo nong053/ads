@@ -33,7 +33,7 @@ if($conn){
 	}
 </style>
 <!--Start Right Content -->
-        	<div class="col-xs-4 magazine-page "> 
+        	<div class="col-md-4 magazine-page "> 
                 <!-- Blog Posts -->
 					<?php
 					//include("right_ads.php");
@@ -42,7 +42,7 @@ if($conn){
 						//if($_GET["page"]=="post_sub_detail" or $_GET["page"]=="home"){
 						?>
 						<!--start  box near realty -->
-						<div class="panel panel-sea" style='width:330px'>
+						<div class="panel panel-sea" >
                             <div class="panel-heading">
                                 <h3 class="panel-title"><i class="glyphicon glyphicon-blackboard"></i>ประกาศใกล้เคียง</h3>
                             </div>
@@ -67,7 +67,7 @@ if($conn){
 								<tr>
 								<td>
 	                               <div class="row">
-											<div class="col-xs-4">
+											<div class="col-md-4">
 												<div class="magazine-posts-img">
 													<a href="#">
 													<?php 
@@ -109,11 +109,11 @@ if($conn){
 
 														if($thumbnailsFile==""){
 																					?>
-																					<img alt="" src="images/billboards_default.jpg" width="300" class="img-thumbnail img-responsive">
+																					<img alt="" src="images/billboards_default.jpg" width="100%" class="img-thumbnail img-responsive">
 																					<?php
 																				}else{
 																					?>
-																					<img alt="" src="<?=$thumbnailsFile?>"  style='width: 300px; max-height:85px;' class="img-thumbnail img-responsive">
+																					<img alt="" src="<?=$thumbnailsFile?>" width="100%"  class="img-thumbnail img-responsive">
 																					<?php
 																				}
 														?>
@@ -124,7 +124,7 @@ if($conn){
 													</a>						
 												</div>
 											</div>
-											<div class="col-xs-8">
+											<div class="col-md-8">
 											<b style="color:#1abc9c;">
 											<a href="index.php?page=post_sub_detail&rdg_id=<?=$rsSimilar['rdg_id']?>">
 											

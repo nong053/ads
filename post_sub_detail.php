@@ -103,8 +103,9 @@ $rdg_id=$rs1['rdg_id'];
 <?php
 ?>
 
-		<div class="blog margin-bottom-5">
-		 <div class="row">
+		<div class="blog margin-bottom-5 ">
+			
+		 <div class="row ">
 								<div class="panel  panel-sea" style="margin-bottom: 5px;">
 									<div class="panel-heading">
 										<h3 class="panel-title"><i class="glyphicon glyphicon-blackboard"></i> รายละเอียด "<?=$rs1['rt_name']?>(<?=$rs1['rf_name']?>)"</h3>

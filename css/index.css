@@ -86,7 +86,7 @@ address{
 background: rgba(0, 0, 0, 0) url("../assets/img/patterns/breadcrumbs.png") repeat scroll 0 0;
 }
 .sky-form .select select{
-	padding: 5px;
+	/* padding: 5px; */
 	/* padding:0px; */
 }
 

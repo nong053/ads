@@ -320,12 +320,7 @@ if($_POST['paramAction']=="searchQuick"){
 
 																				
 
-																				<a href="index.php?page=post_sub_detail&rdg_id=<?=$rsPostDetail['rdg_id']?>" target="_blank">
-																		
-																		
-																				<button style='width:146px;' type="button" class="btn-u  btn-u-xs btn-u-red"     type="button"><i class="fa fa-search-plus "></i> ดูรายละเอียด</button>
 																				
-																				</a>
 																				<?php 
 																			
 																		?>
@@ -339,6 +334,10 @@ if($_POST['paramAction']=="searchQuick"){
 																		}else{
 																		?>
 																		<?=$rsPostDetail['rdg_title']?></b><br>
+																		<a href="index.php?page=post_sub_detail&rdg_id=<?=$rsPostDetail['rdg_id']?>" target="_blank">
+																		ดูรายละเอียด
+																		<!-- <button  type="button" class="btn-u  btn-u-xs btn-u-red"     type="button"><i class="fa fa-search-plus "></i> ดูรายละเอียด</button> -->
+																		</a>
 																		<?php }?>
 
 																		</div>
