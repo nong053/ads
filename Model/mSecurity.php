@@ -44,14 +44,15 @@ if($_POST['paramAction']=="forgotPassword"){
 	if($rsNum!=0){
 
 		$strTo2 = $cus_email;
-		$strSubject2 = "รหัสผ่านสำหรับเข้าใช้งานเว็บไซต์(www.adsthaidd.com)";
+		$strSubject2 = "รหัสผ่านสำหรับเข้าใช้งานเว็บไซต์(www.adskosana.com)";
 		$strHeader2 ="";
 		$strMessage2 = "รหัสผ่านของท่านคือ". $rs['cus_pass'];
 		$flgSend = @mail($strTo2,$strSubject2,$strMessage2,$strHeader2);  // @ = No Show Error //
 		if($flgSend){
 			echo'["success"]';
 		}else{
-			echo "error".mysqli_error();
+			echo '["error"]';
+			//echo mysqli_error($conn);
 		}
 
 	}

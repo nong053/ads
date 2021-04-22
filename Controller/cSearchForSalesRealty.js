@@ -106,28 +106,24 @@ $(document).ready(function(){
 			}
 		});
 		
-		$("#totalMap").show();
+		//$("#totalMap").show();
 		// call total map start
+		/*
 				$.ajax({
 					url:"Model/mTotalMap.php",
 					type:"post",
 					dataType:"json",
 					data:$(this).serialize(),
-					//async:false,
+
 					success:function(data){
-						/*
-						 [{"location":"วัดลาดปลาเค้า", "lat": "13.846876", "lng": "100.604481"},
-			  			  {"location":"หมู่บ้านอารียา", "lat": "13.847766", "lng": "100.605768"}];
-			  			*/
-			  			//alert("Test");
-			  			//console.log(data);
+						
+			  			
 			  			var latLng=[];
 			  			var jsonObj="[";
 			  			$.each(data,function(index,indexEntry){
 
 			  				latLng=indexEntry['rdg_map'].split(",");
-			  				//alert(latLng[0]);
-			  				//alert(latLng[1]);
+			  			
 			  				if(index==0){
 			  					jsonObj+="{";
 			  					
@@ -137,8 +133,7 @@ $(document).ready(function(){
 			  				}
 			  				jsonObj+="\"location\":\""+indexEntry['rdg_title']+"\",\"lat\":\""+latLng[0]+"\",\"lng\":\""+latLng[1]+"\"";
 			  				
-			  				//jsonObj+="\"location\":\"test\",\"lat\":\""+latLng[0]+"\",\"lng\":\""+latLng[1]+"\"";
-			  				
+			  		
 
 			  				jsonObj+="}";
 
@@ -146,12 +141,12 @@ $(document).ready(function(){
 			  			jsonObj+="]";
 
 			  			var jsonObjEncode=eval("("+jsonObj+")");
-			  			//alert(jsonObj);
-						//console.log(jsonObjEncode);
+			  	
 						initMapTotal(jsonObjEncode);
 						
 					}
 				});
+				*/
 				// call total map end
 
 		

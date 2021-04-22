@@ -1,11 +1,30 @@
 <link rel="stylesheet" href="assets/css/pages/page_log_reg_v1.css">
 <script>
 	
-	
+	function check_user_uq(cus_email){
+		var dataReturn="";
+		$.ajax({
+			url:"action/check_user.php",
+			type:"post",
+			dataType:"html",
+			async:false,
+			data:{"action":"check_user_uq","cus_email":cus_email},
+			success:function(data){
+				
+				dataReturn=data;
+			}
+		});
+		return dataReturn;
+	}
 	function check_cus(confrim){
 		//alert("confrim"+confrim);
 		var check="";
 		
+		//alert(check_user_uq($("form#form_regis #cus_email").val()));
+		if(check_user_uq($("form#form_regis #cus_email").val())=="false"){
+			check+="อีเมลล์นี้มีการใช้งานแล้ว!! โปรดใช้อีเมลล์อื่น\n";
+		}
+
 		
 		if(document.form_regis.cus_first_name.value==""){
 			check+="กรุณากรอกชื่อ\n";
@@ -33,6 +52,13 @@
 		if(document.form_regis.cus_confrim.value != confrim){
 			check+="กรอกหัสยืนยันไม่ถูกต้องครับ\n";
 		}
+
+		
+
+
+
+
+
 		
 		if(check!=""){
 			alert(check);
@@ -107,7 +133,7 @@
                             </label>           -->             
                         </div>
                         <div class="col-lg-6 text-right">
-                        	<input type="hidden" name="admin_id" id=""admin_id"" value='1'>
+                        	<input type="hidden" name="admin_id" id="admin_id" value='1'>
                             <button type="button" name="btnRegis" id="btnRegis" onclick="check_cus(<?=$confrim?>)" class="btn-u">สมัครสมาชิก</button>                        
                         </div>
                     </div>

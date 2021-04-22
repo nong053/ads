@@ -138,7 +138,7 @@ if($conn){
 											<?php }?>
 											</a>
 											
-											<div><font color="red"><?=number_format($rsSimilar['rdg_price']);?>  บาท</font></div>
+											<!-- <div><font color="red"><?=number_format($rsSimilar['rdg_price']);?>  บาท</font></div> -->
 											</div>
 								   </div>
 								    <hr>

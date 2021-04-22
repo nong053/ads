@@ -23,22 +23,20 @@
                             <label><input type="checkbox"> จำรหัสผ่าน</label>                        
                         </div>
                          -->
-                        <div class="col-md-12" >
+                        <div class="col-md-12 col-sm-12" >
                         	<input type='hidden' name='loginType' id='loginType' value='loginForManage'><!-- loginForPost,loginForManage -->
-                            <button type="button" name="btnLogin" id="btnLogin" style='width:150px;' class="btn-u pull-right">เข้าสู่ระบบ</button>
+                            <button type="button" name="btnLogin" id="btnLogin" style='width:100%;' class="btn-u pull-right">เข้าสู่ระบบ</button>
                                                  
                         </div>
 
-                        <div class="col-md-12" style='text-align: right; margin-top:10px;'>
+                        <!-- <div class="col-md-12" style='text-align: right; margin-top:10px;'>
                              <a href="#" onclick="window.location.href='<?=$loginUrl?>'">หรือลงชื่อเข้าใช้งานผ่าน facebook</a>  
-                        </div>
-                         <div class="col-md-12" style='text-align: right;'>
-                             <a href="#" id='registerFormModalLoginPage'>หรือสมัครสามาชิก</a>  
-                        </div>
+                        </div> -->
+                         
                     </div>
 
                     <hr>
-
+                    <a href="#" id='registerFormModalLoginPage'>หรือสมัครสามาชิก</a> 
                     <h4>ลืมรหัสผ่านใช่มั้ย ?</h4>
                     <p>ไม่ต้องกังวล, <a href="index.php?page=forgot_pass" class="color-green">คลิ๊ก</a> ส่งรหัสผ่านไปทาง E-mail.</p>
                 </form>            

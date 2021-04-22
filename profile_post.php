@@ -56,14 +56,14 @@ include_once 'config.inc.php';
 													<div class="easy-block-v2">
 
 													<!-- start button link -->
-													<p>
+													<!-- <p>
 														<button type="button" class="btn-u  btn-u-xs  btn-u-green"><i class="fa fa-cloud"></i> แชร์ไปที่เฟสบุ๊ค/กูเกิล</button>
 														<button type="button" class="btn-u  btn-u-xs  btn-u-green"><i class="fa fa-bell-o"></i> ส่งหน้านี้ให้เพิ่อน</button>
-														<!-- <button type="button" class="btn-u  btn-u-xs  btn-u-green"><i class="fa fa-envelope-o"></i> เก็บหน้านี้ไว้ดูครั้งหน้า</button> -->
+														<button type="button" class="btn-u  btn-u-xs  btn-u-green"><i class="fa fa-envelope-o"></i> เก็บหน้านี้ไว้ดูครั้งหน้า</button>
 														<button type="button" class="btn-u  btn-u-xs  btn-u-green"><i class="fa fa-download"></i> คลิ๊กดูหน้าที่จัดเก็บไว้</button>
 														<button type="button" class="btn-u  btn-u-xs  btn-u-green"><i class="fa fa-download"></i> ปริ้น</button>
 													
-													</p>
+													</p> -->
 													<!--end  button link -->
 												
 
@@ -140,7 +140,7 @@ include_once 'config.inc.php';
 																			$i=1;
 																			$rs=mysqli_fetch_array($result);
 																				//จัดการกับรูปภาพ
-																				$thumbnailsPath="realtyPicture/".$rsPostDetail['rdg_id']."/".$rs[ri_id]."/thumbnail/";
+																				$thumbnailsPath="realtyPicture/".$rsPostDetail['rdg_id']."/".$rs['ri_id']."/thumbnail/";
 																				if(!is_dir($thumbnailsPath)){
 																					
 																				}else{ //else
@@ -182,23 +182,13 @@ include_once 'config.inc.php';
 
 																				?>
 
-																				<?php 
-																			
-																		?>
+<button type="button"style="width:100%;" class="btn-u  btn-u-md btn-u-red"  onclick="window.location.href='index.php?page=post_sub_detail&rdg_id=<?=$rsPostDetail['rdg_id']?>'"  type="button"><i class="fa fa-search"></i> ดูรายละเอียด</button>
 
 																		</div>
 																		<div class="col-md-9">
 																		<?=$rsPostDetail['rdg_detail']?><br>
 
-																		<p>
-																		<!-- 
-																		<button type="button" class="btn-u  btn-u-xs btn-u-green"><i class="fa fa-child "></i> ติดต่อผู้ลงประกาศ</button>
-																		<button type="button" class="btn-u  btn-u-xs btn-u-green"><i class="fa  fa-car"></i> แผนที่</button>
-																		<button type="button" id="<?=$rsPostDetail['rdg_id']?>" class="btn-u  btn-u-xs btn-u-green btnSavePost"><i class="fa fa-download"></i> เก็บไว้ดูภายหลัง</button>
-																		 -->
-																		<button type="button" class="btn-u  btn-u-xs btn-u-red"  onclick="window.location.href='index.php?page=post_sub_detail&rdg_id=<?=$rsPostDetail['rdg_id']?>'"  type="button"><i class="fa fa-search"></i> ดูรายละเอียด</button>
-																		
-																		</p>
+																	
 																		</div>
 
 																	</div>

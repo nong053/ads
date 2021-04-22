@@ -149,7 +149,7 @@ if($_POST['paramAction']=="searchQuick"){
 		-->
 			<div class="row" >
 	
-				<div class='' id='totalMap' style='height:250px;'>
+				<div class='' id='totalMap' style='height:250px; display:none'>
 					
 				</div>
 			</div>

@@ -147,7 +147,9 @@ function thai_date($time){
 .navbar-default .navbar-nav>li>a:focus{
     color: #cccc;
 }
-
+.btn.focus, .btn:focus, .btn:hover{
+    color:while;
+}
 
 
 .navbar-default .navbar-toggle {
@@ -214,7 +216,7 @@ if ($user) {
 	{
 		$_SESSION['ses_cus_id']=$user_profile["id"];
 		$_SESSION['ses_cus_first_name']=$user_profile["name"];
-		echo $_SESSION['ses_cus_id'];
+		//echo $_SESSION['ses_cus_id'];
 		
 				
 				$strSQL ="  INSERT INTO  customer (cus_id,cus_first_name,admin_id,cus_update) 
@@ -259,15 +261,33 @@ if($_GET["Action"] == "Logout")
 <body> 
 
 <div id="fb-root"></div>
-<script>(function(d, s, id) {
+
+<!-- <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];
   if (d.getElementById(id)) return;
   js = d.createElement(s); js.id = id;
   js.src = "//connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v2.5&appId=1031225606922179";
   fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'facebook-jssdk'));</script>
+}(document, 'script', 'facebook-jssdk'));</script> -->
 
+<script>
+  window.fbAsyncInit = function() {
+    FB.init({
+      appId      : '1031225606922179',
+      xfbml      : true,
+      version    : 'v10.0'
+    });
+    FB.AppEvents.logPageView();
+  };
 
+  (function(d, s, id){
+     var js, fjs = d.getElementsByTagName(s)[0];
+     if (d.getElementById(id)) {return;}
+     js = d.createElement(s); js.id = id;
+     js.src = "https://connect.facebook.net/en_US/sdk.js";
+     fjs.parentNode.insertBefore(js, fjs);
+   }(document, 'script', 'facebook-jssdk'));
+</script>
 
 <?php 
 
@@ -301,7 +321,7 @@ $rsLR=mysqli_fetch_array($resultBannerLR);
 		
 		</script>
 		<?php
-    include("right_content.php");
+    
 	}
 ?>
  
@@ -370,7 +390,7 @@ $rsLR=mysqli_fetch_array($resultBannerLR);
                                 <div class="col-md-6">
                                      	
                                      	<?php 
-                                     
+                                       
                                      	if($_SESSION['ses_cus_email']!=""){
                                      		?>
                                      	
@@ -453,7 +473,10 @@ $rsLR=mysqli_fetch_array($resultBannerLR);
                 </button>
                 <!-- <a class="navbar-brand" href="#">Project name</a> -->
                 <a class="logo" href="#">
-                    <img src="assets/img/logo1-default.png" alt="Logo">
+                    <!-- <img src="assets/img/logo1-default.png" alt="Logo"> -->
+                    
+                    <img src="images/logo-nnita3.png" alt="เอ็นเอ็นไอที"> 
+                    
                     
                 </a>
             </div>
@@ -499,6 +522,23 @@ $rsLR=mysqli_fetch_array($resultBannerLR);
                          <i class="fa fa-cubes "></i> ป้ายสติ๊กเกอร์
                         </a>
 					</li> 
+
+
+                    <?php 
+                                       
+                    if($_SESSION['ses_cus_email']!=""){
+                    ?>
+                    <li >
+                        <?php
+                            $cus_profile="index.php?page=profile_post&cus_id=".$_SESSION['ses_cus_id']."";
+                        ?>
+                        <a class=" " href="<?=$cus_profile?>">
+                         <i class="glyphicon glyphicon-user"></i> โปรไฟล์ของฉัน
+                        </a>
+					</li> 
+                    <?php
+                    }
+                    ?>
                 
                 </ul>
                 

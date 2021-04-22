@@ -20,7 +20,8 @@ if($_POST['paramAction']=="sendToFriend"){
 	if($flgSend){
 		echo'["success"]';
 	}else{
-		echo "error".mysql_error();
+		echo'["error"]';
+		//echo "error".mysqli_error($conn);
 	}
 
 }
