@@ -2766,6 +2766,7 @@
 .shadow-wrapper {
   z-index: 1;  
   position: relative;
+  padding:5px;
 }
 
 /*Common Style*/
