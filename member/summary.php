@@ -27,8 +27,8 @@
 	where cus_id='$ses_cus_id'
 	and rdg_id='$rdg_id'
 	";
-	$resultRDG=mysql_query($strSQLRDG);
-	$rsRDG=mysql_fetch_array($resultRDG);
+	$resultRDG=mysqli_query($conn,$strSQLRDG);
+	$rsRDG=mysqli_fetch_array($resultRDG);
 	
 	
 
@@ -50,14 +50,14 @@
 	ON cst.cst_id=rd.cst_id
 	where rdg_id='$rdg_id'
 	";
-	$result3=mysql_query($strSQL3);
+	$result3=mysqli_query($conn,$strSQL3);
 	
 	/*
-	$result4=mysql_query($strSQL3);
+	$result4=mysqli_query($conn,$strSQL3);
 	
-	$result5=mysql_query($strSQL3);
+	$result5=mysqli_query($conn,$strSQL3);
 	
-	$result6=mysql_query($strSQL3);
+	$result6=mysqli_query($conn,$strSQL3);
 	*/
 	
 	?>
@@ -155,13 +155,13 @@
 			
 	
 			
-			<div class="row">
+			<!-- <div class="row">
 					<label class="col-md-3 control-label titleGroup" > แผนที่  :</label>
 					<div class="col-md-12">
 						<div id="map-canvas-summary" class="map-canvas-summary" ></div>
 						
 					</div>
-			</div>
+			</div> -->
 		<!-- -ข้อมูลที่ตั้ง-->
 		<div class="headline"><h4>ข้อมูลเพิ่มเติม </h4></div>
 		<!-- -ข้อมูลเพิ่มเติม-->
@@ -171,7 +171,7 @@
 				<ul>
 				<?php 
 				if($rsRDG['cst_type']=="M" or $rsRDG['cst_type']=="C" ){
-					while($rs3=mysql_fetch_array($result3)){
+					while($rs3=mysqli_fetch_array($result3)){
 
 						if($rs3['cst_id']){
 						?>
@@ -184,7 +184,7 @@
 					
 				}else{
 
-					while($rs3=mysql_fetch_array($result3)){
+					while($rs3=mysqli_fetch_array($result3)){
 		
 						if($rs3['rdc_id']){
 							?>
@@ -212,12 +212,12 @@
 		<?php	
 			
 			$strSQL="select * from realty_images where rdg_id='$rdg_id' ORDER BY ri_set_first ";
-			$result=mysql_query($strSQL);
+			$result=mysqli_query($conn,$strSQL);
 			
 			$i=1;
-			while($rs=mysql_fetch_array($result)){
+			while($rs=mysqli_fetch_array($result)){
 				//จัดการกับรูปภาพ
-				$thumbnailsPath="../realtyPicture/".$rdg_id."/".$rs[ri_id]."/thumbnail/";
+				$thumbnailsPath="../realtyPicture/".$rdg_id."/".$rs['ri_id']."/thumbnail/";
 				if(!is_dir($thumbnailsPath)){
 				
 				}else{ //else
@@ -253,7 +253,7 @@
 					<img alt="" src="<?=$thumbnailsFile?>" class="img-responsive">
 				</div>
 			</div>
-			<?
+			<?php
 			$i++;
 			}
 	?>	
@@ -292,8 +292,8 @@
 				<!-- Vimeo Video -->  
 				<?php 
 				$sqlVDO="select * from realty_embed_video where rdg_id='$rdg_id'";
-				$resultVDO=mysql_query($sqlVDO)or die (mysql_error());
-				$rsVDO=mysql_fetch_array($resultVDO);
+				$resultVDO=mysqli_query($conn,$sqlVDO)or die (mysqli_error());
+				$rsVDO=mysqli_fetch_array($resultVDO);
 				?>
 	
 				<div class="col-md-12">

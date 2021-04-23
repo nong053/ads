@@ -1,6 +1,6 @@
 
 <?php 
-
+error_reporting (E_ALL ^ E_NOTICE);
 include("../config.inc.php");
 $dataRDCID=$_POST['dataRDCID'];
 $dataRDIID=$_POST['dataRDIID'];
@@ -11,10 +11,10 @@ $dataRDNPID=$_POST['dataRDNPID'];
 if($_POST['paramAction']=="realtyDetailRoom"){
 
 	$strSQL="select rdr_id,rdr_detail,rdr_unit from realty_detail_room order by rdr_id";
-	$result=mysql_query($strSQL);
+	$result=mysqli_query($conn,$strSQL);
 	$json="";
 	$i=0;
-	while ($rs=mysql_fetch_array($result)){
+	while ($rs=mysqli_fetch_array($result)){
 		?>
 		 		<div class="form-group">
 					<label  class="col-lg-3 control-label"> <?=$rs['rdr_detail']?></label>
@@ -44,16 +44,23 @@ if($_POST['paramAction']=="realtyDetailCharacteristic"){
 	}
 	*/
 	$strSQL="select rdc_id,rdc_detail from  realty_detail_characteristic order by rdc_id";
-	$result=mysql_query($strSQL);
+	$result=mysqli_query($conn,$strSQL);
 	$rdc_id2="";
 
-	while ($rs=mysql_fetch_array($result)){
+	while ($rs=mysqli_fetch_array($result)){
+	
+
+
+		if (is_array($dataRDCID) && count($dataRDCID)){
+
+		
 
 			for($i=0;$i<count($dataRDCID);$i++){
 				if($dataRDCID[$i][0]==$rs['rdc_id']){
 				 $rdc_id2=$rs['rdc_id'];
 				}
-			}//for		
+			}//for	
+		}
 		if($rdc_id2==$rs['rdc_id'])	{
 		?>
 		
@@ -85,9 +92,9 @@ if($_POST['paramAction']=="realtyDetailCharacteristic"){
 if($_POST['paramAction']=="realtyDetailInterior"){
 
 	$strSQL="select rdi_id,rdi_detail from  realty_detail_interior  order by rdi_id";
-	$result=mysql_query($strSQL);
+	$result=mysqli_query($conn,$strSQL);
 	$rdi_id2="";
-	while ($rs=mysql_fetch_array($result)){
+	while ($rs=mysqli_fetch_array($result)){
 		for($i=0;$i<count($dataRDIID);$i++){
 			if($dataRDIID[$i][0]==$rs['rdi_id']){
 				$rdi_id2=$rs['rdi_id'];
@@ -125,9 +132,9 @@ if($_POST['paramAction']=="realtyDetailInterior"){
 if($_POST['paramAction']=="realtyDetailFacility"){
 
 	$strSQL="SELECT rdf_id,rdf_detail FROM realty_detail_facility order by rdf_id";
-	$result=mysql_query($strSQL);
+	$result=mysqli_query($conn,$strSQL);
 	$rdf_id="";
-	while ($rs=mysql_fetch_array($result)){
+	while ($rs=mysqli_fetch_array($result)){
 		for($i=0;$i<count($dataRDFID);$i++){
 			if($dataRDFID[$i][0]==$rs['rdf_id']){
 				$rdf_id=$rs['rdf_id'];
@@ -161,9 +168,9 @@ if($_POST['paramAction']=="realtyDetailFacility"){
 if($_POST['paramAction']=="realtyDetailNearPlace"){
 
 	$strSQL="select rdnp_id,rdnp_detail from realty_detail_near_place order by rdnp_id";
-	$result=mysql_query($strSQL);
+	$result=mysqli_query($conn,$strSQL);
 	$rdnp_id="";
-	while ($rs=mysql_fetch_array($result)){
+	while ($rs=mysqli_fetch_array($result)){
 		for($i=0;$i<count($dataRDNPID);$i++){
 			if($dataRDNPID[$i][0]==$rs['rdnp_id']){
 				$rdnp_id=$rs['rdnp_id'];
@@ -246,8 +253,8 @@ rdr_parking
 
 
 	$strSQLCheck="select * from realty_detail_room where rdg_id = '$rdg_id'";
-	$resultCheck=mysql_query($strSQLCheck);
-	$resultCheckNum=mysql_num_rows($resultCheck);
+	$resultCheck=mysqli_query($conn,$strSQLCheck);
+	$resultCheckNum=mysqli_num_rows($resultCheck);
 	if($resultCheckNum > 0){
 		
 		$strSQL="
@@ -271,12 +278,12 @@ rdr_parking
 				";
 		
 		
-		$sucess=mysql_query($strSQL)or die(mysql_error());
+		$sucess=mysqli_query($conn,$strSQL)or die(mysqli_error());
 		
 		if($sucess){
 			
 			$strSQLDelete="delete from realty_detail where rdg_id = '$rdg_id'";
-			$resultDelete=mysql_query($strSQLDelete);
+			$resultDelete=mysqli_query($conn,$strSQLDelete);
 			if($resultDelete){
 				// checkbox management start
 				for($i=0;$i<count($paramCharacteristicArray);$i++){
@@ -284,7 +291,7 @@ rdr_parking
 					$paramCharacteristicNum=substr($paramCharacteristicArray[$i],15);
 					if($paramCharacteristicNum!=""){
 						$strSQL1="insert into realty_detail(rdg_id,rdc_id)values('$rdg_id','$paramCharacteristicNum')";
-						$result1=mysql_query($strSQL1);
+						$result1=mysqli_query($conn,$strSQL1);
 					}
 				}
 				
@@ -292,14 +299,14 @@ rdr_parking
 					$paramInteriorArrayNum=substr($paramInteriorArray[$j],9);
 					if($paramInteriorArrayNum!=""){
 						$strSQL2="insert into realty_detail(rdg_id,rdi_id)values('$rdg_id','$paramInteriorArrayNum')";
-						$result2=mysql_query($strSQL2);
+						$result2=mysqli_query($conn,$strSQL2);
 					}
 				}
 				for($k=0;$k<count($paramFacilityArray);$k++){
 					$paramFacilityNum=substr($paramFacilityArray[$k],9);
 					if($paramFacilityNum!=""){
 						$strSQL3="insert into realty_detail(rdg_id,rdf_id)values('$rdg_id','$paramFacilityNum')";
-						$result3=mysql_query($strSQL3);
+						$result3=mysqli_query($conn,$strSQL3);
 					}
 				}
 				
@@ -307,7 +314,7 @@ rdr_parking
 					$paramNearPlaceNum=substr($paramNearPlaceArray[$l],10);
 					if($paramNearPlaceNum!=""){
 						$strSQL4="insert into realty_detail(rdg_id,rdnp_id)values('$rdg_id','$paramNearPlaceNum')";
-						$result4=mysql_query($strSQL4);
+						$result4=mysqli_query($conn,$strSQL4);
 					}
 				
 				}
@@ -367,9 +374,9 @@ rdr_parking
 	'$rdr_parking'
 	
 	)";
-	$sucess=mysql_query($strSQL)or die(mysql_error());
+	$sucess=mysqli_query($conn,$strSQL)or die(mysqli_error());
 	if(!$sucess){
-	echo mysql_error();
+	echo mysqli_error();
 	}else{
 	
 	// checkbox management start
@@ -378,7 +385,7 @@ rdr_parking
 			$paramCharacteristicNum=substr($paramCharacteristicArray[$i],15);
 			if($paramCharacteristicNum!=""){
 			$strSQL1="insert into realty_detail(rdg_id,rdc_id)values('$rdg_id','$paramCharacteristicNum')";
-			$result1=mysql_query($strSQL1);
+			$result1=mysqli_query($conn,$strSQL1);
 			}
 		}
 
@@ -386,14 +393,14 @@ rdr_parking
 			$paramInteriorArrayNum=substr($paramInteriorArray[$j],9);
 			if($paramInteriorArrayNum!=""){
 			$strSQL2="insert into realty_detail(rdg_id,rdi_id)values('$rdg_id','$paramInteriorArrayNum')";
-			$result2=mysql_query($strSQL2);
+			$result2=mysqli_query($conn,$strSQL2);
 			}
 		}
 		for($k=0;$k<count($paramFacilityArray);$k++){
 			$paramFacilityNum=substr($paramFacilityArray[$k],9);
 			if($paramFacilityNum!=""){
 			$strSQL3="insert into realty_detail(rdg_id,rdf_id)values('$rdg_id','$paramFacilityNum')";
-			$result3=mysql_query($strSQL3);
+			$result3=mysqli_query($conn,$strSQL3);
 			}
 		}
 		
@@ -401,7 +408,7 @@ rdr_parking
 			$paramNearPlaceNum=substr($paramNearPlaceArray[$l],10);
 			if($paramNearPlaceNum!=""){
 			$strSQL4="insert into realty_detail(rdg_id,rdnp_id)values('$rdg_id','$paramNearPlaceNum')";
-			$result4=mysql_query($strSQL4);
+			$result4=mysqli_query($conn,$strSQL4);
 			}
 		
 		}
@@ -425,12 +432,12 @@ if($_POST['paramAction']=="realtyDetailDataById"){
 	$strSQL1="
 	select rdc_id from realty_detail where rdg_id='$RdgId' and rdc_id!='';
 	";
-	$result1=mysql_query($strSQL1);
+	$result1=mysqli_query($conn,$strSQL1);
 	if($result1){
 	$jsonObject1="";
 	$i=0;
 	$jsonObject1.= "[";
-	 while($rs1=mysql_fetch_array($result1)){	
+	 while($rs1=mysqli_fetch_array($result1)){	
 			if($i==0){
 			$jsonObject1.="[\"".$rs1['rdc_id']."\"]";
 			}else{
@@ -445,12 +452,12 @@ if($_POST['paramAction']=="realtyDetailDataById"){
 		$strSQL2="
 		select rdf_id from realty_detail where rdg_id='$RdgId' and rdf_id!='';
 		";
-		$result2=mysql_query($strSQL2);
+		$result2=mysqli_query($conn,$strSQL2);
 		if($result2){
 			$jsonObject2="";
 			$j=0;
 			$jsonObject2.= "[";
-			while($rs2=mysql_fetch_array($result2)){
+			while($rs2=mysqli_fetch_array($result2)){
 				if($j==0){
 					$jsonObject2.="[\"".$rs2['rdf_id']."\"]";
 				}else{
@@ -464,12 +471,12 @@ if($_POST['paramAction']=="realtyDetailDataById"){
 			$strSQL3="
 			select rdi_id from realty_detail where rdg_id='$RdgId' and rdi_id!='';
 			";
-			$result3=mysql_query($strSQL3);
+			$result3=mysqli_query($conn,$strSQL3);
 			if($result3){
 				$jsonObject3="";
 				$k=0;
 				$jsonObject3.= "[";
-				while($rs3=mysql_fetch_array($result3)){
+				while($rs3=mysqli_fetch_array($result3)){
 					if($k==0){
 						$jsonObject3.="[\"".$rs3['rdi_id']."\"]";
 					}else{
@@ -483,12 +490,12 @@ if($_POST['paramAction']=="realtyDetailDataById"){
 				$strSQL4="
 				select rdnp_id from realty_detail where rdg_id='$RdgId' and rdnp_id!='';
 				";
-				$result4=mysql_query($strSQL4);
+				$result4=mysqli_query($conn,$strSQL4);
 				if($result4){
 					$jsonObject4="";
 					$l=0;
 					$jsonObject4.= "[";
-					while($rs4=mysql_fetch_array($result4)){
+					while($rs4=mysqli_fetch_array($result4)){
 						if($l==0){
 							$jsonObject4.="[\"".$rs4['rdnp_id']."\"]";
 						}else{
@@ -515,9 +522,9 @@ if($_POST['paramAction']=="realtyDetailRoomById"){
 	$strSQL="
 	select * from realty_detail_room where rdg_id = '$RdgId'
 	";
-	$result=mysql_query($strSQL);
+	$result=mysqli_query($conn,$strSQL);
 	if($result){
-	$rs=mysql_fetch_array($result);
+	$rs=mysqli_fetch_array($result);
 	echo "{
 			 \"rdr_bedroom\":\"".$rs['rdr_bedroom']."\"
 			,\"rdr_maid\":\"".$rs['rdr_maid']."\"

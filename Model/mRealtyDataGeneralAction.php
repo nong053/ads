@@ -380,9 +380,9 @@ if($_POST['paramAction']=="realtyDataGeneralSave"){
 
 	)";
 		$sucess=mysqli_query($conn,$strSQL)or die(mysqli_error());
-		$rdg_id=mysqli_insert_id();
+		$rdg_id=mysqli_insert_id($conn);
 		if(!$sucess){
-			echo mysqli_error();
+			echo mysqli_error($conn);
 		}else{
 			echo "[[\"success\"],[".$rdg_id."]]";
 			

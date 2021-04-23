@@ -27,10 +27,10 @@ if($_POST['paramAction']=="showCurrentPost"){
                 	<col style="width:100px" />
                     <col style="width:350px" />
                     <!-- <col /> -->
-                    <col style="width:110px" />
-                    <col style="width:120px" />
+                    <col style="width:150px" />
+                    <!-- <col style="width:120px" />
                     <col style="width:100px" />
-                    <col style="width:200px" />
+                    <col style="width:200px" /> -->
                 </colgroup>
                 <thead>
                     <tr>
@@ -38,9 +38,9 @@ if($_POST['paramAction']=="showCurrentPost"){
                         <th data-field="fileld2"><b>หมวด</b></th>
                         <th data-field="fileld3"><b>รายการ</b></th>
                         <!-- <th data-field="fileld4">ราคา</th> -->
-                        <th data-field="fileld5"><b>วันที่ประกาศ</b></th>
+                        <!-- <th data-field="fileld5"><b>วันที่ประกาศ</b></th>
                         <th data-field="fileld6"><b>สถานะประกาศ</b></th>
-                        <th data-field="fileld7"><b>ประเภท</b></th>
+                        <th data-field="fileld7"><b>ประเภท</b></th> -->
                         <th data-field="fileld8"><b>จัดการ</b></th>
                        
                     </tr>
@@ -62,72 +62,41 @@ if($_POST['paramAction']=="showCurrentPost"){
 			
 			echo $rs['rdg_title'];
 			}
-			
-			?>
-			</td>
-			<!-- 
-			<td>
-		
-			<?php
-			/*
-			 if($rs['rf_id']=="1"){//เพื่อขาย
-				echo number_format($rs['rdg_price']);
-			}else if($rs['rf_id']=="2"){//เพื่อเช่า
-				echo  number_format($rs['rdg_price_rent']);
-			}else if($rsRDG['rf_id']=="3"){//เพื่อขายและเช่า
-				echo  number_format($rs['rdg_price']).",";
-				echo  number_format($rs['rdg_price_rent'])." ";
-			}else if($rsRDG['rf_id']=="5"){//เพื่อขายดาว์น
-				echo  number_format($rs['rdg_price_down']);
-			}
-			*/
-			
-			//number_format($rs[rdg_price]);
-			
-			
-			?>
-			
-			</td>
-			 -->
-			<!-- <td>1250,000</td> -->
-			<td><?=$rs['rdg_create']?></td>
-			<td>
-			<?php 
-			if($rs['rdg_status_post']=="N"){
-			
-			echo "<font color='green'>ยังไม่ขาย/เช่า</font>";
-				
-			}else if($rs['rdg_status_post']=="soldOut"){
-				echo "<font color='red'>ขายแล้ว</font>";
-			}else if($rs['rdg_status_post']=="rented"){
-				echo "<font color='red'>เช่าแล้ว</font>";
-			}else{
+			echo "<div><b>วันที่ประกาศ</b>: ".$rs['rdg_create']."</div>";
+
+			echo"<div><b>สถานะ</b>: ";
+				if($rs['rdg_status_post']=="N"){
 				echo "<font color='green'>ยังไม่ขาย/เช่า</font>";
-			}
-			?>
-			
-			
-			</td>
-			<td>
-			<?php 
+				}else if($rs['rdg_status_post']=="soldOut"){
+					echo "<font color='red'>ขายแล้ว</font>";
+				}else if($rs['rdg_status_post']=="rented"){
+					echo "<font color='red'>เช่าแล้ว</font>";
+				}else{
+					echo "<font color='green'>ยังไม่ขาย/เช่า</font>";
+				}
+			echo"</div>";
+			echo"<div><b>ประเภท</b>: ";
 			if($rs['rdg_special']=="Y"){
 				echo"<font color='green'>ประกาศพิเศษ</font>";
 			}ELSE{
 				echo"ประกาศฟรี";
 			}
+			echo"</div>";
+
 			?>
 			</td>
+			
 			<td>
-			<button class="btn btn-danger btn-xs btnDelPost<?=$idArea?>" id='delPostId-<?=$rs['rdg_id']?>'><i class="fa fa-trash-o"></i> ลบ </button>
-			<button class="btn btn-warning btn-xs btnEditPost<?=$idArea?>" id='editPostId-<?=$rs['rdg_id']?>'><i class="fa fa-pencil"></i> แก้ไข</button>
+			<button class="btn btn-danger  btnDelPost<?=$idArea?>" id='delPostId-<?=$rs['rdg_id']?>'><i class="fa fa-trash-o"></i> ลบ </button>
+			<button class="btn btn-warning  btnEditPost<?=$idArea?>" id='editPostId-<?=$rs['rdg_id']?>'><i class="fa fa-pencil"></i> แก้ไข</button>
 			<?php 
 			if($status=="Y"){
 				?>
-				<button class="btn btn-danger btn-xs btnDisablePost<?=$idArea?>" id='disablePostId-<?=$rs['rdg_id']?>'><i class="fa fa-share"></i> ไม่แสดง</button>
+				<button class="btn btn-danger  btnDisablePost<?=$idArea?>" id='disablePostId-<?=$rs['rdg_id']?>'><i class="fa fa-share"></i> ไม่แสดง</button>
 				<?php
 			}else{
 				?>
-				<button class="btn btn-success btn-xs btnAblePost<?=$idArea?>" id='ablePostId-<?=$rs['rdg_id']?>'><i class="fa fa-share"></i> แสดง</button>
+				<button class="btn btn-success  btnAblePost<?=$idArea?>" id='ablePostId-<?=$rs['rdg_id']?>'><i class="fa fa-share"></i> แสดง</button>
 				<?php
 			}
 			?>

@@ -197,7 +197,7 @@ while($rsSCCate=mysqli_fetch_array($resultSCCate)){
 																//ปิดจัดการรูปภาพ
 																
 																?>
-																<a target="_blank" href="index.php?page=post_sub_detail&rdg_id=<?=$rsPsale['rdg_id']?>&rtc_id=<?=$rsSCCate['rtc_id']?>">
+																<a href="index.php?page=post_sub_detail&rdg_id=<?=$rsPsale['rdg_id']?>&rtc_id=<?=$rsSCCate['rtc_id']?>">
 																
 																<?php
 																
@@ -300,7 +300,7 @@ while($rsSCCate=mysqli_fetch_array($resultSCCate)){
 																			$resultCountHit=mysqli_query($conn,$strSQLCountHit);
 																			$num=mysqli_num_rows($resultCountHit);
 																			?>	
-																				<a target="_blank" href="index.php?page=post_sub_detail&rdg_id=<?=$rsPsale['rdg_id']?>">		
+																				<a  href="index.php?page=post_sub_detail&rdg_id=<?=$rsPsale['rdg_id']?>">		
 																					<span  class="box-margin-top5" type="button"><i class="fa  fa-eye "></i> รายละเอียด</span>
 																				</a>															
 																				<span style='text-align:center'> ดู <?=number_format($num)?> ครั้ง</span>

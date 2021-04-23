@@ -9,8 +9,8 @@ if($_POST['paramAction']=="getMap"){
 	where 
 	 rdg_id='$rdg_id'";
 	
-	$result=mysql_query($strSQL);
-	$rs=mysql_fetch_array($result);
+	$result=mysqli_query($conn,$strSQL);
+	$rs=mysqli_fetch_array($result);
 	echo $rs['rdg_map'];
 }
 

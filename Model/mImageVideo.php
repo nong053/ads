@@ -202,15 +202,15 @@
 	if ($action == "edit"){
 	
 		$sql="UPDATE picture SET picture_detail='$picture_detail',picture_detail_eng='$picture_detail_eng',picture_important='$picture_important',picture_date='$picture_date' WHERE picture_id='$picture_id'";
-		mysql_query($sql)or die (mysql_error());
+		mysqli_query($conn,$sql)or die (mysqli_error());
 		
 		
 	}elseif ($action == "add"){
 		
 		/*
 		$strSQL_num_pic= "select * from picture where picturecat_id='$picturecat_id'";
-		$result_num_pic=mysql_query($strSQL_num_pic);
-		$num_pic=mysql_num_rows($result_num_pic);
+		$result_num_pic=mysqli_query($conn,$strSQL_num_pic);
+		$num_pic=mysqli_num_rows($result_num_pic);
 		
 		
 		
@@ -222,8 +222,8 @@
 		
 		
 		$sql="INSERT INTO realty_images (rdg_id,ri_set_first) VALUES ('$rdg_id','$ri_set_first')";
-		mysql_query($sql)or die (mysql_error());
-		$ri_id = mysql_insert_id();
+		mysqli_query($conn,$sql)or die (mysqli_error());
+		$ri_id = mysqli_insert_id();
 				//$picture_path = iconv("UTF-8","windows-874",$picture_id);
 				$picture_path = "../realtyPicture/" . $rdg_id . "/" . $ri_id . "/";
 				
@@ -299,7 +299,7 @@ if($_POST['action']=="addPDF"){
 		$doc_date=date("d-m-y-h-i-s");
 		$rd_doc=$doc_date.$_FILES["doc_file"]["name"];
 		$sql="INSERT INTO realty_doc (rdg_id,rd_doc) VALUES ('$rdg_id','$rd_doc')";
-		mysql_query($sql)or die (mysql_error());
+		mysqli_query($conn,$sql)or die (mysqli_error());
 		$doc_path = "../realtyDoc/" . $rdg_id;
 		mkdir_r($doc_path,0777);
 			
@@ -309,20 +309,20 @@ if($_POST['action']=="addPDF"){
 		if($result){
 			echo'["success"]';
 		}else{
-		echo mysql_error();
+		echo mysqli_error();
 		}
 	}
 }	
 if($_POST['paramAction']=="showDoc"){
 
 	$strSQL="select * from realty_doc where rdg_id='$rdg_id' ORDER BY rd_id ";
-	$result=mysql_query($strSQL);
+	$result=mysqli_query($conn,$strSQL);
 
 	$i=1;
 	?>
 		<ul>
 		<?php
-		while($rs=mysql_fetch_array($result)){
+		while($rs=mysqli_fetch_array($result)){
 			?>
 				
 					<li><i class='fa fa-trash '></i> <a href="#" class='docDel' id='<?=$rs['rd_id']?>'><?=$rs['rd_doc']?></a></li>
@@ -337,15 +337,15 @@ if($_POST['paramAction']=="delDoc"){
 	$rd_id=$_POST['rd_id'];
 	
 	$strSQL1="select * from realty_doc WHERE rd_id='$rd_id'";
-	$result1=mysql_query($strSQL1);
-	$rs1=mysql_fetch_array($result1);
+	$result1=mysqli_query($conn,$strSQL1);
+	$rs1=mysqli_fetch_array($result1);
 	$path_doc="../realtyDoc/".$rs1['rdg_id']."/".$rs1['rd_doc'];
 	
 	$unlink=@unlink("$path_doc");
 	
 	
 		$strSQL="delete from realty_doc  WHERE rd_id='$rd_id'";
-		$result=mysql_query($strSQL);
+		$result=mysqli_query($conn,$strSQL);
 		if($result){
 			//continue
 			echo $rdg_id;
@@ -365,8 +365,8 @@ if($_POST['action']=="addPicture"){
 			
 			
 			$strSQL="select * from realty_images  where rdg_id='$rdg_id'";
-			$result=mysql_query($strSQL);
-			$num=mysql_num_rows($result);
+			$result=mysqli_query($conn,$strSQL);
+			$num=mysqli_num_rows($result);
 			if($num==0){
 				$ri_set_first="0";
 			}else{
@@ -377,8 +377,8 @@ if($_POST['action']=="addPicture"){
 			
 			$picture_date=date("d-m-y-h-i-s");
 			$sql="INSERT INTO realty_images (rdg_id,ri_set_first) VALUES ('$rdg_id','$ri_set_first')";
-			mysql_query($sql)or die (mysql_error());
-			$ri_id = mysql_insert_id();
+			mysqli_query($conn,$sql)or die (mysqli_error($conn));
+			$ri_id = mysqli_insert_id($conn);
 			$picture_path = "../realtyPicture/" . $rdg_id . "/" . $ri_id . "/thumbnail/";
 			mkdir_r($picture_path,0777);
 			
@@ -420,12 +420,12 @@ if($_POST['action']=="addPicture"){
 	if($_POST['paramAction']=="showPicture"){
 
 		$strSQL="select * from realty_images where rdg_id='$rdg_id' ORDER BY ri_set_first ";
-		$result=mysql_query($strSQL);
+		$result=mysqli_query($conn,$strSQL);
 		
 		$i=1;
-		while($rs=mysql_fetch_array($result)){
+		while($rs=mysqli_fetch_array($result)){
 			//จัดการกับรูปภาพ
-			$thumbnailsPath="../realtyPicture/".$rdg_id."/".$rs[ri_id]."/thumbnail/";
+			$thumbnailsPath="../realtyPicture/".$rdg_id."/".$rs['ri_id']."/thumbnail/";
 			if(!is_dir($thumbnailsPath)){
 			
 			}else{ //else
@@ -462,16 +462,16 @@ if($_POST['action']=="addPicture"){
 				<div class="caption">
 					
 					<p>
-					<a class="btn-u btn-u-xs btn-u-red delPicture" id="delId-<?=$rs[ri_id]?>" href="#"><i class="icon-trash  margin-left-5"></i></a>
+					<a class="btn-u btn-u-xs btn-u-red delPicture" id="delId-<?=$rs['ri_id']?>" href="#"><i class="icon-trash  margin-left-5"></i></a>
 					<?php 
 					
-					if($rs[ri_set_first]==1){
+					if($rs['ri_set_first']==1){
 						?>
-						<a class="btn-u btn-u-xs setFirst btn-u-yellow" href="#" id="id-<?=$rs[ri_id]?>"><i class='icon-ban'></i> ตั้งเป็นหน้าปก </a>
+						<a class="btn-u btn-u-xs setFirst btn-u-yellow" href="#" id="id-<?=$rs['ri_id']?>"><i class='icon-ban'></i> ตั้งเป็นหน้าปก </a>
 						<?php
 					}else{
 						?>
-						<a class="btn-u btn-u-xs setFirst" href="#" id="id-<?=$rs[ri_id]?>"><i class='icon-check'></i> ตั้งเป็นหน้าปก </a>
+						<a class="btn-u btn-u-xs setFirst" href="#" id="id-<?=$rs['ri_id']?>"><i class='icon-check'></i> ตั้งเป็นหน้าปก </a>
 						<?php 
 					}
 					?>
@@ -483,7 +483,7 @@ if($_POST['action']=="addPicture"){
 		
 		
 		
-		<?
+		<?php
 		$i++;
 		}
    
@@ -493,10 +493,10 @@ if($_POST['action']=="addPicture"){
 	if($_POST['paramAction']=="setFirst"){
 
 		$strSQL="UPDATE realty_images SET ri_set_first='1' WHERE rdg_id='$rdg_id'";
-		$result=mysql_query($strSQL);
+		$result=mysqli_query($conn,$strSQL);
 		if($result){
 			$strSQL2="UPDATE realty_images SET ri_set_first='0' WHERE rdg_id='$rdg_id' and ri_id='$ri_id'";
-			$result2=mysql_query($strSQL2);
+			$result2=mysqli_query($conn,$strSQL2);
 			if($result2){
 				echo'["success"]';
 			}
@@ -537,7 +537,7 @@ if($_POST['action']=="addPicture"){
 
 	
 		$strSQL="delete from realty_images  WHERE ri_id='$ri_id'";
-		$result=mysql_query($strSQL);
+		$result=mysqli_query($conn,$strSQL);
 		if($result){
 
 			//continue
@@ -547,12 +547,12 @@ if($_POST['action']=="addPicture"){
 	}
 	if($_POST['paramAction']=="saveEmbedVdo"){
 		$sqlCheck="select * from realty_embed_video where rdg_id='$rdg_id'";
-		$resultCheck=mysql_query($sqlCheck)or die (mysql_error());
-		$rsNumCheck=mysql_num_rows($resultCheck);
+		$resultCheck=mysqli_query($conn,$sqlCheck)or die (mysqli_error());
+		$rsNumCheck=mysqli_num_rows($resultCheck);
 		if($rsNumCheck){
 
 			$sql="UPDATE realty_embed_video SET rev_embed_code='$rev_embed_code' WHERE rdg_id='$rdg_id'";
-			$result=mysql_query($sql)or die (mysql_error());
+			$result=mysqli_query($conn,$sql)or die (mysqli_error());
 			if($result){
 				echo'["success"]';
 			}
@@ -560,7 +560,7 @@ if($_POST['action']=="addPicture"){
 		}else{
 
 			$sql="INSERT INTO realty_embed_video (rdg_id,rev_embed_code) VALUES ('$rdg_id','$rev_embed_code')";
-			$result=mysql_query($sql)or die (mysql_error());
+			$result=mysqli_query($conn,$sql)or die (mysqli_error());
 			if($result){
 				echo'["success"]';
 			}
@@ -569,8 +569,8 @@ if($_POST['action']=="addPicture"){
 	}
 	if($_POST['paramAction']=="showEmbedVdo"){
 		$sqlCheck="select * from realty_embed_video where rdg_id='$rdg_id'";
-		$resultCheck=mysql_query($sqlCheck)or die (mysql_error());
-		$rs=mysql_fetch_array($resultCheck);
+		$resultCheck=mysqli_query($conn,$sqlCheck)or die (mysqli_error());
+		$rs=mysqli_fetch_array($resultCheck);
 		
 		echo $rs['rev_embed_code'];
 		
