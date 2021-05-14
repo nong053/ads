@@ -1,3 +1,21 @@
+<style>
+
+
+ @media (min-width: 768px) {
+     .postFreeImage {
+      width: 100%;
+	  height:100%;
+    } 
+  }
+  @media (min-width: 992px) {
+    .postFreeImage {
+		/* width: 100%; */
+        height:100px;
+   
+    }
+  }
+
+</style>
 <div class="blog margin-bottom-5">
 <div class="row">
 	<div style="margin-bottom: 5px;" class="panel panel-dark-blue">
@@ -84,11 +102,11 @@
 															
 															if($thumbnailsFile==""){
 																					?>
-																					<img alt="<?=$rsPostDetail['rdg_title']?>" src="images/billboards_default.jpg" style='width: 100%;'  class="img-responsive  img-thumbnail">
+																					<img alt="<?=$rsPostDetail['rdg_title']?>" src="images/billboards_default.jpg"   class="img-responsive  img-thumbnail postFreeImage">
 																					<?php
 																				}else{
 																					?>
-																					<img alt="<?=$rsPostDetail['rdg_title']?>" src="<?=$thumbnailsFile?>" style='width: 100%;'  class="img-responsive  img-thumbnail">
+																					<img alt="<?=$rsPostDetail['rdg_title']?>" src="<?=$thumbnailsFile?>"  class="img-responsive  img-thumbnail postFreeImage">
 																					<?php
 																				}
 															

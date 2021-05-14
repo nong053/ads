@@ -272,6 +272,12 @@ date_default_timezone_set('Asia/Jakarta');
     <!--=== End Content Part ===-->
 
  
+     <br style="clear:both;">
+     <br style="clear:both;">
+     <br style="clear:both;">
+     <br style="clear:both;">
+     <br style="clear:both;">
+     <br style="clear:both;">
      
 </div><!--/End Wrapepr-->
 

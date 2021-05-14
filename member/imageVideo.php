@@ -32,7 +32,7 @@
 				<input type="hidden"  name="action"  id="action" value="add"  >
 			</div>
 			<div class="btnUploadArea">
-				<button type="button" id="btnUploadPicture" class="btn-u btn-u-green  disPlaInline"><i class =' icon-cloud-upload'></i> คลิ๊กเพื่ออัปโหลดรูปภาพ</button>
+				<button type="button" id="btnUploadPicture" class=" btn-u-green  disPlaInline"><i class =' icon-cloud-upload'></i> Upload</button>
 			</div>
 		</div>
 	</div>
@@ -51,7 +51,7 @@
 				<input type="hidden"  name="action"  id="action" value="add"  >
 			</div>
 			<div class="btnUploadArea">
-				<button type="button" id="btnUploadDoc" class="btn-u btn-u-green  disPlaInline"><i class ='icon-cloud-upload'></i> คลิ๊กเพื่ออัปโหลดเอกสาร</button>
+				<button type="button" id="btnUploadDoc" class=" btn-u-green  disPlaInline"><i class ='icon-cloud-upload'></i> Upload</button>
 			</div>
 		</div>
 	</div>

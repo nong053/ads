@@ -102,14 +102,51 @@ label {
     margin-bottom: 0px;
 }
 
-.modal-dialog-login{
+/* .modal-dialog-login{
 	width:400px;
 	margin: 30px auto;
-}
-.modal-dialog-register{
+} */
+/* .modal-dialog-register{
 	width:500px;
 	margin: 30px auto;
-}
+} */
+
+/* .modal-dialog-login {
+    width:400px;
+	margin: 30px auto;
+  } */
+  @media (min-width: 768px) {
+     .modal-dialog-login {
+      width: 100%;
+    } 
+  }
+  @media (min-width: 992px) {
+    .modal-dialog-login {
+        width:400px;
+        margin:  auto;
+    }
+  }
+
+
+
+/* .modal-dialog-register {
+    width:500px;
+	margin: 30px auto;
+  } */
+  @media (min-width: 768px) {
+     .modal-dialog-register {
+      width: 100%;
+    } 
+  }
+  @media (min-width: 992px) {
+    .modal-dialog-register {
+        width:500px;
+        margin: auto;
+    }
+  }
+
+
+
 .testimonials .testimonial-info{
 	margin-top: 0px;
 }
