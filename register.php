@@ -80,7 +80,7 @@
                         <!-- <div class="headline headline-md">
 							<h2><i class="fa fa fa-user"></i> สมัครสมาชิก</h2>
 						</div> -->
-                        <p>สมัครสมาชิกแล้ว? คลิ๊ก <a class="color-green" href="member/index.php">ลงชื่อเข้าใข้งาน</a> ด้วยบัญชีของคุณ.</p>                    
+                        <p>สมัครสมาชิกแล้ว? คลิ๊ก <a class="color-green" href="member/index.php">ลงชื่อเข้าใข้งาน</a> </p>                    
                     </div>
 
                     <input type="text" placeholder="ชื่อ *" name="cus_first_name" id="cus_first_name" class="form-control margin-bottom-5">

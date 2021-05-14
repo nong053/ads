@@ -135,9 +135,12 @@ $rsRT=mysqli_fetch_array($resultRT);
 							<div class="alert alert-info fade in col-xs-offset-3">
 			                    <button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button>
 			                    <strong>
-			                   	ประกาศพิเศษหน้าแรก </strong>ติดต่อผู้ดูแลระบบ(Admin)
+			                   	ประกาศพิเศษหน้าแรก 
+								</strong>
+								<!-- ติดต่อผู้ดูแลระบบ(Admin)
 								โทร: 080-992-6565
-								Email: kosit.arom@gmail.com
+								Email: kosit.arom@gmail.com -->
+								ทดลองใช้งานฟรี
 			                </div>
 			                
 							<div class="form-group" style="display:none;">

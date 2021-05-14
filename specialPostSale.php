@@ -48,7 +48,7 @@ while($rsSCCate=mysqli_fetch_array($resultSCCate)){
 		ON c.cus_id= rdg.cus_id
 		where  rdg.rdg_special='Y' and rdg.rdg_status='Y'
 		and rdg.rt_id='".$rsSCCate['rt_id']."'	
-		order by rdg_update   limit 5
+		order by rdg.rdg_update desc   limit 5
 		";
 ?>
  

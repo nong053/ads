@@ -60,7 +60,7 @@ if($conn){
 								 </thead>
 								 <tbody>
 							<?php 
-							$strSQLSimilar="select * from realty_data_general where rdg_status='Y' limit 15 ";
+							$strSQLSimilar="select * from realty_data_general where rdg_status='Y' order by rdg_update desc limit 15 ";
 							$resultSimilar=mysqli_query($conn,$strSQLSimilar);
 							while($rsSimilar=mysqli_fetch_array($resultSimilar)){
 								?>

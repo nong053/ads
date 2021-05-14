@@ -39,6 +39,7 @@ if($conn){
                 
                
 			</span>
+			<br style="clear:both;">
 		</div>
 		<?php 
 		while($rsCN=mysqli_fetch_array($resultCN)){
