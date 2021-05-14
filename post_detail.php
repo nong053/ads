@@ -137,7 +137,8 @@ if($_POST['paramAction']=="searchQuick"){
 	$rsRT=mysqli_fetch_array($resultRT);
 ?>
 <title><?=$rsRT['rt_name']?></title>
-
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9478268987509661"
+     crossorigin="anonymous"></script>
 <script src="Controller/page/cPostDetail.js"></script>    	
 <div class="blog margin-bottom-5">
 		 <!--

@@ -80,6 +80,9 @@ $result3=mysqli_query($conn,$strSQL3);
                    weapons."/>
 
 -->
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9478268987509661"
+     crossorigin="anonymous"></script>
+	 
 <script src="Controller/cPost_sub_detail.js"></script>
 <link rel="stylesheet" href="css/post_sub_detail.css">
 <script>
