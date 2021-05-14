@@ -19,8 +19,9 @@
 										 ON rdg.rf_id=rf.rf_id
 										 LEFT JOIN realty_project_status rps
 										 ON rdg.rps_id=rps.rps_id
-										where rdg.rdg_special='N'
-										order by rdg.rdg_update
+										-- where 
+										-- rdg.rdg_special='N'
+										order by rdg.rdg_update desc
 										limit 10
 					
 										

@@ -78,6 +78,7 @@ if($_POST['paramAction']=="searchQuick"){
 	WHERE  (rdg_title like '%$searchQuick%')
 	and (rdg.rf_id='$rf_id')
 	and rdg.rdg_status='Y'
+	order by rdg.rdg_update desc
 	";
 	
 	
@@ -102,6 +103,7 @@ if($_POST['paramAction']=="searchQuick"){
 	AND (rdg.rdg_address_district_id='$rdg_address_district_id' or 'All'='$rdg_address_district_id')
 	AND (rdg.rdg_address_sub_district_id='$rdg_address_sub_district_id' or 'All'='$rdg_address_sub_district_id')
 	and rdg.rdg_status='Y'
+	order by rdg.rdg_update desc
 
 	";
 

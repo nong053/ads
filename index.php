@@ -468,7 +468,7 @@ $rsLR=mysqli_fetch_array($resultBannerLR);
         <nav class="navbar navbar-default">
             <div class="container">
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar" aria-expanded="true" aria-controls="navbar">
+                <button type="button" class=" navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
                 <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
@@ -483,7 +483,7 @@ $rsLR=mysqli_fetch_array($resultBannerLR);
                     
                 </a>
             </div>
-            <div id="navbar" class="navbar-collapse collapse in" aria-expanded="true" style="">
+            <div id="navbar" class="navbar-collapse collapse " aria-expanded="true" style="">
                 <ul class="nav navbar-nav">
                 
 
@@ -745,7 +745,7 @@ $rsLR=mysqli_fetch_array($resultBannerLR);
 						โทร: +6680-992-6565 <br>
 						Email: <a href="mailto:kosit.arom@gmail.com" class="">kosit.arom@gmail.com</a><br>
                         <!-- Email2: <a href="mailto:sale@adsthaidd.com" class="">sale@adsthaidd.com</a><br> -->
-                        Chat Control Panel: <a target='_blank' href="https://s2.mylivechat.com/webconsole/" class="">Click</a>
+                        <!-- Chat Control Panel: <a target='_blank' href="https://s2.mylivechat.com/webconsole/" class="">Click</a> -->
                         
                         </address>
                     </div><!--/col-md-3-->
@@ -911,7 +911,7 @@ $rsLR=mysqli_fetch_array($resultBannerLR);
 
   <!--chat start-->
   
-  <script type="text/javascript" async="async" defer="defer" data-cfasync="false" src="https://mylivechat.com/chatinline.aspx?hccid=71502250"></script>
+  <!-- <script type="text/javascript" async="async" defer="defer" data-cfasync="false" src="https://mylivechat.com/chatinline.aspx?hccid=71502250"></script> -->
   
 </body>
 </html>	
