@@ -155,13 +155,13 @@
 			
 	
 			
-			<!-- <div class="row">
+			<div class="row">
 					<label class="col-md-3 control-label titleGroup" > แผนที่  :</label>
 					<div class="col-md-12">
 						<div id="map-canvas-summary" class="map-canvas-summary" ></div>
 						
 					</div>
-			</div> -->
+			</div>
 		<!-- -ข้อมูลที่ตั้ง-->
 		<div class="headline"><h4>ข้อมูลเพิ่มเติม </h4></div>
 		<!-- -ข้อมูลเพิ่มเติม-->

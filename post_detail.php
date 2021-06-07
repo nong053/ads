@@ -152,7 +152,7 @@ if($_POST['paramAction']=="searchQuick"){
 		-->
 			<div class="row" >
 	
-				<div class='' id='totalMap' style='height:250px; display:none'>
+				<div class='' id='totalMap' style='height:300px; '>
 					
 				</div>
 			</div>
@@ -373,9 +373,8 @@ if($_POST['paramAction']=="searchQuick"){
 		   </div>
 </div>
 <!--End Blog Post0-->  
-<!--  
- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHeFJa2RjWISo7BNSHF4FomY4bcPXlhtY&callback=initMapTotal" async defer></script>  
- -->
+ 
+
 
 
 

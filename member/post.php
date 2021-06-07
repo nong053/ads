@@ -29,7 +29,8 @@
     ?>
 
  <link rel="stylesheet" href="../assets/css/post.css">
-  <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false"></script> 
+ 
+  <script async defer src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAHeFJa2RjWISo7BNSHF4FomY4bcPXlhtY"  type="text/javascript"></script> 
  <!--<script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=true"></script>-->
  <!-- <div class="tag-box tag-box-v2 box-shadow shadow-effect-2"> -->
  <div class=" box-shadow shadow-effect-21">

@@ -111,8 +111,9 @@ function thai_date($time){
 
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9478268987509661"
      crossorigin="anonymous"></script>
-	
-<script async defer src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyCA5Egg2g8Qu-bbgidkJMhRCyAQqyxSYBk"  type="text/javascript"></script> 
+     
+     <!-- AIzaSyCA5Egg2g8Qu-bbgidkJMhRCyAQqyxSYBk -->
+<script async defer src="https://maps.googleapis.com/maps/api/js?v=3.exp&key=AIzaSyAHeFJa2RjWISo7BNSHF4FomY4bcPXlhtY"  type="text/javascript"></script> 
 <!--
  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAHeFJa2RjWISo7BNSHF4FomY4bcPXlhtY" async defer></script>  
  -->

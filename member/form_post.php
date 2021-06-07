@@ -341,15 +341,15 @@ $rsRT=mysqli_fetch_array($resultRT);
 																		</div>
 																	</div>
 
-																	<!-- <div class="form-group">
+																	 <div class="form-group">
 																		<label class="col-lg-3 control-label" for="rdg_map"> ปักหมุดแผนที่</label>
 																		<div class="col-lg-9 " > 
-																		<button class="btn-u btn-u-green" id="btnCreateMarker">
+																		<button class="" id="btnCreateMarker">
 																		<i class="icon-pin"></i>
 																		คลิ๊กเพื่อปักหมุด
 																		</button>
 
-																		<button class="btn-u btn-u-orange" id="btnClearMarker">
+																		<button class=" id="btnClearMarker">
  																		<i class="icon-trash"></i>
 																		ลบหมุด
 																		</button>
@@ -360,7 +360,7 @@ $rsRT=mysqli_fetch_array($resultRT);
 																			 	<div id="map-canvas"></div>
 																				<p id="demo"></p>
 																		</div>
-																	</div> -->
+																	</div> 
 
 															
 															<div class="showForRealty">

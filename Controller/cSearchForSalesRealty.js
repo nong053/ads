@@ -13,19 +13,22 @@ function initMapTotal(jsonObjEncode) {
 
 	var marker, info;
 
+	// console.log("------------1");
+	// console.log(jsonObjEncode);
 	
-	//alert("jsonObjEncode="+jsonObjEncode);
 	var jsonObj;
 	if(jsonObjEncode==undefined){
-		jsonObj = [{"location":"วัดลาดปลาเค้า", "lat": "13.846876", "lng": "100.604481"},
-	  			  {"location":"หมู่บ้านอารียา", "lat": "13.847766", "lng": "100.605768"},
-	  			  {"location":"สปีดเวย์", "lat": "13.845235", "lng": "100.602711"},
-	  			  {"location":"สเต็ก ลุงหนวด", "lat": "13.862970", "lng": "100.613834"}];
+		// jsonObj = [{"location":"วัดลาดปลาเค้า", "lat": "13.846876", "lng": "100.604481"},
+	  	// 		  {"location":"หมู่บ้านอารียา", "lat": "13.847766", "lng": "100.605768"},
+	  	// 		  {"location":"สปีดเวย์", "lat": "13.845235", "lng": "100.602711"},
+	  	// 		  {"location":"สเต็ก ลุงหนวด", "lat": "13.862970", "lng": "100.613834"}];
+
+					jsonObj = [];
 	}else{
 		jsonObj=jsonObjEncode;
 	}
-
-	  //alert("jsonObj="+jsonObj);
+	// console.log("------------2");
+	// console.log(jsonObjEncode);
 	 
 	 var image = {
 	          //url: 'https://developers.google.com/maps/documentation/javascript/examples/full/images/beachflag.png',
@@ -108,7 +111,7 @@ $(document).ready(function(){
 		
 		//$("#totalMap").show();
 		// call total map start
-		/*
+		
 				$.ajax({
 					url:"Model/mTotalMap.php",
 					type:"post",
@@ -146,7 +149,7 @@ $(document).ready(function(){
 						
 					}
 				});
-				*/
+				
 				// call total map end
 
 		

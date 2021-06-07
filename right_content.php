@@ -65,12 +65,12 @@ if($conn){
 							while($rsSimilar=mysqli_fetch_array($resultSimilar)){
 								?>
 								<!--start sub box near realty -->
-								<tr>
+								<tr >
 								<td>
-	                               <div class="row">
+	                               <div class="row" style="margin-bottom:5px;">
 											<div class="col-md-4">
 												<div class="magazine-posts-img">
-													<a href="#">
+													<!-- <a href="#"> -->
 													<?php 
 													$strSQL="select * from realty_images where rdg_id='".$rsSimilar['rdg_id']."' and  ri_set_first='0'  ORDER BY ri_set_first  ";
 													$result=mysqli_query($conn,$strSQL);
@@ -122,26 +122,28 @@ if($conn){
 														<img alt="" src="<?=$thumbnailsFile?>" class="img-responsive">
 														-->
 													
-													</a>						
+													<!-- </a>						 -->
 												</div>
 											</div>
-											<div class="col-md-8">
-											<b style="color:#1abc9c;">
-											<a href="index.php?page=post_sub_detail&rdg_id=<?=$rsSimilar['rdg_id']?>">
-											
-											<?php if(strlen($rsSimilar['rdg_title'])>55){
-											$rdg_title=mb_substr($rsSimilar['rdg_title'],0,55,"UTF-8")."...";
-											echo"$rdg_title";
-											}else{
-											?>
-											<?=$rsSimilar['rdg_title']?></b>
-											<?php }?>
-											</a>
-											
-											<!-- <div><font color="red"><?=number_format($rsSimilar['rdg_price']);?>  บาท</font></div> -->
+											<div class="col-md-8" style="margin-top:5px;">
+												<div style="color:black;">
+												<a href="index.php?page=post_sub_detail&rdg_id=<?=$rsSimilar['rdg_id']?>">
+												
+												<?php if(strlen($rsSimilar['rdg_title'])>55){
+												$rdg_title=mb_substr($rsSimilar['rdg_title'],0,55,"UTF-8")."...";
+												echo"$rdg_title";
+												}else{
+												?>
+												<?=$rsSimilar['rdg_title']?>
+												
+												<?php }?>
+												</a>
+												</div>
+												
+												<!-- <div><font color="red"><?=number_format($rsSimilar['rdg_price']);?>  บาท</font></div> -->
 											</div>
-								   </div>
-								    <hr>
+								   	</div>
+								    <!-- <hr> -->
 								    </td>
 								    </tr>
 								  <!--end box near realty -->

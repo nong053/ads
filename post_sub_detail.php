@@ -86,11 +86,10 @@ $result3=mysqli_query($conn,$strSQL3);
 <script src="Controller/cPost_sub_detail.js"></script>
 <link rel="stylesheet" href="css/post_sub_detail.css">
 <script>
-/*
+
 $(document).ready(function(){
 	callMapSummary(<?=$rs1['rdg_id']?>);
 });
-*/
 </script>  
 
 <!--Blog Post0-->      
@@ -225,13 +224,13 @@ $rdg_id=$rs1['rdg_id'];
 <a href="https://plus.google.com/share?url= ลิงค์" target="_blank"><img src="img/gplus-variation2.png" alt="Google" /></a>
 -->
 														
-														<button type="button"  onClick="fb('1031225606922179')"; class=" btn-u-xs btn btn-facebook-inversed"><i class="fa fa-facebook"></i> แชร์ไปที่เฟสบุ๊ค</button>
+														<!-- <button type="button"  onClick="fb('1031225606922179')"; class=" btn-u-xs btn btn-facebook-inversed"><i class="fa fa-facebook"></i> แชร์ไปที่เฟสบุ๊ค</button> -->
 
 														<!--
 														<button type="button" onClick="window.open('https://plus.google.com/share?url=adsthaidd.com/<?=$_SERVER['REQUEST_URI']?>')"; class="btn-u  btn-u-xs btn-googleplus-inversed"><i class="fa fa-google-plus"></i> แชร์ไปที่กูเกิล</button>
 														-->
 
-														<button type="button" data-target="#sendToMyFriendsFormModal" data-toggle="modal"   class="btn-u  btn-u-xs btn-u-green"><i class="fa fa-bell-o"></i> ส่งหน้านี้ให้เพิ่อน</button>
+														<!-- <button type="button" data-target="#sendToMyFriendsFormModal" data-toggle="modal"   class="btn-u  btn-u-xs btn-u-green"><i class="fa fa-bell-o"></i> ส่งหน้านี้ให้เพิ่อน</button> -->
 
 														<!--
 <button type="button"  onClick="window.open('http://www.facebook.com/sharer.php?u=adsthaidd.com/<?=$_SERVER['REQUEST_URI']?>')"; class=" btn-u-xs btn btn-facebook-inversed"><i class="fa fa-facebook"></i> แชร์ไปที่เฟสบุ๊ค</button>
@@ -243,7 +242,7 @@ $rdg_id=$rs1['rdg_id'];
 														<button type="button" class="btn-u  btn-u-xs btn-u-green"><i class="fa fa-download"></i>คลิ๊กดูหน้าที่จัดเก็บไว้</button>
 														 -->
 
-														<button type="button"  class=" print btn-u  btn-u-xs btn-u-green"><i class="glyphicon glyphicon-print"></i> ปริ้น</button>
+														<!-- <button type="button"  class=" print btn-u  btn-u-xs btn-u-green"><i class="glyphicon glyphicon-print"></i> ปริ้น</button> -->
 														<!--
 														<div class="fb-like" data-href="http://adsthaidd.com/index.php?page=post_sub_detail&amp;rdg_id=<?=$rs1['rdg_id']?>" data-layout="standard" data-action="like" data-show-faces="true" data-share="true"></div>
 														-->
@@ -344,15 +343,15 @@ $rdg_id=$rs1['rdg_id'];
 		</div>
 		
 
-		<!--
+	
 		<div class="row">
 				<label class="col-md-3 control-label titleGroup" > แผนที่  :</label>
 				<div class="col-md-12">
-					<div id="map-canvas-summary" class="map-canvas-summary" style='width: 655px;height:400px;' ></div>
+					<div id="map-canvas-summary" class="map-canvas-summary" style='width: auto;height:400px;' ></div>
 					
 				</div>
 		</div>
-		-->
+	
 	<!-- -ข้อมูลที่ตั้ง-->
 	<div class="headline"><h4>ข้อมูลเพิ่มเติม </h4></div>
 	
@@ -403,7 +402,7 @@ $rdg_id=$rs1['rdg_id'];
 
 												<!-- start main box4 -->
 														<div class="tag-box tag-box-v1 box-shadow shadow-effect-2">
-															<h2>ฝากขอความไว้กับประกาศนี้</h2>
+															<h2>ฝากขอความ</h2>
 															<p>
 															<!-- comment start -->
 															<div id="commentArea">
