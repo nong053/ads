@@ -98,8 +98,8 @@ $rdg_id=$rs1['rdg_id'];
 ?>
 	<div style="display: none;">
 <?php
-	echo $rdg_id;
-	//include("useronline/each_realty.php");
+	//echo $rdg_id;
+	include("useronline/each_realty.php");
 ?>
 	</div>
 <?php

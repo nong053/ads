@@ -1,6 +1,6 @@
 <?php
 ini_set('display_errors', '1'); //no error=0 all error=1
-include '../config.inc.php';
+include 'config.inc.php';
 
 $title = "โฆษณา";
 date_default_timezone_set('Asia/Bangkok');
