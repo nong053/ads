@@ -69,8 +69,8 @@ var postFn=function(loginType){
 		}
 		
 		function showPosition(position) {
-			//alert(position.coords.latitude);
-			//alert(position.coords.longitude);
+			alert(position.coords.latitude);
+			alert(position.coords.longitude);
 			setupMap(showMarker,position.coords.latitude,position.coords.longitude,"");
 			
 			

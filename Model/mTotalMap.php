@@ -20,7 +20,7 @@ echo "search_type=".$search_type;
 
 
 $strSQL="
-select rdg_title,rdg_map from realty_data_general
+select rdg_title,rdg_map,rdg_id from realty_data_general
 WHERE (rdg_address_province_id='$rdg_address_province_id' OR 'All' ='$rdg_address_province_id')
 AND (rdg_address_district_id='$rdg_address_district_id' OR 'All' ='$rdg_address_district_id')
 AND (rdg_address_sub_district_id='$rdg_address_sub_district_id' OR 'All' ='$rdg_address_sub_district_id')

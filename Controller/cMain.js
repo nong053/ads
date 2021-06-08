@@ -296,29 +296,37 @@ $(document).ready(function(){
 		$(".mainmenuTop").click(function(){
 			
 			var id=this.id;
-
-			$.ajax({
-				url:"post_detail.php",
-				type:"post",
-				dataType:"html",
-				data:{"rt_id":this.id},
-				success:function(data){
-					$("#mainContrainArea").html(data);
-					$("#totalMap").hide();
+		
+			// $.ajax({
+			// 	url:"post_detail.php",
+			// 	type:"post",
+			// 	dataType:"html",
+			// 	data:{"rt_id":this.id},
+			// 	success:function(data){
+			// 		$("#mainContrainArea").html(data);
+			// 		$("#totalMap").hide();
 					
-				}
-			});
+			// 	}
+			// });
 			
 			
 			
 			
-			$("select#rt_id option").filter(function() {
-				//alert($(this).val());
-				//alert(this.id);
-			    //may want to use $.trim in here
-			    return $(this).val() == id; 
-			}).prop('selected', true);
-			return false;
+			
+			// $("select#rt_id option").filter(function() {
+			//     return $(this).val() == id; 
+			// }).prop('selected', true);
+
+			$("select#rt_id").val(id);
+
+			setTimeout(function(){
+				//alert(1);
+				$("form#formSearchForSales").submit();
+			},500);
+			
+			//return false;
+
+			
 
 
 

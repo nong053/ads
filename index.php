@@ -535,6 +535,7 @@ $rsLR=mysqli_fetch_array($resultBannerLR);
                     <li >
                         <?php
                             $cus_profile="index.php?page=profile_post&cus_id=".$_SESSION['ses_cus_id']."";
+                            
                         ?>
                         <a class=" " href="<?=$cus_profile?>">
                          <i class="glyphicon glyphicon-user"></i> โปรไฟล์ของฉัน
@@ -601,19 +602,8 @@ $rsLR=mysqli_fetch_array($resultBannerLR);
 
                            <!-- start not show search if get value below.-->
 							<?php
-								if(($_GET['page']!="sitemap") 
-								and ($_GET['page']!="contact")
-								and ($_GET['page']!="advertise")
-								and ($_GET['page']!="about")
-								and ($_GET['page']!="condition")
-								//and ($_GET['page']!="register")
-								//and ($_GET['page']!="login")
-								and ($_GET['page']!="forgot_pass")
-								and ($_GET['page']!="post_sub_detail")
-								and ($_GET['page']!="profile_post")
-								){
-								include("main_search.php");
-								}
+								
+                                include("main_search.php");
 							?>
 						   <!-- start not show search if get value below.-->
 
@@ -704,11 +694,15 @@ $rsLR=mysqli_fetch_array($resultBannerLR);
                         <div class="headline"><h2>เมนูหลัก</h2></div>
                         <ul class="list-unstyled link-list">
                             <li><a href="index.php">หน้าแรก</a><i class="fa fa-angle-right " ></i></li>
-                            <li><a href="#">ป้ายบิลบอร์ด</a><i class="fa fa-angle-right mainmenuTop" id='15'></i></li>
-                            <li><a href="#">ป้าย LED</a><i class="fa fa-angle-right mainmenuTop" id='39'></i></li>
-                            <li><a href="#">ป้าย คัทเอ้าท์</a><i class="fa fa-angle-right mainmenuTop" id='13'></i></li>
-                            <li><a href="#">ป้ายกล่องไฟ</a><i class="fa fa-angle-right mainmenuTop" id='4'></i></li>
-                            <li><a href="#">ป้ายสติ๊กเกอร์</a><i class="fa fa-angle-right mainmenuTop" id='11'></i></li>
+                            <li><a href="# " class="mainmenuTop" id='1'>ป้ายบิลบอร์ด</a><i class="fa fa-angle-right " ></i></li>
+                            <li><a href="# " class="mainmenuTop" id='2'>ป้ายแบนเนอร์</a><i class="fa fa-angle-right " ></i></li>
+                            <li><a href="#" class="mainmenuTop" id='3'>ป้าย LED</a><i class="fa fa-angle-right " ></i></li>
+                            <li><a href="#" class="mainmenuTop" id='4'>ป้ายคัทเอาท์,ป้ายกองโจร</a><i class="fa fa-angle-right " ></i></li>
+                            <li><a href="# " class="mainmenuTop" id='6'>ป้ายหน้าอาคาร, ร้านค้า</a><i class="fa fa-angle-right " ></i></li>
+                            <li><a href="# " class="mainmenuTop" id='7'>ป้ายโรงงาน,ป้ายบริษัท,ป้ายทาวเวอร์,ป้ายโครงการ</a><i class="fa fa-angle-right " ></i></li>
+                            <li><a href="#" class="mainmenuTop" id='9'>ป้ายกล่องไฟ</a><i class="fa fa-angle-right " ></i></li>
+                            <li><a href="#" class="mainmenuTop" id='10'>ป้ายสติ๊กเกอร์, สติ๊กเกอร์ติดรถ</a><i class="fa fa-angle-right " ></i></li>
+                            <li><a href="# " class="mainmenuTop" id='11'>ป้ายอื่นๆ</a><i class="fa fa-angle-right " ></i></li>
 
 						
                         </ul>

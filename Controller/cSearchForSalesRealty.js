@@ -6,7 +6,7 @@ callProvince();
 function initMapTotal(jsonObjEncode) {
 	var mapOptions = {
 	  center: {lat: 13.847860, lng: 100.604274},
-	  zoom: 10,
+	  zoom: 5,
 	}
 		
 	var maps = new google.maps.Map(document.getElementById("totalMap"),mapOptions);
@@ -48,17 +48,32 @@ function initMapTotal(jsonObjEncode) {
 		   position: new google.maps.LatLng(item.lat, item.lng),
 		   map: maps,
 		   icon: image,
-		   title: item.location
+		   title: item.location,
+		   url:item.url
 		});
 
 	  info = new google.maps.InfoWindow();
 
-	  google.maps.event.addListener(marker, 'click', (function(marker, i) {
+
+	  google.maps.event.addListener(marker, 'mouseover', (function(marker, i) {
 		return function() {
-		  info.setContent(item.location);
-		  info.open(maps, marker);
+		   info.setContent(item.location);
+		   info.open(maps, marker);
+
+		  
 		}
 	  })(marker, i));
+	
+	  google.maps.event.addListener(marker, 'click', (function(marker, i) {
+		return function() {
+		//    info.setContent(item.location);
+		//    info.open(maps, marker);
+		window.location.href = this.url;
+		  
+		}
+	  })(marker, i));
+
+	  
 
 	});
 
@@ -134,7 +149,7 @@ $(document).ready(function(){
 			  					jsonObj+=",{";
 			  					
 			  				}
-			  				jsonObj+="\"location\":\""+indexEntry['rdg_title']+"\",\"lat\":\""+latLng[0]+"\",\"lng\":\""+latLng[1]+"\"";
+			  				jsonObj+="\"location\":\""+indexEntry['rdg_title']+"\",\"lat\":\""+latLng[0]+"\",\"lng\":\""+latLng[1]+"\",\"url\":\"index.php?page=post_sub_detail&rdg_id="+indexEntry['rdg_id']+"\"";
 			  				
 			  		
 
