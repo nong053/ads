@@ -318,11 +318,11 @@ $(document).ready(function(){
 			// }).prop('selected', true);
 
 			$("select#rt_id").val(id);
-
-			setTimeout(function(){
+			$("form#formSearchForSales").submit();
+			//setTimeout(function(){
 				//alert(1);
-				$("form#formSearchForSales").submit();
-			},500);
+				
+			//},500);
 			
 			//return false;
 

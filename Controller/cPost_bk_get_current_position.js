@@ -14,7 +14,46 @@ var postFn=function(loginType){
 		
 		
 		//start map
+		/*
+		function initialize() {
+        	//13.7246005,100.6331108
+          var myLatlng = new google.maps.LatLng(13.857326299999999,100.7267414);
+          var mapOptions = {
+            zoom: 15,
+            center: myLatlng
+          }
+          var map = new google.maps.Map(document.getElementById('map-canvas'), mapOptions);
+        
+          var marker = new google.maps.Marker({
+              position: myLatlng,
+              map: map,
+              title: 'Share Olanlab Com'
+          });
+        }
+        google.maps.event.addDomListener(window, 'load', initialize);
+        
+        
+        var x = document.getElementById("demo");
 		
+		function getLocation() {
+		    if (navigator.geolocation) {
+		        navigator.geolocation.getCurrentPosition(showPosition);
+		    } else { 
+		        x.innerHTML = "Geolocation is not supported by this browser.";
+		    }
+		}
+		
+		function showPosition(position) {
+		    x.innerHTML = "Latitude: " + position.coords.latitude + 
+		    "<br>Longitude: " + position.coords.longitude;	
+		}
+		
+		
+		$("#btnCreateMarker").click(function(){
+			getLocation();
+			return false;
+		});
+		*/
 		var lat="";
 		var long="";
 		
@@ -31,7 +70,8 @@ var postFn=function(loginType){
 		
 		function showPosition(position) {
 
-			
+			// alert(position.coords.latitude);
+			// alert(position.coords.longitude);
 
 			setupMap(showMarker,position.coords.latitude,position.coords.longitude,"");
 			
@@ -50,7 +90,6 @@ var postFn=function(loginType){
 			var myOptions = {
 			  zoom: 15,
 			  center: new google.maps.LatLng(currentLat,currentLong),
-
 			  mapTypeId: google.maps.MapTypeId.ROADMAP
 			};
 			if(mapId!=""){
@@ -281,13 +320,11 @@ var postFn=function(loginType){
 				//setupMap();
 				//getLocation(false);
 				$("#btnCreateMarker").click(function(){
-					//getLocation(true);
-					setupMap(true, 13.847860,100.604274,"");
+					getLocation(true);
 					return false;
 				});
 				$("#btnClearMarker").click(function(){
-					//getLocation(false);
-					setupMap(false, 13.847860,100.604274,"");
+					getLocation(false);
 					return false;
 				});
 				
@@ -393,8 +430,7 @@ var postFn=function(loginType){
 						}else{
 							setTimeout(function(){
 								//get Map not LatLong
-								//getLocation(false);
-								setupMap(false, 13.847860,100.604274,"");
+								getLocation(false);
 							},2000);
 						}
 						
@@ -660,15 +696,14 @@ var postFn=function(loginType){
 		//setupMap();
 		//getLocation(false);
 		$("#btnCreateMarker").click(function(){
-			//is not call current position on http
-			//getLocation(true);
-			//resolve by redirect to setupMap
-			setupMap(true, 13.847860,100.604274,"");
+		
+			getLocation(true);
 			return false;
 		});
 		//end map
 		
 		$("#btnClearMarker").click(function(){
+			//getLocation(false);
 			return false;
 		});
 		
@@ -742,17 +777,14 @@ var postFn=function(loginType){
 		
 		//setupMap();
 		$("#btnClearMarker").click(function(){
-			//getLocation(false);
-			setupMap(false, 13.847860,100.604274,"");
+			getLocation(false);
 			
 			return false;
 		});
 		setTimeout(function(){
-			//getLocation(false);
-			setupMap(false, 13.847860,100.604274,"");
+			getLocation(false);
 			$("#btnCreateMarker").click(function(){
-				//getLocation(true);
-				setupMap(true, 13.847860,100.604274,"");
+				getLocation(true);
 				return false;
 			});
 		},2000);
