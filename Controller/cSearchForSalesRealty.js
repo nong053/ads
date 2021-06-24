@@ -6,7 +6,7 @@ callProvince();
 function initMapTotal(jsonObjEncode) {
 	var mapOptions = {
 	  center: {lat: 13.847860, lng: 100.604274},
-	  zoom: 5,
+	  zoom: 10,
 	}
 		
 	var maps = new google.maps.Map(document.getElementById("totalMap"),mapOptions);

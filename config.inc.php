@@ -2,15 +2,16 @@
 error_reporting (E_ALL ^ E_NOTICE);
 extract($_REQUEST);
 
-$hostname="127.0.0.1";
+$hostname="localhost";
+
 $username="root";
 $password="";
 $dbname="adskosana_db";
 
 /*
-$username="adsthaidd_user";
+$username="dashboa2_adsuser";
 $password="010535546";
-$dbname="adsthaidd_db";
+$dbname="dashboa2_adsdb";
 */
 
 
